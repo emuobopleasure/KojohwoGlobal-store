@@ -12,9 +12,7 @@ const Header = () => {
     const [showMenu, setShowMenu] = useState(false)
 
 
-    const handleToggle = () => {
-        setTheme((prevState) => !prevState)
-    }
+    
 
     return (
         <header>
@@ -59,15 +57,15 @@ const Header = () => {
                         </div>
                         <div className="flex-none">
                             <div className='theme-toggle-icons cursor-pointer hidden md:inline-flex'>
-                                <span onClick={handleToggle} className="moon-icon hidden tooltip tooltip-bottom" data-tip="Dark Theme">
+                                {/* <span onClick={handleToggle} className="moon-icon hidden tooltip tooltip-bottom" data-tip="Dark Theme">
                                     <i className="fa-solid fa-moon"></i>
-                                </span>
+                                </span> */}
                                 {/* <div className="tooltip tooltip-bottom" data-tip="hello">
                             <button className="btn">Hover me</button>
                         </div> */}
-                                <span onClick={handleToggle} className="sun-icon tooltip tooltip-bottom" theme-change="dark" data-tip="Light Theme">
+                                {/* <span onClick={handleToggle} className="sun-icon tooltip tooltip-bottom" theme-change="dark" data-tip="Light Theme">
                                     <i className="fa-solid fa-sun"></i>
-                                </span>
+                                </span> */}
                             </div>
                             <div className="dropdown dropdown-end">
                                 <label tabIndex={0} className="btn btn-ghost btn-circle">
@@ -112,17 +110,18 @@ const Header = () => {
                             </div>
                         </div>
                     </div>
+                    {/* !================mobile menu========! */}
                     <div className={showMenu ? 'hamburger-menu' : 'hidden'}>
                         <ul tabIndex={0} className="menu menu-vertical leading-10 dropdown-content p-2 pr-6 bg-base-100 rounded-box w-screen h-auto overflow-scroll z-10 onrotate:h-[60vh] onrotate:overflow-scroll">
                             <li>
                                 <div className='theme-toggle-icons cursor-pointer'>
-                                    <span onClick={handleToggle} className="moon-icon hidden">
+                                    <span className="moon-icon hidden">
                                         <i className="fa-solid fa-moon"></i>
                                         <span className='ml-2'>
                                             Dark Theme
                                         </span>
                                     </span>
-                                    <span onClick={handleToggle} className="sun-icon">
+                                    <span  className="sun-icon">
                                         <i className="fa-solid fa-sun"></i>
                                         <span className='ml-3'>
                                             Light Theme
