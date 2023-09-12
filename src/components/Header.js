@@ -163,7 +163,7 @@ const Header = () => {
                                 </NavLink>
                             </li>
                             <li>
-                                <div className='social-links flex gap-4 px-4 cursor-default' className='mobile-nav-link landscape:bg-[#c9c4c4] h-[3.4rem] flex items-center justify-between'>
+                                <div className='mobile-nav-link social-links gap-4 px-4 cursor-default mobile-nav-link landscape:bg-[#c9c4c4] h-[3.4rem] flex items-center justify-between'>
                                     <NavLink to=''>
                                         <RiWhatsappFill />
                                     </NavLink>
