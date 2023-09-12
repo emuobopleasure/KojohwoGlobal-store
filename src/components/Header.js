@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { FiMenu } from 'react-icons/fi';
+import { CiSearch } from 'react-icons/ci';
 import { RiWhatsappFill } from 'react-icons/ri';
 import { BsInfoCircleFill } from 'react-icons/bs';
 import { MdOutlineContactPhone } from 'react-icons/md';
@@ -11,6 +12,11 @@ import SearchForm from './SearchForm';
 
 const Header = () => {
     const [showMenu, setShowMenu] = useState(false)
+    const [showSearch, setShowSearch] = useState(false)
+
+    const handleToggle = () => {
+        setShowSearch((prevState) => !prevState)
+    }
 
 
 
@@ -18,7 +24,7 @@ const Header = () => {
     return (
         <header>
             <nav className='mb-[6rem] mt-0'>
-                <div className="navbar bg-base-100 shadow-lg rounded-3xl fixed top-0 z-10 flex flex-col items-start md:px-[2rem] lg:px-[3rem] pb-[3px]">
+                <div className={showSearch ? `navbar bg-base-100 shadow-lg rounded-3xl fixed top-0 z-10 flex flex-col items-start md:px-[2rem] lg:px-[3rem] pb-[3px]` : 'navbar bg-base-100 min-h-0 lg:min-h-[4rem] shadow-lg rounded-3xl fixed top-0 z-10 flex flex-col items-start md:px-[2rem] lg:px-[3rem] pb-[3px]'}>
                     <div className='navbar nav-wrapper flex items-center justify-between h-[2rem] min-h-0 p-0'>
                         <div className='logo/menu nav inline-flex gap-2 items-center'>
                             <div className='hamburger inline-flex lg:hidden'>
@@ -45,19 +51,33 @@ const Header = () => {
                                     </NavLink>
                                 </li>
                                 <li className='contact-nav-link hover:transform transition duration-300 hover:scale-110'>
-                                    <NavLink to='/contactus' className={({ isActive }) => isActive ? 'contact border-b-2 border-btnColor' : 'border-none'}>
+                                    <NavLink to='/contact' className={({ isActive }) => isActive ? 'contact border-b-2 border-btnColor' : 'border-none'}>
                                         Contact
                                     </NavLink>
                                 </li>
                                 <li className='about-nav-link hover:transform transition duration-300 hover:scale-110'>
-                                    <NavLink to='/aboutus' className={({ isActive }) => isActive ? 'about border-b-2 border-btnColor' : 'border-none'}>
+                                    <NavLink to='/about' className={({ isActive }) => isActive ? 'about border-b-2 border-btnColor' : 'border-none'}>
                                         About
                                     </NavLink>
                                 </li>
                             </ul>
                         </div>
+
                         {/* |=======profile tabs =========| */}
-                        <div className="flex-none pr-[13px]">
+                        <div className="flex items-center lg:flex-none pr-[13px]">
+                            {
+                                !showSearch &&
+                                <button onClick={handleToggle} className='search-open lg:hidden'>
+                                    <CiSearch className='search-icon pb-[2px] lg:p-0 mr-[0.5rem]' size='1.5rem' />
+                                </button>
+                            }
+                            {
+                                showSearch &&
+                                <button onClick={handleToggle} className='search-close lg:hidden'>
+                                    <VscClose className='close-icon pb-[2px] lg:p-0 mr-[0.5rem]' size='1.5rem' />
+                                </button>
+                            }
+
                             {/* |===============theme settings=====| */}
                             {/* <div className='theme-toggle-icons cursor-pointer hidden md:inline-flex'>
                                 <span onClick={handleToggle} className="moon-icon hidden tooltip tooltip-bottom" data-tip="Dark Theme">
@@ -118,7 +138,11 @@ const Header = () => {
                         </div>
                     </div>
                     {/* |===============search form===========| */}
-                    <SearchForm formStyle='w-full my-[0.25rem] bg-[btnColor]' inputStyle='h-[2rem] md:h-[2.2rem] lg:h-[2.3rem] focus:outline-transparent text-[0.8rem] py-[3px]' btnStyle='w-[1.9rem] md:w-[2.2rem] min-h-[2rem] h-[2rem] md:min-h-[2.2rem] md:h-[2.2rem] lg:min-h-[2.3rem] lg:h-[2.3rem]' />
+                    {showSearch &&
+                        <SearchForm formStyle='w-full my-[0.25rem] bg-[btnColor]' inputStyle='h-[2rem] md:h-[2.2rem] lg:h-[2.3rem] focus:outline-transparent text-[0.8rem] py-[3px]' btnStyle='w-[1.9rem] md:w-[2.2rem] min-h-[2rem] h-[2rem] md:min-h-[2.2rem] md:h-[2.2rem] lg:min-h-[2.3rem] lg:h-[2.3rem]' />
+                    }
+                    <SearchForm formStyle='desktop-search hidden lg:flex w-full my-[0.25rem] bg-[btnColor]' inputStyle='h-[2rem] md:h-[2.2rem] lg:h-[2.3rem] focus:outline-transparent text-[0.8rem] py-[3px]' btnStyle='w-[1.9rem] md:w-[2.2rem] min-h-[2rem] h-[2rem] md:min-h-[2.2rem] md:h-[2.2rem] lg:min-h-[2.3rem] lg:h-[2.3rem]' />
+
                     {/* !================mobile menu========! */}
                     <div className={showMenu ? 'hamburger-menu w-full' : 'hidden'}>
                         <ul tabIndex={0} className="menu pl-0 pr-0 menu-vertical leading-10 text-[1rem] gap-[1.5rem] dropdown-content pt-[1.5rem] bg-base-100 rounded-box w-screen h-auto z-10 landscape:h-[60vh]">
@@ -138,7 +162,7 @@ const Header = () => {
                                     </span>
                                 </div>
                             </li> */}
-                            <li>
+                            <li onClick={() => setShowMenu(false)}>
                                 <NavLink to='/' className='mobile-nav-link landscape:bg-[#c9c4c4]'>
                                     <span>
                                         <FaHome />
@@ -146,16 +170,16 @@ const Header = () => {
                                     Home
                                 </NavLink>
                             </li>
-                            <li>
-                                <NavLink to='/contactus' className='mobile-nav-link landscape:bg-[#c9c4c4]'>
+                            <li onClick={() => setShowMenu(false)}>
+                                <NavLink to='/contact' className='mobile-nav-link landscape:bg-[#c9c4c4]'>
                                     <span>
                                         <MdOutlineContactPhone />
                                     </span>
                                     Contact
                                 </NavLink>
                             </li>
-                            <li>
-                                <NavLink to='/aboutus' className='mobile-nav-link landscape:bg-[#c9c4c4]'>
+                            <li onClick={() => setShowMenu(false)}>
+                                <NavLink to='/about' className='mobile-nav-link landscape:bg-[#c9c4c4]'>
                                     <span>
                                         <BsInfoCircleFill />
                                     </span>
