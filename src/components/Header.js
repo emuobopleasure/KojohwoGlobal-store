@@ -121,7 +121,7 @@ const Header = () => {
                     <SearchForm formStyle='w-full my-[0.25rem] bg-[btnColor]' inputStyle='h-[2rem] md:h-[2.2rem] lg:h-[2.3rem] focus:outline-transparent text-[0.8rem] py-[3px]' btnStyle='w-[1.9rem] md:w-[2.2rem] min-h-[2rem] h-[2rem] md:min-h-[2.2rem] md:h-[2.2rem] lg:min-h-[2.3rem] lg:h-[2.3rem]' />
                     {/* !================mobile menu========! */}
                     <div className={showMenu ? 'hamburger-menu' : 'hidden'}>
-                        <ul tabIndex={0} className="menu menu-vertical leading-10 text-[1.3rem] gap-[1.5rem] dropdown-content p-2 pt-[1.5rem] pr-6 bg-base-100 rounded-box w-screen h-auto overflow-scroll z-10 onrotate:h-[60vh] onrotate:overflow-scroll">
+                        <ul tabIndex={0} className="menu menu-vertical leading-10 text-[1rem] gap-[1.5rem] dropdown-content p-2 pt-[1.5rem] pr-6 bg-base-100 rounded-box w-screen h-auto overflow-scroll z-10 onrotate:h-[60vh] onrotate:overflow-scroll">
                             {/* <li>
                                 <div className='theme-toggle-icons cursor-pointer'>
                                     <span className="moon-icon hidden">
