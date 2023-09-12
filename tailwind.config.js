@@ -5,5 +5,12 @@ module.exports = {
     themes: ["cupcake", "retro"],
     extend: {},
   },
+  theme: {
+    extend: {
+      colors: {
+        btnColor: '#c95fa1',
+      },
+    },
+  },
   plugins: [require("daisyui")],
 }
