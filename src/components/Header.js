@@ -18,8 +18,8 @@ const Header = () => {
     return (
         <header>
             <nav className='mb-[6rem] mt-0'>
-                <div className="navbar bg-base-100 shadow-lg rounded-3xl fixed top-0 z-10 flex flex-col items-start">
-                    <div className='navbar nav-wrapper flex items-center justify-between h-[2rem] min-h-0'>
+                <div className="navbar bg-base-100 shadow-lg rounded-3xl fixed top-0 z-10 flex flex-col items-start md:px-[2rem] lg:px-[3rem]">
+                    <div className='navbar nav-wrapper flex items-center justify-between h-[2rem] min-h-0 p-0'>
                         <div className='logo/menu nav inline-flex gap-2 items-center'>
                             <div className='hamburger inline-flex lg:hidden'>
                                 {!showMenu && <button onClick={() => setShowMenu(true)}
@@ -32,7 +32,7 @@ const Header = () => {
                                 </button>}
                             </div>
                             <h1 className="logo inline-flex">
-                                <NavLink to="/" className="logo-btn normal-case text-sm px-1 md:text-lg font-['Modak'] font-thin text-btnColor">
+                                <NavLink to="/" className="logo-btn normal-case text-lg px-1 md:text-2xl xl:text-4xl font-['Modak'] font-thin text-btnColor pt-[4px] lg:pt-0">
                                     Kojohwo Global
                                 </NavLink>
                             </h1>
