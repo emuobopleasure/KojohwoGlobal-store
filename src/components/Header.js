@@ -120,8 +120,8 @@ const Header = () => {
                     {/* |===============search form===========| */}
                     <SearchForm formStyle='w-full my-[0.25rem] bg-[btnColor]' inputStyle='h-[2rem] md:h-[2.2rem] lg:h-[2.3rem] focus:outline-transparent text-[0.8rem] py-[3px]' btnStyle='w-[1.9rem] md:w-[2.2rem] min-h-[2rem] h-[2rem] md:min-h-[2.2rem] md:h-[2.2rem] lg:min-h-[2.3rem] lg:h-[2.3rem]' />
                     {/* !================mobile menu========! */}
-                    <div className={showMenu ? 'hamburger-menu' : 'hidden'}>
-                        <ul tabIndex={0} className="menu menu-vertical leading-10 text-[1rem] gap-[1.5rem] dropdown-content p-2 pt-[1.5rem] pr-6 bg-base-100 rounded-box w-screen h-auto overflow-scroll z-10 onrotate:h-[60vh] onrotate:overflow-scroll">
+                    <div className={showMenu ? 'hamburger-menu w-full' : 'hidden'}>
+                        <ul tabIndex={0} className="menu pl-0 pr-0 menu-vertical leading-10 text-[1rem] gap-[1.5rem] dropdown-content pt-[1.5rem] bg-base-100 rounded-box w-screen h-auto z-10 landscape:h-[60vh]">
                             {/* <li>
                                 <div className='theme-toggle-icons cursor-pointer'>
                                     <span className="moon-icon hidden">
@@ -139,7 +139,7 @@ const Header = () => {
                                 </div>
                             </li> */}
                             <li>
-                                <NavLink to='/'>
+                                <NavLink to='/' className='mobile-nav-link landscape:bg-[#c9c4c4]'>
                                     <span>
                                         <FaHome />
                                     </span>
@@ -147,7 +147,7 @@ const Header = () => {
                                 </NavLink>
                             </li>
                             <li>
-                                <NavLink to='/contactus'>
+                                <NavLink to='/contactus' className='mobile-nav-link landscape:bg-[#c9c4c4]'>
                                     <span>
                                         <MdOutlineContactPhone />
                                     </span>
@@ -155,7 +155,7 @@ const Header = () => {
                                 </NavLink>
                             </li>
                             <li>
-                                <NavLink to='/aboutus'>
+                                <NavLink to='/aboutus' className='mobile-nav-link landscape:bg-[#c9c4c4]'>
                                     <span>
                                         <BsInfoCircleFill />
                                     </span>
@@ -163,7 +163,7 @@ const Header = () => {
                                 </NavLink>
                             </li>
                             <li>
-                                <div className='social-links flex gap-4 px-4 cursor-default'>
+                                <div className='social-links flex gap-4 px-4 cursor-default' className='mobile-nav-link landscape:bg-[#c9c4c4] h-[3.4rem] flex items-center justify-between'>
                                     <NavLink to=''>
                                         <RiWhatsappFill />
                                     </NavLink>
