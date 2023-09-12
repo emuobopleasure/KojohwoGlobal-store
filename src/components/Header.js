@@ -18,17 +18,17 @@ const Header = () => {
     return (
         <header>
             <nav className='mb-[6rem] mt-0'>
-                <div className="navbar bg-base-100 shadow-lg rounded-3xl fixed top-0 z-10 flex flex-col items-start md:px-[2rem] lg:px-[3rem]">
+                <div className="navbar bg-base-100 shadow-lg rounded-3xl fixed top-0 z-10 flex flex-col items-start md:px-[2rem] lg:px-[3rem] pb-[3px]">
                     <div className='navbar nav-wrapper flex items-center justify-between h-[2rem] min-h-0 p-0'>
                         <div className='logo/menu nav inline-flex gap-2 items-center'>
                             <div className='hamburger inline-flex lg:hidden'>
                                 {!showMenu && <button onClick={() => setShowMenu(true)}
                                     className='menu-opem'>
-                                    <FiMenu className='menu-icon text-xl' />
+                                    <FiMenu className='menu-icon text-2xl' />
                                 </button>}
                                 {showMenu && <button onClick={() => setShowMenu(false)}
                                     className='menu-close'>
-                                    <VscClose className='menu-close-icon text-xl' />
+                                    <VscClose className='menu-close-icon text-2xl' />
                                 </button>}
                             </div>
                             <h1 className="logo inline-flex">
@@ -118,10 +118,10 @@ const Header = () => {
                         </div>
                     </div>
                     {/* |===============search form===========| */}
-                    <SearchForm formStyle='w-full my-[0.25rem] bg-[btnColor]' inputStyle='h-[1.5rem] focus:outline-transparent text-[0.8rem] py-[3px]' btnStyle='w-[1.9rem] min-h-[1.5rem] h-[1.5rem]' />
+                    <SearchForm formStyle='w-full my-[0.25rem] bg-[btnColor]' inputStyle='h-[2rem] md:h-[2.2rem] lg:h-[2.3rem] focus:outline-transparent text-[0.8rem] py-[3px]' btnStyle='w-[1.9rem] md:w-[2.2rem] min-h-[2rem] h-[2rem] md:min-h-[2.2rem] md:h-[2.2rem] lg:min-h-[2.3rem] lg:h-[2.3rem]' />
                     {/* !================mobile menu========! */}
                     <div className={showMenu ? 'hamburger-menu' : 'hidden'}>
-                        <ul tabIndex={0} className="menu menu-vertical leading-10 dropdown-content p-2 pt-[1rem] pr-6 bg-base-100 rounded-box w-screen h-auto overflow-scroll z-10 onrotate:h-[60vh] onrotate:overflow-scroll">
+                        <ul tabIndex={0} className="menu menu-vertical leading-10 text-[1.3rem] gap-[1.5rem] dropdown-content p-2 pt-[1.5rem] pr-6 bg-base-100 rounded-box w-screen h-auto overflow-scroll z-10 onrotate:h-[60vh] onrotate:overflow-scroll">
                             {/* <li>
                                 <div className='theme-toggle-icons cursor-pointer'>
                                     <span className="moon-icon hidden">
