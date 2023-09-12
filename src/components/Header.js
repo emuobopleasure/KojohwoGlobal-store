@@ -32,7 +32,7 @@ const Header = () => {
                                 </button>}
                             </div>
                             <h1 className="logo inline-flex">
-                                <NavLink to="/" className="logo-btn normal-case text-lg px-1 md:text-2xl xl:text-4xl font-['Modak'] font-thin text-btnColor pt-[4px] lg:pt-0">
+                                <NavLink to="/" className="logo-btn normal-case text-xl px-1 md:text-2xl xl:text-4xl font-['Modak'] font-thin text-btnColor pt-[2px] lg:pt-0">
                                     Kojohwo Global
                                 </NavLink>
                             </h1>
@@ -57,7 +57,7 @@ const Header = () => {
                             </ul>
                         </div>
                         {/* |=======profile tabs =========| */}
-                        <div className="flex-none">
+                        <div className="flex-none pr-[13px]">
                             {/* |===============theme settings=====| */}
                             {/* <div className='theme-toggle-icons cursor-pointer hidden md:inline-flex'>
                                 <span onClick={handleToggle} className="moon-icon hidden tooltip tooltip-bottom" data-tip="Dark Theme">
