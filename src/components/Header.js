@@ -146,7 +146,7 @@ const Header = () => {
 
                     {/* !================mobile menu========! */}
                     <div className={showMenu ? 'hamburger-menu w-full' : 'hidden'}>
-                        <ul tabIndex={0} className="menu pl-0 pr-0 menu-vertical leading-10 text-[1rem] gap-[1.5rem] dropdown-content pt-[1.5rem] bg-base-100 rounded-box w-screen h-auto z-10 landscape:h-[60vh]">
+                        <ul tabIndex={0} className="menu pl-0 pr-0 menu-vertical leading-10 text-[1rem] gap-[1.5rem] dropdown-content pt-[1.5rem] bg-base-100 rounded-box w-screen h-auto z-10 landscape:h-[100vh] landscape:grid landscape:grid-cols-2 landscape:place-content-start">
                             {/* <li>
                                 <div className='theme-toggle-icons cursor-pointer'>
                                     <span className="moon-icon hidden">
