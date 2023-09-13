@@ -146,7 +146,7 @@ const Header = () => {
 
                     {/* !================mobile menu========! */}
                     <div className={showMenu ? 'hamburger-menu w-full' : 'hidden'}>
-                        <ul tabIndex={0} className="menu pl-0 pr-0 menu-vertical leading-10 text-[1rem] gap-[1.5rem] dropdown-content pt-[1.5rem] bg-base-100 rounded-box w-screen h-auto z-10 landscape:h-[100vh] landscape:grid landscape:grid-cols-2 landscape:place-content-start">
+                        <ul tabIndex={0} className="menu pl-0 pr-0 menu-vertical leading-10 text-[1rem] gap-[1.5rem] dropdown-content pt-[1.5rem] bg-base-100 rounded-box w-screen h-auto z-10 landscape:h-auto landscape:grid landscape:grid-cols-2 landscape:place-content-start">
                             {/* <li>
                                 <div className='theme-toggle-icons cursor-pointer'>
                                     <span className="moon-icon hidden">
@@ -187,22 +187,22 @@ const Header = () => {
                                     About
                                 </NavLink>
                             </li>
-                            <li>
-                                <div className='mobile-nav-link social-links gap-4 px-4 cursor-default mobile-nav-link landscape:bg-[#c9c4c4] h-[3.4rem] flex items-center justify-between'>
-                                    <NavLink to=''>
-                                        <RiWhatsappFill />
+                            <div className='social-links cursor-default '>
+                                <div className='mobile-nav-link social-links gap-4 px-4 mobile-nav-link landscape:bg-[#c9c4c4] h-[3.4rem] flex items-center justify-between cursor-text rounded-[2rem]'>
+                                    <NavLink to='' className='whatsapp p-[10px] rounded-[40%] border-[1px] border-[#291334]'>
+                                        <RiWhatsappFill size='1.2rem' />
                                     </NavLink>
-                                    <NavLink to=''>
+                                    <NavLink to='' className='facebook p-[10px] rounded-[40%] border-[1px] border-[#291334]'>
                                         <FaFacebookF />
                                     </NavLink>
-                                    <NavLink to=''>
+                                    <NavLink to='' className='instagram p-[10px] rounded-[40%] border-[1px] border-[#291334]'>
                                         <FaTwitter />
                                     </NavLink>
-                                    <NavLink to=''>
+                                    <NavLink to='' className='tiktok p-[10px] rounded-[40%] border-[1px] border-[#291334]'>
                                         <FaYoutube />
                                     </NavLink>
                                 </div>
-                            </li>
+                            </div>
                         </ul>
                     </div>
                 </div>
