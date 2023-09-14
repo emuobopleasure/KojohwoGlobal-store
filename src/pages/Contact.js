@@ -65,11 +65,11 @@ const ContactPage = () => {
                 focus:text-gray-700 focus:bg-white focus:border-pink-600 focus:outline-none
               " id="exampleFormControlTextarea13" rows={3} placeholder="Message" defaultValue={""} />
                     </div>
-                    <div className="form-group form-check text-center mb-6">
+                    {/* <div className="form-group form-check text-center mb-6">
                       <input type="checkbox" className="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-pink-600 checked:border-pink-600 active:bg-pink-600 hover:text-pink-600 focus:bg-pink-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain mr-2 cursor-pointer" id="exampleCheck87" defaultChecked />
                       <label className="form-check-label inline md:inline-block text-gray-800" htmlFor="exampleCheck87">Send me a copy of this
                         message</label>
-                    </div>
+                    </div> */}
                     <Button
                       text='SEND' styling='rounded py-[5px] w-full'
                     />

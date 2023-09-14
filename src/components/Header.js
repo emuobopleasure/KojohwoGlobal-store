@@ -25,9 +25,11 @@ const Header = () => {
     return (
         <header>
             <nav className='navv lg:mb-[6rem] mt-0'>
-                <div className={showSearch ? `navbar bg-base-100 shadow-lg rounded-3xl fixed top-0 z-10 flex flex-col items-start md:px-[2rem] lg:px-[3rem] pb-[3px]` : 'navbar bg-base-100 min-h-0 lg:min-h-[4rem] shadow-lg rounded-3xl fixed top-0 z-10 flex flex-col items-start md:px-[2rem] lg:px-[3rem] pb-[3px]'}>
-                    <div className='navbar nav-wrapper flex items-center justify-between h-[2rem] min-h-0 p-0'>
-                        <div className='logo/menu nav inline-flex gap-2 items-center'>
+                <div className={showSearch ? `navbar bg-base-100 shadow-lg rounded-3xl fixed top-0 z-10 flex flex-col items-start px-[1.1rem] md:px-[2rem] lg:px-[3rem] pb-[3px]` : 'navbar bg-base-100 min-h-[4rem] lg:min-h-[4rem] shadow-lg rounded-3xl fixed top-0 z-10 flex flex-col items-start px-[1.1rem] md:px-[2rem] lg:px-[3rem] pb-[3px]'}>
+                    <div className={ showSearch ? `navbar nav-wrapper flex items-center justify-between h-[2rem] min-h-0 p-0`
+                    : `navbar nav-wrapper flex items-center justify-between h-[3rem] min-h-0 p-0
+                    `}>
+                        <div className='logo/menu nav inline-flex gap-[1.2rem] items-center'>
                             <div className='hamburger inline-flex lg:hidden'>
                                 {!showMenu && <button onClick={() => setShowMenu(true)}
                                     className='menu-opem'>
@@ -65,7 +67,7 @@ const Header = () => {
                         </div>
 
                         {/* |=======profile tabs =========| */}
-                        <div className="flex items-center lg:flex-none pr-[13px]">
+                        <div className="flex items-center gao-[0.3rem] lg:flex-none pr-[13px]">
                             {
                                 !showSearch &&
                                 <button onClick={handleToggle} className='search-open lg:hidden'>
