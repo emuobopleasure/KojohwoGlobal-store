@@ -5,10 +5,10 @@ const ShopItem = ({item}) => {
     return (
         <article>
             <div className="flex justify-center items-center w-full cursor-pointer">
-                <div className="card bg-base-100 shadow-lg hover:shadow-2xl h-[17rem] rounded-3xl flex flex-col justify-around items-center overflow-hidden sm:flex-row w-[12rem] sm:h-52 sm:w-auto md:w-[23rem] transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 duration-300">
+                <div className="card bg-base-100 shadow-lg hover:shadow-2xl h-[17rem] rounded-3xl flex flex-col justify-around items-center overflow-hidden sm:flex-row w-[12rem] sm:h-52 sm:w-auto md:w-[43vw] lg:w-[23rem] transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 duration-300">
                     <img className="h-1/2 w-full sm:h-full sm:w-1/2 object-cover" src={item.image} alt={item.name} />
                     <div className="flex-1 w-full flex flex-col items-baseline justify-around h-1/2 px-6 sm:h-full sm:items-baseline sm:w-1/2">
-                        <h1 className="text-lg font-bold mb-0 text-gray-600 font-sans">
+                        <h1 className="text-lg font-bold mb-0 text-gray-600 font-sans overflow-hidden">
                             {item.name}
                         </h1>
                         <p className="text-xs text-gray-500 w-4/5">

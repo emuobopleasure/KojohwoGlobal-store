@@ -6,7 +6,7 @@ const Root = () => {
   return (
     <>
         <Header/>
-        <main>
+        <main className='main xl:max-w-[90rem]'>
             <Outlet/>
         </main>
     </>
