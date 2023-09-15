@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { FiMenu } from 'react-icons/fi';
+import { AiOutlineHeart } from 'react-icons/ai';
 import { CiSearch } from 'react-icons/ci';
 import { RiWhatsappFill } from 'react-icons/ri';
 import { BsInfoCircleFill } from 'react-icons/bs';
@@ -17,7 +18,7 @@ const Header = () => {
     const handleToggle = () => {
         setShowSearch((prevState) => !prevState)
     }
-    
+
 
 
 
@@ -26,8 +27,8 @@ const Header = () => {
         <header>
             <nav className='navv lg:mb-[6rem]'>
                 <div className={showSearch ? `navbar bg-base-100 shadow-lg rounded-3xl fixed top-0 z-10 flex flex-col items-start px-[1.1rem] md:px-[2rem] lg:px-[3rem] pb-[3px]` : 'navbar bg-base-100 min-h-[4rem] lg:min-h-[4rem] shadow-lg rounded-3xl fixed top-0 z-10 flex flex-col items-start px-[1.1rem] md:px-[2rem] lg:px-[3rem] pb-[3px]'}>
-                    <div className={ showSearch ? `navbar nav-wrapper flex items-center justify-between h-[2rem] min-h-0 p-0`
-                    : `navbar nav-wrapper flex items-center justify-between h-[3rem] min-h-0 p-0
+                    <div className={showSearch ? `navbar nav-wrapper flex items-center justify-between h-[2rem] min-h-0 p-0`
+                        : `navbar nav-wrapper flex items-center justify-between h-[3rem] min-h-0 p-0
                     `}>
                         <div className='logo/menu nav inline-flex gap-[1.2rem] items-center'>
                             <div className='hamburger inline-flex lg:hidden'>
@@ -95,10 +96,13 @@ const Header = () => {
                             </div> */}
                             {/* |======cart section indicator======== */}
                             <div className="dropdown dropdown-end">
-                                {/* |======cart number indicator======== */}
+                                {/* |======cart icon======== */}
                                 <label tabIndex={0} className="btn btn-ghost btn-circle w-[1rem] h-full min-h-[1.5rem]">
                                     <div className="indicator">
-                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                                        <AiOutlineHeart size='1.2rem' color='#513f59' />
+                                        {/* <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg> */}
+
+                                        {/* wishlist indicatoe badge */}
                                         <span className="badge badge-sm indicator-item">1</span>
                                     </div>
                                 </label>
@@ -110,7 +114,7 @@ const Header = () => {
                                         <div className="card-actions">
                                             <Link to='/cart'>
                                                 <Button
-                                                    text='View Cart' styling='px-3 py-1'
+                                                    text='View Wishlist' styling='text-sm px-1'
                                                 />
                                             </Link>
                                         </div>

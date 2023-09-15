@@ -149,26 +149,7 @@ const products = [
         rating: 4,
         numReviews: 4,
     },
-    {
-        id: 16,
-        name: 'Norland Power Bank',
-        image: '/images/productImages/norland-power-bank.png',
-        description: 'lorem ipsum dolor',
-        price: 15000.00,
-        countInStock: 3,
-        rating: 4,
-        numReviews: 4,
-    },
-    // {
-    //     id: 17,
-    //     name: 'Norland Power Bank',
-    //     image: '/images/productImages/norland-power-bank.png',
-    //     description: 'lorem ipsum dolor',
-    //     price: 15000.00,
-    //     countInStock: 3,
-    //     rating: 4,
-    //     numReviews: 4,
-    // },
+    
 ]
 
 export default products
