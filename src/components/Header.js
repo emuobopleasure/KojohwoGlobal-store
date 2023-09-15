@@ -32,11 +32,11 @@ const Header = () => {
                         <div className='logo/menu nav inline-flex gap-[1.2rem] items-center'>
                             <div className='hamburger inline-flex lg:hidden'>
                                 {!showMenu && <button onClick={() => setShowMenu(true)}
-                                    className='menu-opem'>
+                                    className='menu-opem' aria-label="menu open">
                                     <FiMenu className='menu-icon text-2xl' />
                                 </button>}
                                 {showMenu && <button onClick={() => setShowMenu(false)}
-                                    className='menu-close'>
+                                    className='menu-close' aria-label="menu close">
                                     <VscClose className='menu-close-icon text-2xl' />
                                 </button>}
                             </div>
