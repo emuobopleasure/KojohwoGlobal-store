@@ -97,24 +97,21 @@ const Header = () => {
                             {/* |======cart section indicator======== */}
                             <div className="dropdown dropdown-end">
                                 {/* |======cart icon======== */}
-                                <label tabIndex={0} className="btn btn-ghost btn-circle w-[1rem] h-full min-h-[1.5rem]">
+                                <label tabIndex={0} className="wishlist-btn btn btn-ghost btn-circle w-[1rem] h-full min-h-[1.5rem]">
                                     <div className="indicator">
                                         <AiOutlineHeart size='1.2rem' color='#513f59' />
-                                        {/* <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg> */}
-
-                                        {/* wishlist indicatoe badge */}
                                         <span className="badge badge-sm indicator-item">1</span>
                                     </div>
                                 </label>
                                 {/* |======cart icon indicator======== */}
-                                <div tabIndex={0} className="mt-3 card card-compact dropdown-content w-36 bg-base-100 shadow">
+                                <div tabIndex={0} className="mt-3 card card-compact dropdown-content items-center p-[0.1rem] w-36 bg-base-100 shadow z-10">
                                     <div className="card-body">
                                         <span className="font-bold text-lg">1 Items</span>
                                         <span className="text-gray-600">Subtotal: $999</span>
                                         <div className="card-actions">
                                             <Link to='/cart'>
                                                 <Button
-                                                    text='View Wishlist' styling='text-sm px-1'
+                                                    text='View Wishlist' styling='text-[10px] px-[10px] py-[4px]'
                                                 />
                                             </Link>
                                         </div>
