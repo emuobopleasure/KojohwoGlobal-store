@@ -29,13 +29,13 @@ const HeroSection = () => {
                     <img src="/images/sliderImages/huggies-2.png"alt="sliderimage-4"  className="w-full object-cover lg:object-cover" />
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                         <a href="#slide3" className="btn btn-circle">❮</a>
-                        <a href="#slide1" className="btn btn-circle">❯</a>
+                        <a href="#slide5" className="btn btn-circle">❯</a>
                     </div>
                 </div>
                 <div id="slide5" className="carousel-item relative w-full">
-                    <img src="/images/sliderImages/molfix-3.png" alt="sliderimage-5" className="w-full object-cover lg:object-cover" />
+                    <img src="/images/sliderImages/molfix-3.jpg" alt="sliderimage-5" className="w-full object-cover lg:object-cover" />
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                        <a href="#slide3" className="btn btn-circle">❮</a>
+                        <a href="#slide4" className="btn btn-circle">❮</a>
                         <a href="#slide1" className="btn btn-circle">❯</a>
                     </div>
                 </div>
