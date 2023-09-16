@@ -34,11 +34,11 @@ const Header = () => {
                             <div className='hamburger inline-flex lg:hidden'>
                                 {!showMenu && <button onClick={() => setShowMenu(true)}
                                     className='menu-opem' aria-label="menu open">
-                                    <FiMenu className='menu-icon text-2xl' />
+                                    <FiMenu className='menu-icon text-2xl' color='#513f59' />
                                 </button>}
                                 {showMenu && <button onClick={() => setShowMenu(false)}
                                     className='menu-close' aria-label="menu close">
-                                    <VscClose className='menu-close-icon text-2xl' />
+                                    <VscClose className='menu-close-icon text-2xl' color='#513f59' />
                                 </button>}
                             </div>
                             <h1 className="logo inline-flex">
@@ -71,14 +71,14 @@ const Header = () => {
                         <div className="flex items-center gao-[0.3rem] lg:flex-none pr-[13px]">
                             {
                                 !showSearch &&
-                                <button onClick={handleToggle} className='search-open lg:hidden'>
-                                    <CiSearch className='search-icon pb-[2px] lg:p-0 mr-[0.5rem]' size='1.5rem' />
+                                <button onClick={handleToggle} className='search-open lg:hidden' aria-label='Search Open Button'>
+                                    <CiSearch className='search-icon pb-[2px] lg:p-0 mr-[0.5rem]' size='1.5rem' color='#513f59' />
                                 </button>
                             }
                             {
                                 showSearch &&
-                                <button onClick={handleToggle} className='search-close lg:hidden'>
-                                    <VscClose className='close-icon pb-[2px] lg:p-0 mr-[0.5rem]' size='1.5rem' />
+                                <button onClick={handleToggle} className='search-close lg:hidden' aria-label='Search Close Button'>
+                                    <VscClose className='close-icon pb-[2px] lg:p-0 mr-[0.5rem]' size='1.5rem' color='#513f59' />
                                 </button>
                             }
 

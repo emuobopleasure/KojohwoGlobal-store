@@ -30,8 +30,10 @@ const ShopItem = ({ item }) => {
                                 text="Add to Wishlist" styling="mr-5 rounded-3xl text-sm px-[8px] py-[1px] font-light mr-0"
                             /> */}
                             <button className="add-to-wish w-full px-[6px] py-[4px] gap-[2px] flex justify-center items-center bg-btnColor text-white font-medium text-[0.7rem] md:text-sm leading-snug capitalize rounded-full shadow-md hover:bg-pink-500 hover:shadow-lg focus:bg-pink-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-pink-800 active:shadow-lg transition duration-150 ease-in-out">
-                                <AiOutlineHeart />
-                                Add to Wishlist
+                                <AiOutlineHeart size='1.2rem' />
+                                <p className='addtowish'>
+                                    Add to Wishlist
+                                </p>
                             </button>
                         </div>
                     </div>
