@@ -23,13 +23,13 @@ const Footer = () => {
             </div>
             <div>
                 <div className="grid grid-flow-col gap-4">
-                    <Link to='whatsapp' className='whatsapp p-[10px] rounded-[40%] border-[1px] border-[#374151] hover:text-[white] hover:bg-[#374151]'>
+                    <Link to='whatsapp' className='whatsapp p-[10px] rounded-[40%] border-[1px] border-[#374151] hover:text-[white] hover:bg-[#374151]' aria-label='Link to WhatsApp profile'>
                         <RiWhatsappFill size='1.2rem' />
                     </Link>
-                    <Link to='facebook' className='facebook p-[10px] rounded-[40%] border-[1px] border-[#374151] hover:text-[white] hover:bg-[#374151]'>
+                    <Link to='facebook' className='facebook p-[10px] rounded-[40%] border-[1px] border-[#374151] hover:text-[white] hover:bg-[#374151]' aria-label='Link to Facebook profile'>
                         <FaFacebookF size='1.2rem' />
                     </Link>
-                    <Link to='twitter' className='instagram p-[10px] rounded-[40%] border-[1px] border-[#374151] hover:text-[white] hover:bg-[#374151]'>
+                    <Link to='twitter' className='instagram p-[10px] rounded-[40%] border-[1px] border-[#374151] hover:text-[white] hover:bg-[#374151]' aria-label='Link to Twitter profile'>
                         <FaTwitter size='1.2rem' />
                     </Link>
                     {/* <a href='https://www.twitter.com' target='_blank'>
