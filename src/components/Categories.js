@@ -5,15 +5,15 @@ const Categories = () => {
         <article>
             {/* mobile screen categories */}
             <div className='categ px-[1.1rem] md:px-[2rem] lg:px-[3rem] lg:hidden'>
-                <div className='categories min-w-fit mx-auto my-4 w-max overflow-x-scroll'>
-                    <ul className='categories-list text-gray-700 text-sm flex justify-center md:justify-evenly gap-2 flex'>
+                <div className='categories mx-auto my-4'>
+                    <ul className='categories-list text-gray-700 text-sm flex justify-start whitespace-nowrap items-center md:justify-evenly gap-2 flex overflow-auto'>
                         <li>
                             <button className="btn-glass border px-[0.8rem] py-[0.5rem] border-gray-500 rounded-full hover:bg-btnColor hover:text-white hover:border-white flex gap-1">
                                 <span>
-                                    <i className="fa-solid fa-toilet-paper"></i>
+                                    <i className="fa-solid fa-house-chimney"></i>
                                 </span>
                                 <span>
-                                    All Items
+                                    All Purpose
                                 </span>
                             </button>
                         </li>
@@ -34,16 +34,6 @@ const Categories = () => {
                                 </span>
                                 <span>
                                     Diapers
-                                </span>
-                            </button>
-                        </li>
-                        <li>
-                            <button className="btn-glass border px-[0.8rem] py-[0.5rem] border-gray-500 rounded-full hover:bg-btnColor hover:text-white hover:border-white flex gap-1">
-                                <span>
-                                    <i className="fa-solid fa-house-chimney"></i>
-                                </span>
-                                <span>
-                                    All Purpose
                                 </span>
                             </button>
                         </li>
