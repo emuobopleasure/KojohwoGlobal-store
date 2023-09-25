@@ -4,6 +4,7 @@ import Root from "./pages/Root";
 import AboutPage from "./pages/About";
 import ContactPage from "./pages/Contact";
 import SingleProductPage from "./pages/SingleProduct";
+import { AppProvider } from "./appContext";
 
 const router = createBrowserRouter([
   { path: '/', element: <Root/>, children: [
@@ -15,8 +16,11 @@ const router = createBrowserRouter([
 ])
 
 function App() {
+  
   return (
+    <AppProvider>
     <RouterProvider router={router} />
+    </AppProvider>
   );
 }
 

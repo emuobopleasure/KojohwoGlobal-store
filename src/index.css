@@ -25,3 +25,10 @@ html {
     background-color: darkgrey;
     outline: 1px solid slategrey;
   } */
+
+  .sticky {
+    position: fixed;
+    top: 5rem;
+    width: 100%;
+    z-index: 100;
+  }

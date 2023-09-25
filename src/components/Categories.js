@@ -1,10 +1,27 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 const Categories = () => {
+    // const [sticky, setSticky] = useState(false);
+
+    // useEffect(() => {
+    //     const handleScroll = () => {
+    //         const navbar = document.getElementById('catee');
+    //         if (navbar) {
+    //             const offset = navbar.offsetTop;
+    //             setSticky(window.scrollY >= offset);
+    //         }
+    //     };
+
+    //     window.addEventListener('scroll', handleScroll);
+    //     return () => {
+    //         window.removeEventListener('scroll', handleScroll);
+    //     };
+    // }, []);
+
     return (
         <article>
             {/* mobile screen categories */}
-            <div className='categ px-[1.1rem] md:px-[2rem] lg:px-[3rem] lg:hidden'>
+            <div id='catee' className='categ px-[1.1rem] md:px-[2rem] lg:px-[3rem] lg:hidden z-10'>
                 <div className='categories mx-auto my-4'>
                     <ul className='categories-list text-gray-700 text-sm flex justify-start whitespace-nowrap items-center md:justify-evenly gap-2 flex overflow-auto'>
                         <li>
@@ -63,7 +80,7 @@ const Categories = () => {
             </div>
 
             {/* large screens categories */}
-            <div className='categ px-[1.1rem] md:px-[2rem] lg:px-[3rem] hidden lg:block'>
+            {/* <div className='categ px-[1.1rem] md:px-[2rem] lg:px-[3rem] hidden lg:block'>
                 <div className='categories min-w-fit mx-auto my-4 w-max'>
                     <ul className='categories-list text-gray-700 text-sm flex justify-center md:justify-evenly gap-2 flex'>
                         <li>
@@ -129,7 +146,7 @@ const Categories = () => {
 
                     </ul>
                 </div>
-            </div>
+            </div> */}
         </article>
     )
 }
