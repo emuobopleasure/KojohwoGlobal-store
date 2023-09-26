@@ -3,7 +3,7 @@ import { AppContext } from '../appContext'
 
 const Categories = () => {
 
-    const { selectedCategory, setSelectedCategory, categories } = useContext(AppContext)
+    const { selectedCategory, setSelectedCategory, categories, categoryIcons } = useContext(AppContext)
     // const [sticky, setSticky] = useState(false);
 
     // useEffect(() => {
@@ -20,6 +20,8 @@ const Categories = () => {
     //         window.removeEventListener('scroll', handleScroll);
     //     };
     // }, []);
+
+    
 
     return (
         <article>
@@ -41,7 +43,14 @@ const Categories = () => {
                         {categories.map((category) => (
                             <li key={category}
                                 onClick={() => setSelectedCategory(category)} >
-                                <button className={ selectedCategory ? `btn-glass bg-btnColor text-white border px-[0.8rem] py-[0.5rem] rounded-full hover:bg-btnColor hover:text-white hover:border-white flex gap-1` : `btn-glass bg-none border px-[0.8rem] py-[0.5rem] border-gray-500 rounded-full hover:bg-btnColor hover:text-white hover:border-white flex gap-1`}>
+                                <button className={ selectedCategory === category ? `btn-glass bg-btnColor text-white border px-[0.8rem] py-[0.5rem] rounded-full hover:bg-btnColor hover:text-white hover:border-white flex gap-1` : `btn-glass bg-none border px-[0.8rem] py-[0.5rem] border-gray-500 rounded-full hover:bg-btnColor hover:text-white hover:border-white flex gap-1`}>
+                                    {
+                                        categoryIcons[category] && (
+                                            <span>
+                                                <i className={`fa solid ${categoryIcons[category]}`}/>
+                                            </span>
+                                        )
+                                    }
                                     {category}
                                 </button>
                             </li>
