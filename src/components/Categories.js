@@ -1,6 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
+import { AppContext } from '../appContext'
 
 const Categories = () => {
+
+    const { selectedCategory, setSelectedCategory, categories } = useContext(AppContext)
     // const [sticky, setSticky] = useState(false);
 
     // useEffect(() => {
@@ -21,20 +24,29 @@ const Categories = () => {
     return (
         <article>
             {/* mobile screen categories */}
-            <div id='catee' className='categ px-[1.1rem] md:px-[2rem] lg:px-[3rem] lg:hidden z-10'>
+            <div id='catee' className='categ px-[1.1rem] md:px-[2rem] lg:px-[3rem] z-10'>
                 <div className='categories mx-auto my-4'>
-                    <ul className='categories-list text-gray-700 text-sm flex justify-start whitespace-nowrap items-center md:justify-evenly gap-2 flex overflow-auto'>
-                        <li>
-                            <button className="btn-glass border px-[0.8rem] py-[0.5rem] border-gray-500 rounded-full hover:bg-btnColor hover:text-white hover:border-white flex gap-1">
+                    <ul className='categories-list text-gray-700 text-sm flex justify-start whitespace-nowrap items-center md:justify-evenly gap-2 overflow-auto'>
+                        <li >
+                            <button
+                                onClick={() => setSelectedCategory(null)} className={ selectedCategory ?`btn-glass border px-[0.8rem] py-[0.5rem] border-gray-500 rounded-full hover:bg-btnColor hover:text-white hover:border-white flex gap-1` : `btn-glass bg-btnColor text-white border px-[0.8rem] py-[0.5rem] rounded-full hover:bg-btnColor hover:text-white hover:border-white flex gap-1`}>
                                 <span>
                                     <i className="fa-solid fa-house-chimney"></i>
                                 </span>
                                 <span>
-                                    All Purpose
+                                    All Products
                                 </span>
                             </button>
                         </li>
-                        <li>
+                        {categories.map((category) => (
+                            <li key={category}
+                                onClick={() => setSelectedCategory(category)} >
+                                <button className={ selectedCategory ? `btn-glass bg-btnColor text-white border px-[0.8rem] py-[0.5rem] rounded-full hover:bg-btnColor hover:text-white hover:border-white flex gap-1` : `btn-glass bg-none border px-[0.8rem] py-[0.5rem] border-gray-500 rounded-full hover:bg-btnColor hover:text-white hover:border-white flex gap-1`}>
+                                    {category}
+                                </button>
+                            </li>
+                        ))}
+                        {/* <li>
                             <button className="btn-glass border px-[0.8rem] py-[0.5rem] border-gray-500 rounded-full hover:bg-btnColor hover:text-white hover:border-white flex gap-1">
                                 <span>
                                     <i className="fa-solid fa-toilet-paper"></i>
@@ -73,7 +85,7 @@ const Categories = () => {
                                     Sunlit Products
                                 </span>
                             </button>
-                        </li>
+                        </li> */}
 
                     </ul>
                 </div>

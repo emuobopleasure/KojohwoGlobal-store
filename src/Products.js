@@ -1,3 +1,6 @@
+// export const categories = ['All Products', 'Diapers', 'Toilet tissues', 'Norland', 'Sunlit Products', 'All purpose']
+
+
 const products = [
     {
         id: 1,
@@ -8,6 +11,7 @@ const products = [
         countInStock: 3,
         rating: 4,
         numReviews: 4,
+        category: 'Diapers'
     },
     {
         id: 2,
@@ -18,6 +22,7 @@ const products = [
         countInStock: 3,
         rating: 4,
         numReviews: 4,
+        category: 'Diapers'
     },
     {
         id: 3,
@@ -28,6 +33,7 @@ const products = [
         countInStock: 3,
         rating: 4,
         numReviews: 4,
+        category: 'Diapers'
     },
     {
         id: 4,
@@ -38,6 +44,7 @@ const products = [
         countInStock: 3,
         rating: 4,
         numReviews: 4,
+        category: 'Diapers'
     },
     {
         id: 5,
@@ -48,6 +55,7 @@ const products = [
         countInStock: 3,
         rating: 4,
         numReviews: 4,
+        category: 'Diapers'
     },
     {
         id: 6,
@@ -58,6 +66,7 @@ const products = [
         countInStock: 3,
         rating: 4,
         numReviews: 4,
+        category: 'Diapers'
     },
     {
         id: 7,
@@ -68,6 +77,7 @@ const products = [
         countInStock: 3,
         rating: 4,
         numReviews: 4,
+        category: 'Norland'
     },
     {
         id: 8,
@@ -78,6 +88,7 @@ const products = [
         countInStock: 3,
         rating: 4,
         numReviews: 4,
+        category: 'Sunlit'
     },
     {
         id: 9,
@@ -88,6 +99,7 @@ const products = [
         countInStock: 3,
         rating: 4,
         numReviews: 4,
+        category: 'Sunlit'
     },
     {
         id: 10,
@@ -98,6 +110,7 @@ const products = [
         countInStock: 3,
         rating: 4,
         numReviews: 4,
+        category: 'Sunlit'
     },
     {
         id: 11,
@@ -108,6 +121,7 @@ const products = [
         countInStock: 3,
         rating: 4,
         numReviews: 4,
+        category: 'Norland'
     },
     {
         id: 12,
@@ -118,6 +132,7 @@ const products = [
         countInStock: 3,
         rating: 4,
         numReviews: 4,
+        category: 'Norland'
     },
     {
         id: 13,
@@ -128,6 +143,7 @@ const products = [
         countInStock: 3,
         rating: 4,
         numReviews: 4,
+        category: 'Norland'
     },
     {
         id: 14,
@@ -138,6 +154,7 @@ const products = [
         countInStock: 3,
         rating: 4,
         numReviews: 4,
+        category: 'Norland'
     },
     {
         id: 15,
@@ -148,6 +165,7 @@ const products = [
         countInStock: 3,
         rating: 4,
         numReviews: 4,
+        category: 'Norland'
     },
     
 ]
