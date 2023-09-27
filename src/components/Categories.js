@@ -1,9 +1,20 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { AppContext } from '../appContext'
 
-const Categories = () => {
+const Categories = ({handleCategoryClick}) => {
 
     const { selectedCategory, setSelectedCategory, categories, categoryIcons } = useContext(AppContext)
+    // const [isLoading, setIsLoading] = useState(false)
+
+    // const handleCategoryClick = (category) => {
+    //     setIsLoading(true)
+
+    //     // Simulate a delay for filtering (you can replace this with your actual filtering logic)
+    //     setTimeout(()=> {
+    //         setSelectedCategory(category)
+    //         setIsLoading(false)
+    //     }, 1000)
+    // }
     // const [sticky, setSticky] = useState(false);
 
     // useEffect(() => {
@@ -21,7 +32,7 @@ const Categories = () => {
     //     };
     // }, []);
 
-    
+
 
     return (
         <article>
@@ -31,7 +42,7 @@ const Categories = () => {
                     <ul className='categories-list text-gray-700 text-sm flex justify-start whitespace-nowrap items-center md:justify-evenly gap-2 overflow-auto'>
                         <li >
                             <button
-                                onClick={() => setSelectedCategory(null)} className={ selectedCategory ?`btn-glass border px-[0.8rem] py-[0.5rem] border-gray-500 rounded-full hover:bg-btnColor hover:text-white hover:border-white flex gap-1` : `btn-glass bg-btnColor text-white border px-[0.8rem] py-[0.5rem] rounded-full hover:bg-btnColor hover:text-white hover:border-white flex gap-1`}>
+                                onClick={() => handleCategoryClick(null)} className={selectedCategory ? `btn-glass border px-[0.8rem] py-[0.5rem] border-gray-500 rounded-full hover:bg-btnColor hover:text-white hover:border-white flex gap-1` : `btn-glass bg-btnColor text-white border px-[0.8rem] py-[0.5rem] rounded-full hover:bg-btnColor hover:text-white hover:border-white flex gap-1`}>
                                 <span>
                                     <i className="fa-solid fa-house-chimney"></i>
                                 </span>
@@ -42,12 +53,12 @@ const Categories = () => {
                         </li>
                         {categories.map((category) => (
                             <li key={category}
-                                onClick={() => setSelectedCategory(category)} >
-                                <button className={ selectedCategory === category ? `btn-glass bg-btnColor text-white border px-[0.8rem] py-[0.5rem] rounded-full hover:bg-btnColor hover:text-white hover:border-white flex gap-1` : `btn-glass bg-none border px-[0.8rem] py-[0.5rem] border-gray-500 rounded-full hover:bg-btnColor hover:text-white hover:border-white flex gap-1`}>
+                                onClick={() => handleCategoryClick(category)} >
+                                <button className={selectedCategory === category ? `btn-glass bg-btnColor text-white border px-[0.8rem] py-[0.5rem] rounded-full hover:bg-btnColor hover:text-white hover:border-white flex gap-1` : `btn-glass bg-none border px-[0.8rem] py-[0.5rem] border-gray-500 rounded-full hover:bg-btnColor hover:text-white hover:border-white flex gap-1`}>
                                     {
                                         categoryIcons[category] && (
                                             <span>
-                                                <i className={`fa solid ${categoryIcons[category]}`}/>
+                                                <i className={`fa solid ${categoryIcons[category]}`} />
                                             </span>
                                         )
                                     }
