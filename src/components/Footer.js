@@ -25,7 +25,7 @@ const Footer = () => {
                 </div>
                 <div>
                     <div className="grid grid-flow-col gap-4">
-                        <a href='https://api.whatsapp.com/message/WRKSVZP2GDD7K1?autoload=1&app_absent=0' className='whatsapp p-[10px] rounded-[40%] border-[1px] border-[#374151] hover:text-[white] hover:bg-[#374151]' aria-label='Link to WhatsApp profile'>
+                        <a href='https://wa.me/message/WRKSVZP2GDD7K1' className='whatsapp p-[10px] rounded-[40%] border-[1px] border-[#374151] hover:text-[white] hover:bg-[#374151]' aria-label='Link to WhatsApp profile'>
                             <RiWhatsappFill size='1.2rem' />
                         </a>
                         <a href='https://facebook.com/profile.php/?id=100003626663302&_rdc=1&_rdr' className='facebook p-[10px] rounded-[40%] border-[1px] border-[#374151] hover:text-[white] hover:bg-[#374151]' aria-label='Link to Facebook profile'>

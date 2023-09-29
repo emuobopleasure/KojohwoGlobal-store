@@ -50,7 +50,7 @@ const SingleProductPage = () => {
                             <p className="leading-relaxed">{product.description}</p>
                             <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-200 mb-5 justify-between gap-[6vw]">
                                 <div className="title-font font-medium text-2xl text-gray-900">₦{product.price}</div>
-                                <Link className='tooltip tooltip-top' to='https://api.whatsapp.com/message/WRKSVZP2GDD7K1?autoload=1&app_absent=0' target='_blank' data-tip="Chat to Order">
+                                <Link className='tooltip tooltip-top' to='https://wa.me/message/WRKSVZP2GDD7K1' target='_blank' data-tip="Chat to Order">
                                     <button className="wish-button rounded-full w-10 h-10 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4 bg-green-600">
                                         <BsWhatsapp
                                             color='white'

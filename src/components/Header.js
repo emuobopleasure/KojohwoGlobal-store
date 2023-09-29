@@ -192,7 +192,7 @@ const Header = () => {
                             </li>
                             <div className='social-links cursor-default '>
                                 <div className='mobile-nav-link social-links gap-4 px-4 mobile-nav-link landscape:bg-[#c9c4c4] h-[3.4rem] flex items-center justify-between cursor-text rounded-[2rem]'>
-                                    <a href='https://api.whatsapp.com/message/WRKSVZP2GDD7K1?autoload=1&app_absent=0' className='whatsapp p-[10px] rounded-[40%] border-[1px] border-[#291334]'>
+                                    <a href='https://wa.me/message/WRKSVZP2GDD7K1' className='whatsapp p-[10px] rounded-[40%] border-[1px] border-[#291334]'>
                                         <RiWhatsappFill size='1.2rem' />
                                     </a>
                                     <a href='https://facebook.com/profile.php/?id=100003626663302&_rdc=1&_rdr' className='facebook p-[10px] rounded-[40%] border-[1px] border-[#291334]'>
