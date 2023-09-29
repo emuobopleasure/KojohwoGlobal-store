@@ -1,9 +1,9 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext } from 'react'
 import { AppContext } from '../appContext'
 
 const Categories = () => {
 
-    const { selectedCategory, setSelectedCategory, categories, categoryIcons, handleCategoryClick } = useContext(AppContext)
+    const { selectedCategory, categories, categoryIcons, handleCategoryClick } = useContext(AppContext)
 
 
 

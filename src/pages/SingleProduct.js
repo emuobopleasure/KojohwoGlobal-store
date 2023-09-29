@@ -16,9 +16,9 @@ const SingleProductPage = () => {
                     <div className="lg:w-4/5 mx-auto flex flex-wrap">
                         <img alt={product.name} className="product-image lg:w-1/2 w-full h-full max-h-[20rem] md:max-h-[28rem] md:h-[28rem] object-scale-down md:object-contain object-center rounded-bl-2xl rounded-br-2xl md:rounded relative" src={product.image} />
                         {/* <div className='arrow-back absolute'> */}
-                            <Link to='..' className='back-link absolute md:hidden ml-[1rem] top-[4.3rem] p-[10px] rounded-[40%] border-[1px] border-[#374151] bg-[#efeae6]'>
-                                <BsArrowLeft size='1.2rem' />
-                            </Link>
+                        <Link to='..' className='back-link absolute md:hidden ml-[1rem] top-[4.3rem] p-[10px] rounded-[40%] border-[1px] border-[#374151] bg-[#efeae6]'>
+                            <BsArrowLeft size='1.2rem' />
+                        </Link>
                         {/* </div> */}
                         <div className="lg:w-1/2 w-full px-[1.1rem] md:px-[2rem] lg:px-[3rem] lg:pl-10 lg:py-6 mt-6 lg:mt-0">
                             {/* <h2 className="text-sm title-font text-gray-500 tracking-widest">BRAND NAME</h2> */}
@@ -50,7 +50,7 @@ const SingleProductPage = () => {
                             <p className="leading-relaxed">{product.description}</p>
                             <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-200 mb-5 justify-between gap-[6vw]">
                                 <div className="title-font font-medium text-2xl text-gray-900">₦{product.price}</div>
-                                <a className='tooltip tooltip-top' href='https://api.whatsapp.com/message/WRKSVZP2GDD7K1?autoload=1&app_absent=0' target='_blank' data-tip="Chat to Order">
+                                <Link className='tooltip tooltip-top' to='https://api.whatsapp.com/message/WRKSVZP2GDD7K1?autoload=1&app_absent=0' target='_blank' data-tip="Chat to Order">
                                     <button className="wish-button rounded-full w-10 h-10 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4 bg-green-600">
                                         <BsWhatsapp
                                             color='white'
@@ -58,7 +58,7 @@ const SingleProductPage = () => {
 
                                         />
                                     </button>
-                                </a>
+                                </Link>
                             </div>
                             <div className="add-to-wish flex justify-between lg:justify-start gap-[10vw]">
                                 <button className="add-to-wish w-full px-[6px] py-[4px] gap-[4px] flex justify-center items-center bg-btnColor text-white font-medium text-[79%] md:text-lg leading-snug capitalize rounded-full shadow-md hover:bg-pink-500 hover:shadow-lg focus:bg-pink-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-pink-800 active:shadow-lg transition duration-150 ease-in-out">

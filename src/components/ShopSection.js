@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import ShopItem from './ShopItem'
 import products from '../Products'
 import { Link } from 'react-router-dom'
@@ -8,22 +8,16 @@ import { AppContext } from '../appContext'
 
 const ShopSection = () => {
 
-    const { searchQuery,
-        selectedCategory,
-        setSelectedCategory,
-        category,
-        categories,
-        filteredProducts,
-        setFilteredProducts,
-        isLoading,
-        setIsLoading
-
-    } = useContext(AppContext)
+    const
+        {
+            filteredProducts,
+            isLoading,
+        } = useContext(AppContext)
 
 
     return (
         <section>
-            <Categories/>
+            <Categories />
             <div className='shopsection px-[1.1rem] md:px-[2rem] lg:px-[3rem] grid grid-cols-2 gap-x-3 gap-y-7 md:flex flex-wrap justify-between border-b-[1px] pb-[2rem]'>
                 {isLoading && (
                     <div className='overlay loading-backdrop'>

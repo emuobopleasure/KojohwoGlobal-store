@@ -1,5 +1,4 @@
 import React from 'react'
-import Button from './Button'
 import { AiOutlineHeart } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 

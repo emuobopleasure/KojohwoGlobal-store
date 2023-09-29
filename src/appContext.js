@@ -31,7 +31,7 @@ const AppProvider = ({ children }) => {
 
     useEffect(() => {
         setFilteredProducts(products)
-    }, [products])
+    }, [])
 
     const handleSearchSubmit = (e) => {
         e.preventDefault()

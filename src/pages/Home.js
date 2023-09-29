@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-import Header from '../components/Header'
+import React from 'react'
 import HeroSection from '../components/HeroSection'
 import ShopSection from '../components/ShopSection'
 
