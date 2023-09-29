@@ -7,35 +7,23 @@ import Categories from './Categories'
 import { AppContext } from '../appContext'
 
 const ShopSection = () => {
-    const [isLoading, setIsLoading] = useState(false)
 
     const { searchQuery,
         selectedCategory,
-        setSelectedCategory, category,
-        categories, } = useContext(AppContext)
+        setSelectedCategory,
+        category,
+        categories,
+        filteredProducts,
+        setFilteredProducts,
+        isLoading,
+        setIsLoading
 
-
-    const filteredProducts = products.filter(product =>
-        product.name.toLowerCase().includes(searchQuery.toLowerCase()) &&
-        (!selectedCategory || product.category === selectedCategory)
-    );
-
-    const handleCategoryClick = (category) => {
-        setIsLoading(true)
-
-        // Simulate a delay for filtering (you can replace this with your actual filtering logic)
-        setTimeout(() => {
-            setSelectedCategory(category)
-            setIsLoading(false)
-        }, 1000)
-    }
-    // const noFilter = products.filter((product) => product.name.toLowerCase().includes(!searchQuery.toLowerCase()))
-
+    } = useContext(AppContext)
 
 
     return (
         <section>
-            <Categories handleCategoryClick={handleCategoryClick} />
+            <Categories/>
             <div className='shopsection px-[1.1rem] md:px-[2rem] lg:px-[3rem] grid grid-cols-2 gap-x-3 gap-y-7 md:flex flex-wrap justify-between border-b-[1px] pb-[2rem]'>
                 {isLoading && (
                     <div className='overlay loading-backdrop'>
@@ -45,7 +33,7 @@ const ShopSection = () => {
                     </div>
                 )}
                 {
-                   !isLoading && filteredProducts.length === 0 ?
+                    !isLoading && filteredProducts.length === 0 ?
                         <div className='product-not-found'>
                             <p>Product not found</p>
                         </div>

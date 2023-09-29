@@ -89,7 +89,7 @@ const ContactPage = () => {
                         </div>
                         <div className="grow ml-6">
                           <p className="font-bold mb-1">Technical support</p>
-                          <p className="text-gray-500">support@example.com</p>
+                          <p className="text-gray-500">support@Kojohwobusiness</p>
                           <p className="text-gray-500">+1 234-567-89</p>
                         </div>
                       </div>
@@ -106,7 +106,7 @@ const ContactPage = () => {
                         </div>
                         <div className="grow ml-6">
                           <p className="font-bold mb-1">Sales questions</p>
-                          <p className="text-gray-500">Kojohwobusiness</p>
+                          <p className="text-gray-500">sales@Kojohwobusiness</p>
                           <p className="text-gray-500">+1 234-567-89</p>
                         </div>
                       </div>
@@ -123,7 +123,7 @@ const ContactPage = () => {
                         </div>
                         <div className="grow ml-6">
                           <p className="font-bold mb-1">Press</p>
-                          <p className="text-gray-500">press@example.com</p>
+                          <p className="text-gray-500">press@Kojohwobusiness</p>
                           <p className="text-gray-500">+1 234-567-89</p>
                         </div>
                       </div>
@@ -140,7 +140,7 @@ const ContactPage = () => {
                         </div>
                         <div className="grow ml-6">
                           <p className="font-bold mb-1">Bug report</p>
-                          <p className="text-gray-500">bugs@example.com</p>
+                          <p className="text-gray-500">bugs@Kojohwobusiness</p>
                           <p className="text-gray-500">+1 234-567-89</p>
                         </div>
                       </div>

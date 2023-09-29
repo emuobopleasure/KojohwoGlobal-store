@@ -2,10 +2,10 @@ import React, { useContext } from 'react'
 import { AppContext } from '../appContext'
 
 const SearchForm = ({formStyle, groupStyle, inputStyle, btnStyle}) => {
-  const {searchQuery, setSearchQuery} = useContext(AppContext)
+  const {searchQuery, setSearchQuery, handleSearchSubmit} = useContext(AppContext)
 
   return (
-    <form className={`form my-5 flex justify-center ${formStyle}`}>
+    <form onSubmit={handleSearchSubmit} className={`form my-5 flex justify-center ${formStyle}`}>
       <div className="form-control w-full">
         <div className={`input-group ${groupStyle}`}>
           <input value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} type="search" placeholder="Search products…" className={`input input-bordered w-full ${inputStyle}`} />
