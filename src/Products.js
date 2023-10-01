@@ -1,5 +1,3 @@
-// export const categories = ['All Products', 'Diapers', 'Toilet tissues', 'Norland', 'Sunlit Products', 'All purpose']
-
 
 const products = [
     {

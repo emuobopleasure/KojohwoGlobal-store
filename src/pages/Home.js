@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import HeroSection from '../components/HeroSection'
 import ShopSection from '../components/ShopSection'
 
 const HomePage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   
   return (
     <section>

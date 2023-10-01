@@ -31,7 +31,7 @@ const Footer = () => {
                         <a href='https://facebook.com/profile.php/?id=100003626663302&_rdc=1&_rdr' className='facebook p-[10px] rounded-[40%] border-[1px] border-[#374151] hover:text-[white] hover:bg-[#374151]' aria-label='Link to Facebook profile'>
                             <FaFacebookF size='1.2rem' />
                         </a>
-                        <a href='twitter' className='instagram p-[10px] rounded-[40%] border-[1px] border-[#374151] hover:text-[white] hover:bg-[#374151]' aria-label='Link to Twitter profile'>
+                        <a href='https://twitter.com' className='instagram p-[10px] rounded-[40%] border-[1px] border-[#374151] hover:text-[white] hover:bg-[#374151]' aria-label='Link to Twitter profile'>
                             <FaTwitter size='1.2rem' />
                         </a>
                         {/* <a href='https://www.twitter.com' target='_blank'>

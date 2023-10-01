@@ -4,7 +4,7 @@ import Root from "./pages/Root";
 import AboutPage from "./pages/About";
 import ContactPage from "./pages/Contact";
 import SingleProductPage from "./pages/SingleProduct";
-import { AppProvider } from "./appContext";
+import { AppProvider } from "./context/appContext";
 
 const router = createBrowserRouter([
   { path: '/', element: <Root/>, children: [

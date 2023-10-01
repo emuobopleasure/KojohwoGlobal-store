@@ -143,9 +143,9 @@ const Header = () => {
                     </div>
                     {/* |===============search form===========| */}
                     {showSearch &&
-                        <SearchForm formStyle='w-full my-[0.25rem] bg-[btnColor]' inputStyle='h-[2rem] md:h-[2.2rem] lg:h-[2.3rem] focus:outline-transparent text-[0.8rem] py-[3px] focus:border-pink-200' btnStyle='w-[1.9rem] md:w-[2.2rem] min-h-[2rem] h-[2rem] md:min-h-[2.2rem] md:h-[2.2rem] lg:min-h-[2.3rem] lg:h-[2.3rem]' />
+                        <SearchForm formStyle='w-full my-[0.25rem] bg-[btnColor]' inputStyle='h-[2rem] md:h-[2.2rem] lg:h-[2.3rem] focus:outline-transparent text-[0.8rem] py-[3px]' btnStyle='w-[1.9rem] md:w-[2.2rem] min-h-[2rem] h-[2rem] md:min-h-[2.2rem] md:h-[2.2rem] lg:min-h-[2.3rem] lg:h-[2.3rem]' />
                     }
-                    <SearchForm formStyle='desktop-search hidden lg:flex w-full my-[0.25rem] bg-[btnColor]' inputStyle='h-[2rem] md:h-[2.2rem] lg:h-[2.3rem] focus:outline-transparent text-[0.8rem] py-[3px] focus:border-pink-200' btnStyle='w-[1.9rem] md:w-[2.2rem] min-h-[2rem] h-[2rem] md:min-h-[2.2rem] md:h-[2.2rem] lg:min-h-[2.3rem] lg:h-[2.3rem]' />
+                    <SearchForm formStyle='desktop-search hidden lg:flex w-full my-[0.25rem] bg-[btnColor]' inputStyle='h-[2rem] md:h-[2.2rem] lg:h-[2.3rem] focus:outline-transparent text-[0.8rem] py-[3px]' btnStyle='w-[1.9rem] md:w-[2.2rem] min-h-[2rem] h-[2rem] md:min-h-[2.2rem] md:h-[2.2rem] lg:min-h-[2.3rem] lg:h-[2.3rem]' />
 
                     {/* !================mobile menu========! */}
                     <div className={showMenu ? 'hamburger-menu w-full' : 'hidden'}>
@@ -198,10 +198,10 @@ const Header = () => {
                                     <a href='https://facebook.com/profile.php/?id=100003626663302&_rdc=1&_rdr' className='facebook p-[10px] rounded-[40%] border-[1px] border-[#291334]'>
                                         <FaFacebookF />
                                     </a>
-                                    <a href='' className='instagram p-[10px] rounded-[40%] border-[1px] border-[#291334]'>
+                                    <a href='https://twitter.com' className='instagram p-[10px] rounded-[40%] border-[1px] border-[#291334]'>
                                         <FaTwitter />
                                     </a>
-                                    <a href='' className='tiktok p-[10px] rounded-[40%] border-[1px] border-[#291334]'>
+                                    <a href='https://youtube.com' className='tiktok p-[10px] rounded-[40%] border-[1px] border-[#291334]'>
                                         <FaYoutube />
                                     </a>
                                 </div>

@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 const AboutPage = () => {
-  // window.scrollTo(0, 0)
+  window.scrollTo(0, 0)
   return (
     <div>
       {/* <div className="container my-24 px-6 mx-auto"> */}

@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { AppContext } from '../appContext'
+import { AppContext } from '../context/appContext'
 
 const Categories = () => {
 
@@ -9,7 +9,6 @@ const Categories = () => {
 
     return (
         <article>
-            {/* mobile screen categories */}
             <div id='catee' className='categ px-[1.1rem] md:px-[2rem] lg:px-[3rem] z-10'>
                 <div className='categories mx-auto my-4'>
                     <ul className='categories-list text-gray-700 text-sm flex justify-between whitespace-nowrap items-center md:justify-evenly gap-2 overflow-auto'>
@@ -17,7 +16,7 @@ const Categories = () => {
                             <button
                                 onClick={() => handleCategoryClick('All Categories')}
                                 className={`btn-glass border px-[0.8rem] py-[0.5rem] ${selectedCategory === 'All Categories' ? 'bg-btnColor text-white' : 'border-gray-500'
-                                    } rounded-full hover:bg-btnColor lg:hover:text-white hover:border-white flex gap-1`}
+                                    } rounded-full lg:hover:bg-btnColor lg:hover:text-white lg:hover:border-white flex gap-1`}
                             >
                                 <span>
                                     <i className="fa-solid fa-house-chimney"></i>
@@ -33,6 +32,7 @@ const Categories = () => {
                                 onClick={() => handleCategoryClick(category)} >
                                 <button className={selectedCategory === category ? `btn-glass bg-btnColor text-white border px-[0.8rem] py-[0.5rem] rounded-full lg:hover:bg-btnColor lg:hover:text-white lg:hover:border-white flex gap-1` : `btn-glass bg-none border px-[0.8rem] py-[0.5rem] border-gray-500 rounded-full lg:hover:bg-btnColor lg:hover:text-white lg:hover:border-white flex gap-1`}>
                                     {
+                                        // outputting icons for each category
                                         categoryIcons[category] && (
                                             <span>
                                                 <i className={`fa solid ${categoryIcons[category]}`} />

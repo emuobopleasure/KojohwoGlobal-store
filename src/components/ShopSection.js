@@ -1,27 +1,23 @@
 import React, { useContext } from 'react'
 import ShopItem from './ShopItem'
-import products from '../Products'
 import { Link } from 'react-router-dom'
 import Pagination from './Pagination'
 import Categories from './Categories'
-import { AppContext } from '../appContext'
+import { AppContext } from '../context/appContext'
 
 const ShopSection = () => {
 
-    const
-        {
-            filteredProducts,
-            isLoading,
-        } = useContext(AppContext)
-
+    const { filteredProducts, isLoading } = useContext(AppContext)
 
     return (
         <section>
             <Categories />
             <div className='shopsection px-[1.1rem] md:px-[2rem] lg:px-[3rem] grid grid-cols-2 gap-x-3 gap-y-7 md:flex flex-wrap justify-between border-b-[1px] pb-[2rem]'>
                 {isLoading && (
+                    // loading dots overlay
                     <div className='overlay loading-backdrop'>
                         <div className="loadin absolute left-[45vw] md:static md:mx-auto">
+                            {/* spinner/loader */}
                             <span className="loading loading-dots loading-lg text-btnColor text-[5rem]"></span>
                         </div>
                     </div>

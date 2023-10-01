@@ -7,19 +7,21 @@ import { BsArrowLeft } from 'react-icons/bs';
 
 const SingleProductPage = () => {
     window.scrollTo(0, 0)
+
     const { id } = useParams()
+
     const product = products.find((p) => p.id === parseInt(id))
+
     return (
         <section>
             <div className="single-item text-gray-700 body-font overflow-hidden bg-base-100 mt-[7.3vh] mb-4 md:mt-20">
                 <div className="container py-2 md:py-12 mx-auto">
                     <div className="lg:w-4/5 mx-auto flex flex-wrap">
                         <img alt={product.name} className="product-image lg:w-1/2 w-full h-full max-h-[20rem] md:max-h-[28rem] md:h-[28rem] object-scale-down md:object-contain object-center rounded-bl-2xl rounded-br-2xl md:rounded relative" src={product.image} />
-                        {/* <div className='arrow-back absolute'> */}
+                        {/* arrow button that navigates to the previously active route */}
                         <Link to='..' className='back-link absolute md:hidden ml-[1rem] top-[4.3rem] p-[10px] rounded-[40%] border-[1px] border-[#374151] bg-[#efeae6]'>
                             <BsArrowLeft size='1.2rem' />
                         </Link>
-                        {/* </div> */}
                         <div className="lg:w-1/2 w-full px-[1.1rem] md:px-[2rem] lg:px-[3rem] lg:pl-10 lg:py-6 mt-6 lg:mt-0">
                             {/* <h2 className="text-sm title-font text-gray-500 tracking-widest">BRAND NAME</h2> */}
                             <h1 className="product-name text-gray-600 text-3xl title-font font-medium mb-2">{product.name}</h1>
