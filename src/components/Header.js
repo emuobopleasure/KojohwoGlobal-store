@@ -109,7 +109,7 @@ const Header = () => {
                                         <span className="font-bold text-lg">1 Items</span>
                                         <span className="text-gray-600">Subtotal: $999</span>
                                         <div className="card-actions">
-                                            <Link to='/cart'>
+                                            <Link to='/wishlist'>
                                                 <Button
                                                     text='View Wishlist' styling='text-[10px] px-[10px] py-[4px]'
                                                 />
