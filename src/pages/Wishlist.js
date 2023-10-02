@@ -14,8 +14,8 @@ const Wishlist = () => {
                     </h1>
                 </div>
                 <div className='cart-container bg-[#ede8e8] py-[2rem] px-[1rem] flex flex-col lg:flex-row justify-between gap-[1rem]'>
-                    <div className='cart-products w-full bg-base-100'>
-                        <div className="cart-item-card flex py-4 px-4 border border-base-300 rounded-lg shadow-lg hover:bg-base-200">
+                    <div className='cart-products w-full'>
+                        <div className="cart-item-card bg-base-100 flex py-4 px-4 border border-base-300 rounded-lg shadow-lg hover:bg-base-200">
                             <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-base-300">
                                 <img src="https://molfix.com.ng/wp-content/uploads/2020/04/comfortfix5.png" alt="Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt." className="h-full w-full object-cover object-center" />
                             </div>
@@ -43,8 +43,8 @@ const Wishlist = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='cart-products w-full bg-base-100'>
-                        <div className="cart-item-card flex py-4 px-4 border border-base-300 rounded-lg shadow-lg hover:bg-base-200">
+                    <div className='cart-products w-full'>
+                        <div className="cart-item-card bg-base-100 flex py-4 px-4 border border-base-300 rounded-lg shadow-lg hover:bg-base-200">
                             <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-base-300">
                                 <img src="https://molfix.com.ng/wp-content/uploads/2020/04/comfortfix5.png" alt="Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt." className="h-full w-full object-cover object-center" />
                             </div>
