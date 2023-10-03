@@ -74,12 +74,26 @@ const AppProvider = ({ children }) => {
     }
 
     const handleAddToWishlist = (product) => {
-        setWishlist([...wishlist, product]);
+
+        setWishlist((prevWishlist) => ([...prevWishlist, product]));
     };
 
     const handleRemoveFromWishlist = (productId) => {
-        setWishlist(wishlist.filter(product => product.id !== productId));
+        setWishlist((prevWishlist) => (prevWishlist.filter(product => product.id !== productId)));
     };
+
+    
+    const handleWishlistButtonClick = (item) => {
+        const isItemInWishlist = wishlist.some(wishlistItem => wishlistItem.id === item.id)
+
+        if (isItemInWishlist) {
+            handleRemoveFromWishlist(item.id)
+        } else {
+            handleAddToWishlist(item)
+        }
+
+        // setWishlist([...wishlist])
+    }
 
     return (
         <AppContext.Provider value={{
@@ -97,7 +111,8 @@ const AppProvider = ({ children }) => {
             handleSearchSubmit,
             isLoading,
             setIsLoading,
-            handleCategoryClick
+            handleCategoryClick,
+            handleWishlistButtonClick
         }}>
             {children}
         </AppContext.Provider>

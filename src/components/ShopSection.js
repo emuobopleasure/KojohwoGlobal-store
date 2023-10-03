@@ -1,6 +1,5 @@
 import React, { useContext } from 'react'
 import ShopItem from './ShopItem'
-import { Link } from 'react-router-dom'
 import Pagination from './Pagination'
 import Categories from './Categories'
 import { AppContext } from '../context/appContext'
@@ -29,12 +28,12 @@ const ShopSection = () => {
                         </div>
                         :
                         !isLoading && filteredProducts.map((product) => (
-                            <Link to={`/products/${product.id}`} key={product.id}>
+                            // <Link to={`/products/${product.id}`} key={product.id}>
                                 <ShopItem
                                     key={product.id}
                                     item={product}
                                 />
-                            </Link>
+                            // </Link>
                         ))
                 }
             </div>
