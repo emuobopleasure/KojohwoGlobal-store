@@ -12,6 +12,8 @@ const AppProvider = ({ children }) => {
     const [wishlist, setWishlist] = useState([]);
     const [filteredProducts, setFilteredProducts] = useState([])
     const [isLoading, setIsLoading] = useState(false)
+    const [addToWishAlert, setAddToWishAlert] = useState(false)
+    const [removeFromWishAlert, setRemoveFromWishAlert] = useState(false)
 
     const getUniqueCategories = (products) => {
         const uniqueCategories = [...new Set(products.map(product => product.category))];
@@ -88,8 +90,18 @@ const AppProvider = ({ children }) => {
 
         if (isItemInWishlist) {
             handleRemoveFromWishlist(item.id)
+            setRemoveFromWishAlert(true)
+            setTimeout(() => {
+                setRemoveFromWishAlert(false)
+            }, 1000)
         } else {
             handleAddToWishlist(item)
+            setAddToWishAlert(true)
+            setTimeout(() => {
+                setAddToWishAlert(false)
+            }, 1000)
+
+
         }
 
         // setWishlist([...wishlist])
@@ -112,7 +124,9 @@ const AppProvider = ({ children }) => {
             isLoading,
             setIsLoading,
             handleCategoryClick,
-            handleWishlistButtonClick
+            handleWishlistButtonClick,
+            addToWishAlert,
+            removeFromWishAlert
         }}>
             {children}
         </AppContext.Provider>
