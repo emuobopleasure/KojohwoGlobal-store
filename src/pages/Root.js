@@ -16,7 +16,7 @@ const Root = () => {
       }
       {
         removeFromWishAlert &&
-        <Alert text='Item successfully removed from Wishlist!' styling='alert-error' />
+        <Alert text='Item successfully removed from Wishlist!' styling='alert-warning' />
 
       }
       {/* <Alert text='Item successfully removed from Wishlist!' styling='alert-warning' /> */}

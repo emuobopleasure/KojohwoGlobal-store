@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { FiMenu } from 'react-icons/fi';
 import { AiOutlineHeart } from 'react-icons/ai';
 import { CiSearch } from 'react-icons/ci';
@@ -10,6 +10,7 @@ import { VscClose } from 'react-icons/vsc';
 import { NavLink, Link } from 'react-router-dom';
 import Button from './Button';
 import SearchForm from './SearchForm';
+import { AppContext } from '../context/appContext';
 
 const Header = () => {
     const [showMenu, setShowMenu] = useState(false)
@@ -19,6 +20,9 @@ const Header = () => {
         setShowSearch((prevState) => !prevState)
     }
 
+    const { wishlist } = useContext(AppContext)
+
+    const wishListLength = wishlist.length
 
 
 
@@ -100,14 +104,14 @@ const Header = () => {
                                 <label tabIndex={0} className="wishlist-btn btn btn-ghost btn-circle w-[1rem] h-full min-h-[1.5rem]">
                                     <div className="indicator">
                                         <AiOutlineHeart size='1.2rem' color='#513f59' />
-                                        <span className="badge badge-sm indicator-item">1</span>
+                                        <span className="badge badge-sm indicator-item">{wishListLength}</span>
                                     </div>
                                 </label>
                                 {/* |======cart icon indicator======== */}
                                 <div tabIndex={0} className="mt-3 card card-compact dropdown-content items-center p-[0.1rem] w-36 bg-base-100 shadow z-10">
                                     <div className="card-body">
-                                        <span className="font-bold text-lg">1 Items</span>
-                                        <span className="text-gray-600">Subtotal: $999</span>
+                                        <span className="font-bold text-lg">{wishListLength} Items</span>
+                                        {/* <span className="text-gray-600">Subtotal: $999</span> */}
                                         <div className="card-actions">
                                             <Link to='/wishlist'>
                                                 <Button

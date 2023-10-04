@@ -82,9 +82,13 @@ const AppProvider = ({ children }) => {
 
     const handleRemoveFromWishlist = (productId) => {
         setWishlist((prevWishlist) => (prevWishlist.filter(product => product.id !== productId)));
+        setRemoveFromWishAlert(true)
+        setTimeout(() => {
+            setRemoveFromWishAlert(false)
+        }, 2000)
     };
 
-    
+
     const handleWishlistButtonClick = (item) => {
         const isItemInWishlist = wishlist.some(wishlistItem => wishlistItem.id === item.id)
 
@@ -93,13 +97,13 @@ const AppProvider = ({ children }) => {
             setRemoveFromWishAlert(true)
             setTimeout(() => {
                 setRemoveFromWishAlert(false)
-            }, 1000)
+            }, 2000)
         } else {
             handleAddToWishlist(item)
             setAddToWishAlert(true)
             setTimeout(() => {
                 setAddToWishAlert(false)
-            }, 1000)
+            }, 2000)
 
 
         }
