@@ -30,12 +30,26 @@ const ShopItem = ({ item }) => {
                             {/* <Button
                                 text="Add to Wishlist" styling="mr-5 rounded-3xl text-sm px-[8px] py-[1px] font-light mr-0"
                             /> */}
-                            <button onClick={() => handleWishlistButtonClick(item)} className="add-to-wish w-full px-[6px] py-[4px] gap-[2px] flex justify-center items-center bg-btnColor text-white font-medium text-[63%] md:text-sm leading-snug capitalize rounded-full shadow-md hover:bg-pink-500 hover:shadow-lg focus:bg-pink-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-pink-800 active:shadow-lg transition duration-150 ease-in-out">
-                                <AiOutlineHeart size='1.2rem' />
-                                <p className='addtowish'>
-                                    {isItemInWishlist ? 'Remove from Wishlist' : 'Add to Wishlist'}
-                                </p>
-                            </button>
+                            {
+                                isItemInWishlist ?
+                                    (
+                                        <button onClick={() => handleWishlistButtonClick(item)} className="add-to-wish w-full px-[6px] py-[4px] gap-[2px] flex justify-center items-center bg-transaparent border border-btnColor text-btnColor font-medium text-[60%] md:text-[65%] leading-snug capitalize rounded-full shadow-md hover:shadow-lg  focus:shadow-lg focus:outline-none focus:ring-0 active:bg-pink-800 active:shadow-lg transition duration-150 ease-in-out">
+                                            <AiOutlineHeart size='1.2rem' />
+                                            <p className='addtowish'>
+                                                Remove from Wishlist
+                                            </p>
+                                        </button>
+                                    )
+                                    :
+                                    (
+                                        <button onClick={() => handleWishlistButtonClick(item)} className="add-to-wish w-full px-[6px] py-[4px] gap-[2px] flex justify-center items-center bg-btnColor text-white font-medium text-[63%] md:text-sm leading-snug capitalize rounded-full shadow-md hover:bg-pink-500 hover:shadow-lg focus:bg-pink-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-pink-800 active:shadow-lg transition duration-150 ease-in-out">
+                                            <AiOutlineHeart size='1.2rem' />
+                                            <p className='addtowish'>
+                                                Add to Wishlist
+                                            </p>
+                                        </button>
+                                    )
+                            }
                         </div>
                     </div>
                 </div>

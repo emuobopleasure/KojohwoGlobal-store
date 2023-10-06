@@ -1,11 +1,16 @@
 import { createContext, useEffect, useState } from "react";
 import products from "../Products";
+import { json } from "react-router-dom";
 // import { categories } from "./Products";
 
 
 const AppContext = createContext()
 
 const AppProvider = ({ children }) => {
+    // const getWishlistFromLocalStorage = () => {
+    //     const savedWishlist = localStorage.getItem('wishlistData')
+    //     return savedWishlist ? JSON.parse(savedWishlist) : []
+    // }
 
     const [searchQuery, setSearchQuery] = useState('');
     const [selectedCategory, setSelectedCategory] = useState('All Categories');
@@ -38,6 +43,11 @@ const AppProvider = ({ children }) => {
     useEffect(() => {
         setFilteredProducts(products)
     }, [])
+
+    // const saveWishlistToLocalStorage = (wishlist) => {
+    //     localStorage.setItem('wishlistData', JSON.stringify(wishlist))
+    // }
+
 
     const handleSearchSubmit = (e) => {
         e.preventDefault()
