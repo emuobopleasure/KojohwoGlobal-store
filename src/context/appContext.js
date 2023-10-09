@@ -7,18 +7,27 @@ import { json } from "react-router-dom";
 const AppContext = createContext()
 
 const AppProvider = ({ children }) => {
-    // const getWishlistFromLocalStorage = () => {
-    //     const savedWishlist = localStorage.getItem('wishlistData')
-    //     return savedWishlist ? JSON.parse(savedWishlist) : []
-    // }
+    const getWishlistFromLocalStorage = () => {
+        const savedWishlist = localStorage.getItem('wishlistData')
+        return savedWishlist ? JSON.parse(savedWishlist) : []
+    }
 
     const [searchQuery, setSearchQuery] = useState('');
     const [selectedCategory, setSelectedCategory] = useState('All Categories');
-    const [wishlist, setWishlist] = useState([]);
+    const [wishlist, setWishlist] = useState(() => {
+        const savedWishlist = getWishlistFromLocalStorage()
+        return Array.isArray(savedWishlist) ? savedWishlist : []
+    });
+    // Using a callback function in useState, so i can ensure that wishlist is always an array, even if it's initially null or undefined.
+
     const [filteredProducts, setFilteredProducts] = useState([])
     const [isLoading, setIsLoading] = useState(false)
     const [addToWishAlert, setAddToWishAlert] = useState(false)
     const [removeFromWishAlert, setRemoveFromWishAlert] = useState(false)
+
+    const saveWishlistToLocalStorage = (wishlist) => {
+        localStorage.setItem('wishlistData', JSON.stringify(wishlist))
+    }
 
     const getUniqueCategories = (products) => {
         const uniqueCategories = [...new Set(products.map(product => product.category))];
@@ -39,14 +48,14 @@ const AppProvider = ({ children }) => {
         'Sunlit': 'fa-sun',
     };
 
+    useEffect(() => {
+        getWishlistFromLocalStorage()
+    },)
 
     useEffect(() => {
         setFilteredProducts(products)
     }, [])
 
-    // const saveWishlistToLocalStorage = (wishlist) => {
-    //     localStorage.setItem('wishlistData', JSON.stringify(wishlist))
-    // }
 
 
     const handleSearchSubmit = (e) => {
@@ -86,12 +95,17 @@ const AppProvider = ({ children }) => {
     }
 
     const handleAddToWishlist = (product) => {
+        const updatedWishlist = [...wishlist, product]
 
-        setWishlist((prevWishlist) => ([...prevWishlist, product]));
+        setWishlist(updatedWishlist);
+        saveWishlistToLocalStorage(updatedWishlist)
     };
 
     const handleRemoveFromWishlist = (productId) => {
-        setWishlist((prevWishlist) => (prevWishlist.filter(product => product.id !== productId)));
+        // setWishlist((prevWishlist) => (prevWishlist.filter(product => product.id !== productId)));
+        const updatedWishlist = wishlist.filter((item) => item.id !== productId)
+        setWishlist(updatedWishlist)
+        saveWishlistToLocalStorage(updatedWishlist)
         setRemoveFromWishAlert(true)
         setTimeout(() => {
             setRemoveFromWishAlert(false)
