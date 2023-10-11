@@ -17,7 +17,7 @@ const ShopItem = ({ item }) => {
                         <img className="object-cover h-full w-full" src={item.image} alt={item.name} />
                     </Link>
                     <div className="card-buttom flex-1 w-full flex flex-col items-baseline justify-around h-1/2 px-4 sm:h-full sm:items-baseline sm:w-1/2 sm:gap-[2rem]">
-                        <Link to={`/products/${item.id}`} className='w-full flex flex-col items-start gap-4'>
+                        <Link to={`/products/${item.id}`} className='w-full flex flex-col items-start sm:gap-4'>
                             <h1 className="text-base font-bold mb-0 text-gray-600 font-sans truncate w-full">
                                 {item.name}
                             </h1>

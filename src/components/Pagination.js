@@ -1,13 +1,17 @@
 import React from 'react'
 
-const Pagination = () => {
+const Pagination = ({ currentPage, totalPages, onPageChange }) => {
+    const pageNumbers = Array.from({length: totalPages}, (_, index) => index + 1)
+
     return (
         <div>
             <div className="join">
-                <button className="join-item btn">1</button>
-                <button className="join-item btn btn-active">2</button>
-                <button className="join-item btn">3</button>
-                <button className="join-item btn">4</button>
+                {
+                    pageNumbers.map((number) => (
+
+                        <button key={number} onClick={() => onPageChange(number)} className={ number === currentPage ? "join-item btn btn-active bg-[#c9c4c4]" : 'join-item btn' }>{number}</button>
+                    ))
+                }
             </div>
         </div>
     )

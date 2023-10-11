@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import ShopItem from './ShopItem'
 import Pagination from './Pagination'
 import Categories from './Categories'
@@ -6,12 +6,31 @@ import { AppContext } from '../context/appContext'
 
 const ShopSection = () => {
 
-    const { filteredProducts, isLoading } = useContext(AppContext)
+    const { filteredProducts, isLoading, setIsLoading } = useContext(AppContext)
+
+    const [currentPage, setCurrentPage] = useState(1)
+    const productsPerPage = 8
+
+    const indexOfLastProduct = currentPage * productsPerPage
+    const indexOfFirstProduct = indexOfLastProduct - productsPerPage
+    const currentProducts = filteredProducts.slice(indexOfFirstProduct, indexOfLastProduct)
+    const totalPages = Math.ceil(filteredProducts.length / productsPerPage)
+
+    const handlePageChange = (pageNumber) => {
+        setIsLoading(true)
+
+        setTimeout(() => {
+
+            setCurrentPage(pageNumber)
+            setIsLoading(false)
+        }, 1000)
+        
+    }
 
     return (
         <section>
             <Categories />
-            <div className='shopsection px-[1.1rem] md:px-[2rem] lg:px-[3rem] grid grid-cols-2 gap-x-3 gap-y-7 md:flex flex-wrap justify-between border-b-[1px] pb-[2rem]'>
+            <div className='shopsection px-[1.1rem] md:px-[2rem] lg:px-[3rem] grid grid-cols-2 gap-x-3 gap-y-7 lg:grid-cols-3 border-b-[1px] pb-[2rem]'>
                 {isLoading && (
                     // loading dots overlay
                     <div className='overlay loading-backdrop'>
@@ -22,12 +41,12 @@ const ShopSection = () => {
                     </div>
                 )}
                 {
-                    !isLoading && filteredProducts.length === 0 ?
+                    !isLoading && currentProducts.length === 0 ?
                         <div className='product-not-found'>
                             <p>Product not found</p>
                         </div>
                         :
-                        !isLoading && filteredProducts.map((product) => (
+                        !isLoading && currentProducts.map((product) => (
                             // <Link to={`/products/${product.id}`} key={product.id}>
                                 <ShopItem
                                     key={product.id}
@@ -39,7 +58,7 @@ const ShopSection = () => {
             </div>
 
             <div className='pagination-wrapper mt-[2rem] flex justify-center'>
-                <Pagination />
+                <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={handlePageChange} />
             </div>
         </section>
     )
