@@ -1,12 +1,11 @@
 import React, { useContext } from 'react'
-import { CiTrash } from 'react-icons/ci';
 import { VscClose } from 'react-icons/vsc';
 import { AppContext } from '../context/appContext';
 import { Link } from 'react-router-dom';
 const Wishlist = () => {
     window.scrollTo(0, 0)
 
-    const { wishlist, handleRemoveFromWishlist, removeFromWishAlert } = useContext(AppContext)
+    const { wishlist, handleRemoveFromWishlist } = useContext(AppContext)
 
     const numOfWishItems = wishlist.length
 

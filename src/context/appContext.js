@@ -1,7 +1,5 @@
 import { createContext, useEffect, useState } from "react";
 import products from "../Products";
-import { json } from "react-router-dom";
-// import { categories } from "./Products";
 
 
 const AppContext = createContext()

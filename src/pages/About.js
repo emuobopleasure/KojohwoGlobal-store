@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 
 const AboutPage = () => {
   window.scrollTo(0, 0)
