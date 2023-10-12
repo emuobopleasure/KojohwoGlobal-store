@@ -70,6 +70,7 @@ const AppProvider = ({ children }) => {
             );
             setFilteredProducts(searchedProducts)
             setIsLoading(false)
+            // window.scrollTo("#shopsection")
         }, 1000)
     }
 

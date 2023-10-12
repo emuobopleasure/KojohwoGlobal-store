@@ -28,9 +28,9 @@ const ShopSection = () => {
     }
 
     return (
-        <section>
+        <section id='shopsection'>
             <Categories />
-            <div className='shopsection px-[1.1rem] md:px-[2rem] lg:px-[3rem] grid grid-cols-2 gap-x-3 gap-y-7 lg:grid-cols-3 border-b-[1px] pb-[2rem]'>
+            <div className='shopsection px-[1.1rem] md:px-[2rem] lg:px-[3rem] grid grid-cols-2 gap-x-3 gap-y-7 lg:grid-cols-3 lg:gap-x-1 xl:gap-x-4 border-b-[1px] pb-[2rem]'>
                 {isLoading && (
                     // loading dots overlay
                     <div className='overlay loading-backdrop'>

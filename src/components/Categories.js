@@ -9,7 +9,7 @@ const Categories = () => {
 
     return (
         <article>
-            <div id='catee' className='categ px-[1.1rem] md:px-[2rem] lg:px-[3rem] z-10'>
+            <div id='catee' className='categ px-[1.1rem] md:px-[2rem] lg:px-[3rem] z-10 border-t-[1px] mb-[2rem]'>
                 <div className='categories mx-auto my-4'>
                     <ul className='categories-list text-gray-700 text-sm flex justify-between whitespace-nowrap items-center md:justify-evenly gap-2 overflow-auto'>
                         <li >

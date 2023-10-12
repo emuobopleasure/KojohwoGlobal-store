@@ -3,9 +3,9 @@ import HeroSection from '../components/HeroSection'
 import ShopSection from '../components/ShopSection'
 
 const HomePage = () => {
-  useEffect(() => {
+  // useEffect(() => {
     window.scrollTo(0, 0);
-  }, []);
+  // }, []);
   
   return (
     <section>

@@ -3,40 +3,25 @@ import React from 'react'
 const HeroSection = () => {
     return (
         <section>
-            <div className="carousel w-full h-[15rem] md:h-[25rem]">
-                <div id="slide1" className="carousel-item relative w-full">
-                    <img src='/images/sliderImages/molfix-1.jpg' alt="sliderimage-1" className="w-full object-cover lg:object-cover" />
-                    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                        <a href="#slide5" className="btn btn-circle">❮</a>
-                        <a href="#slide2" className="btn btn-circle">❯</a>
+            <div className="hero-section bg-base-100 mb-[4rem] landscape:h-screen sm:h-screen sm:mb-0">
+                <div className="hero-container flex flex-col landscape:flex-row-reverse landscape:items-center gap-4 md:gap-12 lg:gap-3 lg:flex-row-reverse items-center">
+                    <div className='image-wrapper basis-[40%] lg:basis-[50%] w-full'>
+                        <img src="/images/heroImage2.jpg" className="her0-image w-full h-[45vh] md:h-[53vh] lg:h-[90vh] landscape:h-screen object-cover rounded-lg shadow-lg md:shadow-2xl" />
                     </div>
-                </div>
-                <div id="slide2" className="carousel-item relative w-full">
-                    <img src="/images/sliderImages/huggies-1.png"alt="sliderimage-2"  className="w-full object-cover lg:object-cover" />
-                    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                        <a href="#slide1" className="btn btn-circle">❮</a>
-                        <a href="#slide3" className="btn btn-circle">❯</a>
-                    </div>
-                </div>
-                <div id="slide3" className="carousel-item relative w-full">
-                    <img src="/images/sliderImages/molfix-2.jpg" alt="sliderimage-3" className="w-full object-cover lg:object-cover" />
-                    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                        <a href="#slide2" className="btn btn-circle">❮</a>
-                        <a href="#slide4" className="btn btn-circle">❯</a>
-                    </div>
-                </div>
-                <div id="slide4" className="carousel-item relative w-full">
-                    <img src="/images/sliderImages/huggies-2.png"alt="sliderimage-4"  className="w-full object-cover lg:object-cover" />
-                    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                        <a href="#slide3" className="btn btn-circle">❮</a>
-                        <a href="#slide5" className="btn btn-circle">❯</a>
-                    </div>
-                </div>
-                <div id="slide5" className="carousel-item relative w-full">
-                    <img src="/images/sliderImages/molfix-3.jpg" alt="sliderimage-5" className="w-full object-cover lg:object-cover" />
-                    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                        <a href="#slide4" className="btn btn-circle">❮</a>
-                        <a href="#slide1" className="btn btn-circle">❯</a>
+                    <div className='basis-[60%] lg:basis-[50%] px-[1.1rem] md:px-[2rem] lg:px-[3rem] landscape:text-start md:text-center lg:text-start'>
+                        <div className='hero-text flex flex-col justify-around landscape:gap-y-0 md:gap-y-[4rem] lg:gap-y-2'>
+                            <h1 className="text-[2.5rem] leading-[3rem] font-bold">
+                                Kojohwo Global Services
+                            </h1>
+                            <p className="py-6">
+                                Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.
+                            </p>
+                            <a href='#shopsection' className='w-fit mx-auto lg:mx-0 landscape:mx-0'>
+                                <button className="btn btn-secondary">
+                                    Explore Products
+                                </button>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
