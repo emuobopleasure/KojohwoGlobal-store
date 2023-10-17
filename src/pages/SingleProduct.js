@@ -3,7 +3,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom'
 import products from '../Products'
 import { BsWhatsapp } from 'react-icons/bs';
 import { TbHeartPlus, TbHeartMinus } from 'react-icons/tb';
-import { AiOutlineHeart } from 'react-icons/ai';
+// import { AiOutlineHeart } from 'react-icons/ai';
 import { BsArrowLeft } from 'react-icons/bs';
 import { AppContext } from '../context/appContext';
 
@@ -86,8 +86,8 @@ const SingleProductPage = () => {
 
     return (
         <section>
-            <div className="single-item text-gray-700 h-screen landscape:overflow-y-scroll hidden-scroll body-font bg-base-100 mt-[7.3vh] mb-4 md:mt-20">
-                <div className="container py-2 md:py-12 mx-auto">
+            <div className="single-item text-gray-700 body-font bg-base-100 mt-[7.3vh] mb-4 md:mt-20">
+                <div className="container h-screen landscape:overflow-y-scroll hidden-scroll py-2 md:py-12 mx-auto">
                     <div className="lg:w-4/5 mx-auto flex flex-wrap">
                         <div className='image-wrapper w-full lg:w-1/2 lg:h-full'>
                             <img alt={item.name} className="product-image w-full h-full lg:h-full max-h-[20rem] md:max-h-[28rem] md:h-[28rem] object-scale-down md:object-contain object-center rounded-bl-2xl rounded-br-2xl md:rounded relative" src={item.image} />
