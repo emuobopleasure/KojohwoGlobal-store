@@ -8,7 +8,7 @@ import { CiLocationOn } from 'react-icons/ci';
 
 const Footer = () => {
     return (
-        <footer data-theme="" className='bg-base-300'>
+        <footer id='footer' data-theme="" className='bg-base-300'>
             <div className="footer footer-center p-10  text-gray-700 mt-20 rounded-t-3xl xl:max-w-[90rem] xl:mx-auto">
                 <div className="grid grid-flow-col gap-4">
                     <Link to="/about" className="link link-hover mt-[10px]">About Us</Link>

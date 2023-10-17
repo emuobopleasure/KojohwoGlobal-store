@@ -17,8 +17,10 @@ html {
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .categories-list {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
 .sticky {
@@ -42,3 +44,5 @@ html {
   z-index: 9999;
   /* Ensure the backdrop is on top of other content */
 }
+
+
