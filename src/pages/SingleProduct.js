@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import products from '../Products'
 import { BsWhatsapp } from 'react-icons/bs';
+import { TbHeartPlus, TbHeartMinus } from 'react-icons/tb';
 import { AiOutlineHeart } from 'react-icons/ai';
 import { BsArrowLeft } from 'react-icons/bs';
 import { AppContext } from '../context/appContext';
@@ -85,8 +86,8 @@ const SingleProductPage = () => {
 
     return (
         <section>
-            <div className="single-item text-gray-700 body-font overflow-scroll bg-base-100 mt-[7.3vh] mb-4 md:mt-20">
-                <div className="container h-screen py-2 md:py-12 mx-auto">
+            <div className="single-item text-gray-700 h-screen landscape:overflow-y-scroll hidden-scroll body-font bg-base-100 mt-[7.3vh] mb-4 md:mt-20">
+                <div className="container py-2 md:py-12 mx-auto">
                     <div className="lg:w-4/5 mx-auto flex flex-wrap">
                         <div className='image-wrapper w-full lg:w-1/2 lg:h-full'>
                             <img alt={item.name} className="product-image w-full h-full lg:h-full max-h-[20rem] md:max-h-[28rem] md:h-[28rem] object-scale-down md:object-contain object-center rounded-bl-2xl rounded-br-2xl md:rounded relative" src={item.image} />
@@ -140,8 +141,8 @@ const SingleProductPage = () => {
                                 {
                                     isItemInWishlist ?
                                         (
-                                            <button onClick={() => handleWishlistButtonClick(item)} className="w-full px-[6px] py-[4px] h-[3rem] md:h-[4rem] gap-[2px] flex justify-center items-center bg-base-100 border border-btnColor text-btnColor font-medium text-[79%] md:text-lg leading-snug capitalize rounded-full shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:bg-pink-800 active:shadow-lg transition duration-150 ease-in-out">
-                                                <AiOutlineHeart size='1.2rem' />
+                                            <button onClick={() => handleWishlistButtonClick(item)} className="w-full px-[6px] py-[4px] h-[3rem] landscape:h-[2.5rem] md:h-[4rem] gap-[2px] flex justify-center items-center bg-base-100 border border-btnColor text-btnColor font-medium text-[79%] md:text-lg leading-snug capitalize rounded-full shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:bg-pink-800 active:shadow-lg transition duration-150 ease-in-out">
+                                                <TbHeartMinus size='1.2rem' />
                                                 <p className='addtowish'>
                                                     Remove from Wishlist
                                                 </p>
@@ -150,8 +151,8 @@ const SingleProductPage = () => {
                                         :
                                         (
 
-                                            <button onClick={() => handleWishlistButtonClick(item)} className="w-full px-[6px] py-[4px] h-[3rem] md:h-[4rem] gap-[4px] flex justify-center items-center bg-btnColor text-white font-medium text-[79%] md:text-lg leading-snug capitalize rounded-full shadow-md hover:bg-pink-500 hover:shadow-lg focus:bg-pink-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-pink-800 active:shadow-lg transition duration-150 ease-in-out">
-                                                <AiOutlineHeart size='1.2rem' />
+                                            <button onClick={() => handleWishlistButtonClick(item)} className="w-full px-[6px] py-[4px] h-[3rem] landscape:h-[2.5rem] md:h-[4rem] gap-[4px] flex justify-center items-center bg-btnColor text-white font-medium text-[79%] md:text-lg leading-snug capitalize rounded-full shadow-md hover:bg-pink-500 hover:shadow-lg focus:bg-pink-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-pink-800 active:shadow-lg transition duration-150 ease-in-out">
+                                                <TbHeartPlus size='1.2rem' />
                                                 <p className='addtowish'>
                                                     Add to Wishlist
                                                 </p>
@@ -166,7 +167,7 @@ const SingleProductPage = () => {
                                     isItemInWishlist ?
                                         (
                                             <button onClick={() => handleWishlistButtonClick(item)} className="w-full px-[6px] py-[4px] gap-[2px] flex justify-center items-center bg-base-100 border border-btnColor text-btnColor font-medium text-[79%] md:text-lg leading-snug capitalize rounded-full shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:bg-pink-800 active:shadow-lg transition duration-150 ease-in-out">
-                                                <AiOutlineHeart size='1.2rem' />
+                                                <TbHeartMinus size='1.2rem' />
                                                 <p className='addtowish'>
                                                     Remove from Wishlist
                                                 </p>
@@ -176,7 +177,7 @@ const SingleProductPage = () => {
                                         (
 
                                             <button onClick={() => handleWishlistButtonClick(item)} className="w-full px-[6px] py-[4px] gap-[4px] flex justify-center items-center bg-btnColor text-white font-medium text-[79%] md:text-lg leading-snug capitalize rounded-full shadow-md hover:bg-pink-500 hover:shadow-lg focus:bg-pink-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-pink-800 active:shadow-lg transition duration-150 ease-in-out">
-                                                <AiOutlineHeart size='1.2rem' />
+                                                <TbHeartPlus size='1.2rem' />
                                                 <p className='addtowish'>
                                                     Add to Wishlist
                                                 </p>

@@ -45,4 +45,12 @@ html {
   /* Ensure the backdrop is on top of other content */
 }
 
+/* hide overlow for singleproduct.js */
+.hidden-scroll {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
 

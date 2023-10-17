@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
-import { AiOutlineHeart } from 'react-icons/ai';
+// import { AiOutlineHeart } from 'react-icons/ai';
+import { TbHeartMinus, TbHeartPlus } from 'react-icons/tb';
 import { AppContext } from '../context/appContext';
 import { Link } from 'react-router-dom';
 
@@ -34,7 +35,7 @@ const ShopItem = ({ item }) => {
                                 isItemInWishlist ?
                                     (
                                         <button onClick={() => handleWishlistButtonClick(item)} className="add-to-wish w-full px-[6px] py-[4px] gap-[2px] flex justify-center items-center bg-transaparent border border-btnColor text-btnColor font-medium text-[55%] md:text-[65%] lg:text-[47%] xl:text-[65%] leading-snug capitalize rounded-full shadow-md hover:shadow-lg  focus:shadow-lg focus:outline-none focus:ring-0 active:bg-pink-800 active:shadow-lg transition duration-150 ease-in-out">
-                                            <AiOutlineHeart size='1.2rem' />
+                                            <TbHeartMinus size='1.2rem' />
                                             <p className='addtowish'>
                                                 Remove from Wishlist
                                             </p>
@@ -43,7 +44,7 @@ const ShopItem = ({ item }) => {
                                     :
                                     (
                                         <button onClick={() => handleWishlistButtonClick(item)} className="add-to-wish w-full px-[6px] py-[4px] gap-[2px] flex justify-center items-center bg-btnColor text-white font-medium text-[63%] md:text-sm lg:text-[60%] xl:text-sm leading-snug capitalize rounded-full shadow-md hover:bg-pink-500 hover:shadow-lg focus:bg-pink-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-pink-800 active:shadow-lg transition duration-150 ease-in-out">
-                                            <AiOutlineHeart size='1.2rem' />
+                                            <TbHeartPlus size='1.2rem' />
                                             <p className='addtowish'>
                                                 Add to Wishlist
                                             </p>
