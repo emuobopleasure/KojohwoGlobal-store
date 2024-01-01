@@ -34,7 +34,7 @@ const ShopItem = ({ item }) => {
                             {
                                 isItemInWishlist ?
                                     (
-                                        <button onClick={() => handleWishlistButtonClick(item)} className="add-to-wish w-full px-[6px] py-[4px] gap-[2px] flex justify-center items-center bg-transaparent border border-btnColor text-btnColor font-medium text-[55%] md:text-[65%] lg:text-[47%] xl:text-[65%] leading-snug capitalize rounded-full shadow-md hover:shadow-lg  focus:shadow-lg focus:outline-none focus:ring-0 active:bg-pink-800 active:shadow-lg transition duration-150 ease-in-out">
+                                        <button onClick={() => handleWishlistButtonClick(item)} className="renove-from-wish w-full px-[6px] py-[4px] gap-[2px] flex justify-center items-center bg-transaparent border border-btnColor text-btnColor font-medium text-[55%] md:text-[65%] lg:text-[47%] xl:text-[65%] leading-snug capitalize rounded-full shadow-md hover:shadow-lg  focus:shadow-lg focus:outline-none focus:ring-0 active:bg-pink-800 active:shadow-lg transition duration-150 ease-in-out">
                                             <TbHeartMinus size='1.2rem' />
                                             <p className='addtowish'>
                                                 Remove from Wishlist

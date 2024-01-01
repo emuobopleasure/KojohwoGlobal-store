@@ -6,10 +6,13 @@ import ContactPage from "./pages/Contact";
 import SingleProductPage from "./pages/SingleProduct";
 import { AppProvider } from "./context/appContext";
 import Wishlist from "./pages/Wishlist";
+import Error from "./pages/Error";
 
 const router = createBrowserRouter([
   {
-    path: '/', element: <Root />, children: [
+    path: '/', element: <Root />,
+    errorElement: <Error/>,
+     children: [
       { path: '/', element: <HomePage /> },
       { path: '/contact', element: <ContactPage /> },
       { path: '/about', element: <AboutPage /> },
