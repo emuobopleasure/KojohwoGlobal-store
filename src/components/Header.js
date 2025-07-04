@@ -8,6 +8,7 @@ import { MdOutlineContactPhone } from 'react-icons/md';
 import { FaFacebookF, FaTwitter, FaYoutube, } from 'react-icons/fa';
 import { HiOutlineShoppingBag } from "react-icons/hi2";
 import { VscClose, VscHome } from 'react-icons/vsc';
+import { IoIosCloseCircleOutline } from "react-icons/io";
 import { NavLink, Link } from 'react-router-dom';
 import Button from './Button';
 import SearchForm from './SearchForm';
@@ -47,7 +48,7 @@ const Header = () => {
                                 </button>}
                                 {showMenu && <button onClick={() => setShowMenu(false)}
                                     className='menu-close' aria-label="menu close">
-                                    <VscClose className='menu-close-icon text-2xl' color='#513f59' />
+                                    <IoIosCloseCircleOutline className='menu-close-icon text-2xl' color='#513f59' />
                                 </button>}
                             </div>
                             <h1 className="logo inline-flex">
@@ -92,7 +93,7 @@ const Header = () => {
                             {
                                 showSearch &&
                                 <button onClick={handleToggle} className='search-close lg:hidden' aria-label='Search Close Button'>
-                                    <VscClose className='close-icon pb-[2px] lg:p-0 mr-[0.5rem]' size='1.5rem' color='#513f59' />
+                                    <IoIosCloseCircleOutline className='close-icon pb-[2px] lg:p-0 mr-[0.5rem] mb-[0.2rem]' size='1.5rem' color='#513f59' />
                                 </button>
                             }
 
