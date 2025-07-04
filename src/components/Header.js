@@ -5,16 +5,21 @@ import { CiSearch } from 'react-icons/ci';
 import { RiWhatsappFill } from 'react-icons/ri';
 import { BsInfoCircleFill } from 'react-icons/bs';
 import { MdOutlineContactPhone } from 'react-icons/md';
-import { FaFacebookF, FaTwitter, FaYoutube, FaHome } from 'react-icons/fa';
-import { VscClose } from 'react-icons/vsc';
+import { FaFacebookF, FaTwitter, FaYoutube, } from 'react-icons/fa';
+import { HiOutlineShoppingBag } from "react-icons/hi2";
+import { VscClose, VscHome } from 'react-icons/vsc';
 import { NavLink, Link } from 'react-router-dom';
 import Button from './Button';
 import SearchForm from './SearchForm';
 import { AppContext } from '../context/appContext';
+import Categories from './Categories';
 
 const Header = () => {
     const [showMenu, setShowMenu] = useState(false)
     const [showSearch, setShowSearch] = useState(false)
+
+    const { showStickyCategories } = useContext(AppContext)
+
 
     const handleToggle = () => {
         setShowSearch((prevState) => !prevState)
@@ -56,6 +61,11 @@ const Header = () => {
                                 <li className='home-nav-link hover:transform transition duration-300 hover:scale-110'>
                                     <NavLink to='/' className={({ isActive }) => isActive ? 'home border-b-2 border-btnColor' : 'border-none'}>
                                         Home
+                                    </NavLink>
+                                </li>
+                                <li className='contact-nav-link hover:transform transition duration-300 hover:scale-110'>
+                                    <NavLink to='/products' className={({ isActive }) => isActive ? 'contact border-b-2 border-btnColor' : 'border-none'}>
+                                        Shop
                                     </NavLink>
                                 </li>
                                 <li className='contact-nav-link hover:transform transition duration-300 hover:scale-110'>
@@ -151,6 +161,12 @@ const Header = () => {
                     }
                     <SearchForm formStyle='desktop-search hidden lg:flex w-full my-[0.25rem] bg-[btnColor]' inputStyle='h-[2rem] md:h-[2.2rem] lg:h-[2.3rem] focus:outline-transparent text-[0.8rem] py-[3px]' btnStyle='w-[1.9rem] md:w-[2.2rem] min-h-[2rem] h-[2rem] md:min-h-[2.2rem] md:h-[2.2rem] lg:min-h-[2.3rem] lg:h-[2.3rem]' />
 
+                    {showStickyCategories && (
+                        <div className="headr-categories w-full">
+                            <Categories />
+                        </div>
+                    )}
+
                     {/* !================mobile menu========! */}
                     <div className={showMenu ? 'hamburger-menu w-full' : 'hidden'}>
                         <ul tabIndex={0} className="menu pl-0 pr-0 menu-vertical leading-10 text-[1rem] gap-[1.5rem] dropdown-content pt-[1.5rem] bg-base-100 rounded-box w-screen h-auto z-10 landscape:h-auto landscape:grid landscape:grid-cols-2 landscape:place-content-start">
@@ -173,9 +189,17 @@ const Header = () => {
                             <li onClick={() => setShowMenu(false)}>
                                 <NavLink to='/' className='mobile-nav-link landscape:bg-[#c9c4c4]'>
                                     <span>
-                                        <FaHome />
+                                        <VscHome />
                                     </span>
                                     Home
+                                </NavLink>
+                            </li>
+                            <li onClick={() => setShowMenu(false)}>
+                                <NavLink to='/products' className='mobile-nav-link landscape:bg-[#c9c4c4]'>
+                                    <span>
+                                        <HiOutlineShoppingBag />
+                                    </span>
+                                    Shop
                                 </NavLink>
                             </li>
                             <li onClick={() => setShowMenu(false)}>

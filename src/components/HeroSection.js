@@ -2,34 +2,41 @@ import React from 'react'
 
 const HeroSection = () => {
     return (
-        <section>
-            <div className="hero-section bg-base-100 mb-[4rem] landscape:h-screen sm:h-screen sm:mb-0 lg:mb-[4rem]">
-                <div className="hero-container flex flex-col landscape:flex-row-reverse landscape:items-center gap-6 md:gap-12 lg:gap-3 lg:flex-row-reverse items-center">
-                    <div className='image-wrapper basis-[40%] lg:basis-[50%] w-full landscape:h-full'>
-                        <img src="/images/heroImage2.jpg" alt='hero image' className="hero-image w-full h-[45vh] md:h-[53vh] lg:h-[90vh] landscape:h-screen object-cover rounded-lg" />
-                    </div>
-                    <div className='basis-[60%] lg:basis-[50%] px-[1.1rem] md:px-[2rem] lg:px-[3rem] landscape:text-start md:text-center lg:text-start'>
-                        <div className='hero-text flex flex-col justify-around landscape:gap-y-0 md:gap-y-[4rem] lg:gap-y-2'>
-                            <h1 className="text-[2.5rem] leading-[3rem] font-bold text-gray-600">
-                                Kojohwo Global Services
-                            </h1>
-                            <p className="py-6 text-gray-600">
-                                Welcome to Kojohwo Global: Your Go-To for Cool Stuff!
+       <section>
+  <div className="hero-section bg-base-100 mb-[4rem] sm:mb-0 lg:mb-[4rem]">
+    <div className="hero-container flex flex-col items-center gap-6 md:gap-12 lg:gap-3 lg:flex-row-reverse lg:items-center md:px-[2rem] lg:px-[3rem]
+      [@media(orientation:landscape)]:flex-row-reverse">
 
-                                We're your one-stop shop for all things awesome. From premium toilet tissues to comfy diapers, we've got the goods you need. Quality and fun – that's the Kojohwo Global way!
+      {/* Image */}
+      <div className="w-full sm:w-1/2 h-[50vh] sm:h-[70vh] md:h-[80vh] lg:h-screen landscape:pr-[1.1rem]">
+        <img
+          src="/images/heroImage2.jpg"
+          alt="Hero visual"
+          className="w-full h-full object-cover rounded-lg"
+        />
+      </div>
 
-                                Join the cool crew and discover what's in store. Let's make life more exciting, one click at a time!
-                            </p>
-                            <a href='#shopsection' className='w-fit mx-auto lg:mx-0 landscape:mx-0'>
-                                <button className="btn btn-secondary bg-btnColor text-white border-none">
-                                    Explore Products
-                                </button>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+      {/* Text */}
+      <div className="w-full sm:w-1/2 text-center sm:text-left flex items-center h-full px-[1.1rem]">
+        <div className="flex flex-col justify-center gap-4 sm:gap-6 md:gap-8 py-6 sm:py-0">
+          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-snug font-bold text-gray-700">
+            Trusted Household Products for Your Everyday Needs
+          </h1>
+          <p className="text-sm sm:text-base md:text-lg lg:text-lg text-gray-600 leading-relaxed">
+            Discover top-quality household and personal care products — from ultra-soft toilet tissue to trusted baby diapers.
+          </p>
+          <a href="#shopsection" className="w-fit mx-auto sm:mx-0">
+            <button className="btn btn-secondary bg-btnColor text-white border-none text-sm sm:text-base">
+              Shop Now
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
     )
 }
 

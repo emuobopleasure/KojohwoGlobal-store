@@ -88,7 +88,7 @@ const SingleProductPage = () => {
         <section>
             <div className="single-item text-gray-700 h-screen landscape:overflow-y-scroll hidden-scroll body-font bg-base-100 mt-[7.3vh] mb-4 md:mt-20">
                 <div className="container py-2 md:py-12 mx-auto">
-                    <div className="lg:w-4/5 mx-auto flex flex-wrap">
+                    <div className="lg:w-4/5 mx-auto flex flex-wrap landscape:flex-nowrap landscape:items-center">
                         <div className='image-wrapper w-full lg:w-1/2 lg:h-full'>
                             <img alt={item.name} className="product-image w-full h-full lg:h-full max-h-[20rem] md:max-h-[28rem] md:h-[28rem] object-scale-down md:object-contain object-center rounded-bl-2xl rounded-br-2xl md:rounded relative" src={item.image} />
                         </div>
@@ -137,7 +137,7 @@ const SingleProductPage = () => {
                                 </Link>
                             </div>
                             {/* add to wishlist buttons for mobile and tablet displays */}
-                            <div id='addToWish' className={`add-to-wish lg:hidden ${showButton ? 'gap-[10vw]' : ' fixed bottom-2 right-4 left-4 md:right-8 md:left-8'}`}>
+                            <div id='addToWish' className={`add-to-wish lg:hidden landscape:hidden ${showButton ? 'gap-[10vw]' : ' fixed bottom-2 right-4 left-4 md:right-8 md:left-8'}`}>
                                 {
                                     isItemInWishlist ?
                                         (
@@ -162,7 +162,7 @@ const SingleProductPage = () => {
                             </div>
 
                             {/* add to wishlist button for 1000px and larger displays... */}
-                            <div id='addToWish' className='add-to-wish hidden lg:block lg:justify-start gap-[10vw]'>
+                            <div id='addToWish' className='add-to-wish hidden lg:block landscape:block lg:justify-start gap-[10vw]'>
                                 {
                                     isItemInWishlist ?
                                         (

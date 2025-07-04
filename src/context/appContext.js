@@ -10,6 +10,9 @@ const AppProvider = ({ children }) => {
         return savedWishlist ? JSON.parse(savedWishlist) : []
     }
 
+    //for handling sticky categories in products list
+    const [showStickyCategories, setShowStickyCategories] = useState(false)
+
     const [searchQuery, setSearchQuery] = useState('');
     const [selectedCategory, setSelectedCategory] = useState('All Categories');
     const [wishlist, setWishlist] = useState(() => {
@@ -153,7 +156,10 @@ const AppProvider = ({ children }) => {
             handleCategoryClick,
             handleWishlistButtonClick,
             addToWishAlert,
-            removeFromWishAlert
+            removeFromWishAlert,
+            showStickyCategories,
+            setShowStickyCategories
+
         }}>
             {children}
         </AppContext.Provider>
