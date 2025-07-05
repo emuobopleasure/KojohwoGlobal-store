@@ -7,7 +7,7 @@ import { BsInfoCircleFill } from 'react-icons/bs';
 import { MdOutlineContactPhone } from 'react-icons/md';
 import { FaFacebookF, FaTwitter, FaYoutube, } from 'react-icons/fa';
 import { HiOutlineShoppingBag } from "react-icons/hi2";
-import { VscClose, VscHome } from 'react-icons/vsc';
+import { VscHome } from 'react-icons/vsc';
 import { IoIosCloseCircleOutline } from "react-icons/io";
 import { NavLink, Link } from 'react-router-dom';
 import Button from './Button';

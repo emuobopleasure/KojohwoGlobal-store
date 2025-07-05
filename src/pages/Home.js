@@ -1,6 +1,5 @@
 import React from 'react'
 import HeroSection from '../components/HeroSection'
-import ShopSection from '../components/ShopSection'
 import FeaturedProducts from '../components/FeaturedProducts';
 
 const HomePage = () => {

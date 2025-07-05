@@ -9,12 +9,12 @@ const Products = () => {
         filteredProducts,
         isLoading,
         handleSearchSubmit,
-        searchQuery,
-        setSearchQuery,
-        handleCategoryClick,
-        selectedCategory,
-        categories,
-        setShowStickyCategories 
+        // searchQuery,
+        // setSearchQuery,
+        // handleCategoryClick,
+        // selectedCategory,
+        // categories,
+        // setShowStickyCategories 
     } = useContext(AppContext)
 
     const [currentPage, setCurrentPage] = useState(1)
@@ -60,7 +60,7 @@ const Products = () => {
 
             {/* Products Grid */}
             {isLoading ? (
-                <div className="flex justify-center">
+                <div className="fixed inset-0 bg-[rgba(229,227,225,0.4)] z-50 flex items-center justify-center">
                     <span className="loading loading-dots loading-lg text-btnColor"></span>
                 </div>
             ) : currentProducts.length === 0 ? (

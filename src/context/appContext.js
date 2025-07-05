@@ -90,7 +90,15 @@ const AppProvider = ({ children }) => {
                 );
             }
 
-            setSelectedCategory(category === 'All Categories' ? 'All Categories' : category);
+            // setSelectedCategory(category === 'All Categories' ? 'All Categories' : category);
+            
+            // Toggle Active State
+            if (selectedCategory === category) {
+                setSelectedCategory('All Categories') // or '' depending on your default
+            } else {
+                setSelectedCategory(category)
+            }
+
             setFilteredProducts(filteredProducts);
             setIsLoading(false);
         }, 1000);
