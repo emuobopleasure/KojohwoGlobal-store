@@ -20,7 +20,7 @@ const HeroSection = () => {
       <div className="w-full sm:w-1/2 text-center sm:text-left flex items-center h-full px-[1.1rem]">
         <div className="flex flex-col justify-center gap-4 sm:gap-6 md:gap-8 py-6 sm:py-0">
           <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-snug font-bold text-gray-700">
-            Trusted Household Products for Your Everyday Needs
+            Trusted Household Products for Your Everyday Needs.
           </h1>
           <p className="text-sm sm:text-base md:text-lg lg:text-lg text-gray-600 leading-relaxed">
             Discover top-quality household and personal care products from ultra-soft toilet tissue to trusted baby diapers.
