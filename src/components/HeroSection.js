@@ -23,7 +23,7 @@ const HeroSection = () => {
             Trusted Household Products for Your Everyday Needs
           </h1>
           <p className="text-sm sm:text-base md:text-lg lg:text-lg text-gray-600 leading-relaxed">
-            Discover top-quality household and personal care products — from ultra-soft toilet tissue to trusted baby diapers.
+            Discover top-quality household and personal care products from ultra-soft toilet tissue to trusted baby diapers.
           </p>
           <a href="#shopsection" className="w-fit mx-auto sm:mx-0">
             <button className="btn btn-secondary bg-btnColor text-white border-none text-sm sm:text-base">
