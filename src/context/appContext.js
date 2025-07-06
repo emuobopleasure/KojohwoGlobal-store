@@ -79,29 +79,29 @@ const AppProvider = ({ children }) => {
         setIsLoading(true);
 
         // Simulate a delay for filtering (you can replace this with your actual filtering logic)
+        setIsLoading(true);
+
         setTimeout(() => {
-            let filteredProducts;
-
-            if (category === 'All Categories') {
-                filteredProducts = products;  // Show all products if 'All Categories' is selected
-            } else {
-                filteredProducts = products.filter(product =>
-                    product.category === category
-                );
+            // Ensure products are available before filtering
+            if (!products || products.length === 0) {
+                setFilteredProducts([]); // or keep previous state
+                setIsLoading(false);
+                return;
             }
 
-            // setSelectedCategory(category === 'All Categories' ? 'All Categories' : category);
-            
-            // Toggle Active State
-            if (selectedCategory === category) {
-                setSelectedCategory('All Categories') // or '' depending on your default
+            let newFilteredProducts;
+
+            if (category === selectedCategory || category === 'All Categories') {
+                setSelectedCategory('All Categories');
+                newFilteredProducts = products;
             } else {
-                setSelectedCategory(category)
+                setSelectedCategory(category);
+                newFilteredProducts = products.filter(product => product.category === category);
             }
 
-            setFilteredProducts(filteredProducts);
+            setFilteredProducts(newFilteredProducts);
             setIsLoading(false);
-        }, 1000);
+        }, 500); // 500ms is fine for feedback
     }
 
     const handleAddToWishlist = (product) => {
