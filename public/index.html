@@ -80,19 +80,21 @@
     //   });
     // }
 
-    // ✅ Unregister old service workers (place this outside the component
+    // Force unregister any existing Service Worker
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.getRegistrations().then(function (registrations) {
         for (let registration of registrations) {
-          registration.unregister(); // Unregister all Service Workers
+          registration.unregister();
         }
       });
-      // Optional: Clear all caches (aggressive cleanup)
-      caches.keys().then(function (cacheNames) {
-        cacheNames.forEach(function (cacheName) {
-          caches.delete(cacheName);
+      // Clear all caches
+      if ('caches' in window) {
+        caches.keys().then(function (cacheNames) {
+          cacheNames.forEach(function (cacheName) {
+            caches.delete(cacheName);
+          });
         });
-      });
+      }
     }
 
 
