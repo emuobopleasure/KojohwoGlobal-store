@@ -11,15 +11,15 @@ import Products from "./pages/Products";
 
 
 // ✅ Unregister old service workers (place this outside the component)
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.getRegistrations().then(registrations => {
-    registrations.forEach(registration => {
-      registration.unregister().then(() => {
-        window.location.reload();
-      });
-    });
-  });
-}
+// if ('serviceWorker' in navigator) {
+//   navigator.serviceWorker.getRegistrations().then(registrations => {
+//     registrations.forEach(registration => {
+//       registration.unregister().then(() => {
+//         window.location.reload();
+//       });
+//     });
+//   });
+// }
 
 const router = createBrowserRouter([
   {
