@@ -1,9 +1,8 @@
 import React, { useContext, useState } from 'react'
 import { FiMenu } from 'react-icons/fi';
-import { AiOutlineHeart } from 'react-icons/ai';
-import { CiSearch } from 'react-icons/ci';
+import { CiSearch, CiHeart,   } from 'react-icons/ci';
 import { RiWhatsappFill } from 'react-icons/ri';
-import { BsInfoCircleFill } from 'react-icons/bs';
+import { TfiInfoAlt } from "react-icons/tfi";
 import { MdOutlineContactPhone } from 'react-icons/md';
 import { FaFacebookF, FaTwitter, FaYoutube, } from 'react-icons/fa';
 import { HiOutlineShoppingBag } from "react-icons/hi2";
@@ -44,15 +43,15 @@ const Header = () => {
                             <div className='hamburger inline-flex lg:hidden'>
                                 {!showMenu && <button onClick={() => setShowMenu(true)}
                                     className='menu-opem' aria-label="menu open">
-                                    <FiMenu className='menu-icon text-2xl' color='#513f59' />
+                                    <FiMenu className='menu-icon text-3xl' color='#513f59' />
                                 </button>}
                                 {showMenu && <button onClick={() => setShowMenu(false)}
                                     className='menu-close' aria-label="menu close">
-                                    <IoIosCloseCircleOutline className='menu-close-icon text-2xl' color='#513f59' />
+                                    <IoIosCloseCircleOutline className='menu-close-icon text-3xl' color='#513f59' />
                                 </button>}
                             </div>
                             <h1 className="logo inline-flex">
-                                <NavLink to="/" className="logo-btn normal-case text-xl px-1 md:text-2xl xl:text-4xl font-['Modak'] font-thin text-btnColor pt-[2px] lg:pt-0">
+                                <NavLink to="/" className="logo-btn normal-case text-2xl px-1 md:text-2xl xl:text-4xl font-['Modak'] font-thin text-btnColor pt-[2px] lg:pt-0">
                                     Kojohwo Global
                                 </NavLink>
                             </h1>
@@ -83,17 +82,17 @@ const Header = () => {
                         </div>
 
                         {/* |=======profile tabs =========| */}
-                        <div className="flex items-center gao-[0.3rem] lg:flex-none pr-[13px]">
+                        <div className="flex items-center gap-[0.3rem] lg:flex-none pr-[13px]">
                             {
                                 !showSearch &&
                                 <button onClick={handleToggle} className='search-open lg:hidden' aria-label='Search Open Button'>
-                                    <CiSearch className='search-icon pb-[2px] lg:p-0 mr-[0.5rem]' size='1.5rem' color='#513f59' />
+                                    <CiSearch className='search-icon pb-[2px] lg:p-0 mr-[0.5rem]' size='2rem' color='#513f59' />
                                 </button>
                             }
                             {
                                 showSearch &&
                                 <button onClick={handleToggle} className='search-close lg:hidden' aria-label='Search Close Button'>
-                                    <IoIosCloseCircleOutline className='close-icon pb-[2px] lg:p-0 mr-[0.5rem] mb-[0.2rem]' size='1.5rem' color='#513f59' />
+                                    <IoIosCloseCircleOutline className='close-icon pb-[2px] lg:p-0 mr-[0.5rem] mb-[0.2rem]' size='2rem' color='#513f59' />
                                 </button>
                             }
 
@@ -110,11 +109,11 @@ const Header = () => {
                                 </span>
                             </div> */}
                             {/* |======cart section indicator======== */}
-                            <div className="dropdown dropdown-end">
+                            <div className="dropdown dropdown-end mt-[3px]">
                                 {/* |======cart icon======== */}
                                 <label tabIndex={0} className="wishlist-btn btn btn-ghost btn-circle w-[1rem] h-full min-h-[1.5rem]">
                                     <div className="indicator">
-                                        <AiOutlineHeart size='1.2rem' color='#513f59' />
+                                        <CiHeart size='1.8rem' color='#513f59' />
                                         <span className="badge badge-sm indicator-item">{wishListLength}</span>
                                     </div>
                                 </label>
@@ -190,7 +189,7 @@ const Header = () => {
                             <li onClick={() => setShowMenu(false)}>
                                 <NavLink to='/' className='mobile-nav-link landscape:bg-[#c9c4c4]'>
                                     <span>
-                                        <VscHome />
+                                        <VscHome size={'1.5rem'} className='mr-[0.3rem]' />
                                     </span>
                                     Home
                                 </NavLink>
@@ -198,7 +197,7 @@ const Header = () => {
                             <li onClick={() => setShowMenu(false)}>
                                 <NavLink to='/products' className='mobile-nav-link landscape:bg-[#c9c4c4]'>
                                     <span>
-                                        <HiOutlineShoppingBag />
+                                        <HiOutlineShoppingBag size={'1.5rem'} className='mr-[0.3rem]' />
                                     </span>
                                     Shop
                                 </NavLink>
@@ -206,7 +205,7 @@ const Header = () => {
                             <li onClick={() => setShowMenu(false)}>
                                 <NavLink to='/contact' className='mobile-nav-link landscape:bg-[#c9c4c4]'>
                                     <span>
-                                        <MdOutlineContactPhone />
+                                        <MdOutlineContactPhone size={'1.5rem'} className='mr-[0.3rem]' />
                                     </span>
                                     Contact
                                 </NavLink>
@@ -214,7 +213,7 @@ const Header = () => {
                             <li onClick={() => setShowMenu(false)}>
                                 <NavLink to='/about' className='mobile-nav-link landscape:bg-[#c9c4c4]'>
                                     <span>
-                                        <BsInfoCircleFill />
+                                        <TfiInfoAlt   size={'1.5rem'} className='mr-[0.3rem]' />
                                     </span>
                                     About
                                 </NavLink>
