@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { AppContext } from '../context/appContext'
 import Categories from '../components/Categories'
 import ShopItem from '../components/ShopItem'
@@ -36,6 +36,10 @@ const Products = () => {
             setCurrentPage(1)
         }
     }
+
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, []);
 
     return (
         <section className="px-[1.1rem] md:px-[2rem] lg:px-[3rem] pt-[5.5rem] md:pt-28 lg:pt-36">
