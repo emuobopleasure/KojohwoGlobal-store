@@ -9,7 +9,9 @@ const products = [
         countInStock: 3,
         rating: 4,
         numReviews: 4,
-        category: 'Diapers'
+        category: 'Diapers',
+        featured: true,
+
     },
     {
         id: 2,
@@ -20,7 +22,9 @@ const products = [
         countInStock: 3,
         rating: 4,
         numReviews: 4,
-        category: 'Diapers'
+        category: 'Diapers',
+        featured: true,
+
     },
     {
         id: 3,
@@ -53,7 +57,7 @@ const products = [
         countInStock: 3,
         rating: 4,
         numReviews: 4,
-        category: 'Diapers'
+        category: 'Diapers',
     },
     {
         id: 6,
@@ -119,7 +123,9 @@ const products = [
         countInStock: 3,
         rating: 4,
         numReviews: 4,
-        category: 'Norland'
+        category: 'Norland',
+        featured: true,
+
     },
     {
         id: 12,
@@ -165,7 +171,7 @@ const products = [
         numReviews: 4,
         category: 'Norland'
     },
-    
+
 ]
 
 export default products
