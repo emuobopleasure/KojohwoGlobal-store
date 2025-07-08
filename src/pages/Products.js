@@ -9,6 +9,7 @@ const Products = () => {
         filteredProducts,
         isLoading,
         handleSearchSubmit,
+        setIsLoading,
         // searchQuery,
         // setSearchQuery,
         // handleCategoryClick,
@@ -26,8 +27,14 @@ const Products = () => {
     const totalPages = Math.ceil(filteredProducts.length / productsPerPage)
 
     const handlePageChange = (pageNumber) => {
-        setCurrentPage(pageNumber)
-        window.scrollTo({ top: 0, behavior: 'smooth' })
+        setIsLoading(true)
+
+        setTimeout(() => {
+            setCurrentPage(pageNumber)
+            setIsLoading(false)
+
+            window.scrollTo({ top: 0, behavior: 'smooth' })
+        }, 500)
     }
 
     const handleKeyDown = (e) => {
