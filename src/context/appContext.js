@@ -14,7 +14,10 @@ const AppProvider = ({ children }) => {
     const [showStickyCategories, setShowStickyCategories] = useState(false)
 
     const [searchQuery, setSearchQuery] = useState('');
-    const [selectedCategory, setSelectedCategory] = useState('All Categories');
+    const [selectedCategory, setSelectedCategory] = useState(() => {
+        return sessionStorage.getItem('selectedCategory') || 'All Categories'
+    });
+
     const [wishlist, setWishlist] = useState(() => {
         const savedWishlist = getWishlistFromLocalStorage()
         return Array.isArray(savedWishlist) ? savedWishlist : []
@@ -76,12 +79,13 @@ const AppProvider = ({ children }) => {
     }
 
     const handleCategoryClick = (category) => {
-        setIsLoading(true);
+        sessionStorage.setItem('selectedCategory', category);
 
-        // Simulate a delay for filtering (you can replace this with your actual filtering logic)
+        // Simulate a delay for filtering
         setIsLoading(true);
 
         setTimeout(() => {
+
             // Ensure products are available before filtering
             if (!products || products.length === 0) {
                 setFilteredProducts([]); // or keep previous state
@@ -93,16 +97,36 @@ const AppProvider = ({ children }) => {
 
             if (category === selectedCategory || category === 'All Categories') {
                 setSelectedCategory('All Categories');
+                sessionStorage.setItem('selectedCategory', 'All Categories');
                 newFilteredProducts = products;
             } else {
                 setSelectedCategory(category);
+                sessionStorage.setItem('selectedCategory', category);
                 newFilteredProducts = products.filter(product => product.category === category);
+
             }
 
             setFilteredProducts(newFilteredProducts);
             setIsLoading(false);
         }, 500); // 500ms is fine for feedback
     }
+
+    //returns react state to what is in sessionstorage
+    useEffect(() => {
+        const storedCategory = sessionStorage.getItem('selectedCategory') || 'All Categories';
+
+        setSelectedCategory(storedCategory);
+
+        if (storedCategory === 'All Categories') {
+            setFilteredProducts(products);
+        } else {
+            const filtered = products.filter(
+                (product) => product.category === storedCategory
+            );
+            setFilteredProducts(filtered);
+        }
+    }, []);
+
 
     const handleAddToWishlist = (product) => {
         const updatedWishlist = [...wishlist, product]
