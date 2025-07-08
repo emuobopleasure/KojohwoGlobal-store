@@ -39,7 +39,7 @@ const Wishlist = () => {
                         (
                             <div className='wishlist-container bg-[#ede8e8] py-[2rem] px-[1rem] flex flex-col lg:grid grid-cols-2 2xl:grid-cols-3 justify-between gap-[1rem] rounded-xl'>
                                 {wishlist.map((item) => (
-                                    <div key={item.id} className='cart-products w-full'>
+                                    <div key={item.id} className='cart-products'>
                                         <div className="cart-item-card bg-base-100 flex py-4 px-4 rounded-lg shadow-lg hover:bg-base-300 hover:outline hover:outline-white">
                                             <Link to={`/products/${item.id}`} className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-base-300">
                                                 <img src={item.image} alt="Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt." className="h-full w-full object-cover object-center" />
@@ -52,7 +52,7 @@ const Wishlist = () => {
                                                                 {item.name}
                                                             </Link>
                                                         </h3>
-                                                        <div className="flex border-red-500 border rounded-lg mb-[1rem]">
+                                                        <div className="delete-btn flex border-red-500 border rounded-lg mb-[1rem]">
                                                             <button onClick={() => handleRemoveFromWishlist(item.id)} type="button" className="font-bold text-sm text-red-600 hover:text-red-500 flex items-center gap-1">
                                                                 <VscClose size='1.2rem' className='font-bold' />
                                                             </button>

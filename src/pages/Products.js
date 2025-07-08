@@ -41,6 +41,11 @@ const Products = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }, []);
 
+    useEffect(() => {
+        setCurrentPage(1); // Reset to first page when filteredProducts change
+    }, [filteredProducts]);
+
+
     return (
         <section className="px-[1.1rem] md:px-[2rem] lg:px-[3rem] pt-[5.5rem] md:pt-28 lg:pt-36">
             <h1 className="text-2xl font-bold text-gray-700 mb-6 text-center md:text-left">All Products</h1>
