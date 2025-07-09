@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import products from "../Products";
+import { useLocation, useNavigate } from "react-router-dom";
 
 
 const AppContext = createContext()
@@ -9,6 +10,9 @@ const AppProvider = ({ children }) => {
         const savedWishlist = localStorage.getItem('wishlistData')
         return savedWishlist ? JSON.parse(savedWishlist) : []
     }
+
+    const navigate = useNavigate()
+    const location = useLocation()
 
     //for handling sticky categories in products list
     const [showStickyCategories, setShowStickyCategories] = useState(false)
@@ -64,6 +68,7 @@ const AppProvider = ({ children }) => {
 
     const handleSearchSubmit = (e) => {
         e.preventDefault()
+        if (!searchQuery.trim()) return;
 
         setIsLoading(true)
         // Filter products based on search query only
@@ -73,10 +78,25 @@ const AppProvider = ({ children }) => {
                 product.name.toLowerCase().includes(searchQuery.toLowerCase())
             );
             setFilteredProducts(searchedProducts)
+            setSelectedCategory("All Categories"); // Reset category
             setIsLoading(false)
             // window.scrollTo("#shopsection")
+
+            if (location.pathname !== '/products') {
+                navigate('/products');
+            }
         }, 1000)
     }
+
+    useEffect(() => {
+        // Clear search query when user leaves /products
+        if (location.pathname !== '/products') {
+            setSearchQuery('');
+            setFilteredProducts(products);
+            setSelectedCategory('All Categories');
+        }
+    }, [location.pathname]);
+
 
     const handleCategoryClick = (category) => {
         sessionStorage.setItem('selectedCategory', category);

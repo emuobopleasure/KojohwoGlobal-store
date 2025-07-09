@@ -10,20 +10,15 @@ import Error from "./pages/Error";
 import Products from "./pages/Products";
 
 
-// ✅ Unregister old service workers (place this outside the component)
-// if ('serviceWorker' in navigator) {
-//   navigator.serviceWorker.getRegistrations().then(registrations => {
-//     registrations.forEach(registration => {
-//       registration.unregister().then(() => {
-//         window.location.reload();
-//       });
-//     });
-//   });
-// }
+
 
 const router = createBrowserRouter([
   {
-    path: '/', element: <Root />,
+    path: '/', element: (
+      <AppProvider>
+        <Root />
+      </AppProvider>
+    ),
     errorElement: <Error />,
     children: [
       { path: '/', element: <HomePage /> },
@@ -39,9 +34,7 @@ const router = createBrowserRouter([
 function App() {
 
   return (
-    <AppProvider>
-      <RouterProvider router={router} />
-    </AppProvider>
+    <RouterProvider router={router} />
   );
 }
 
