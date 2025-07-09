@@ -25,6 +25,8 @@ const Header = () => {
         setShowSearch((prevState) => !prevState)
     }
 
+    
+
     const { wishlist } = useContext(AppContext)
 
     const wishListLength = wishlist.length
