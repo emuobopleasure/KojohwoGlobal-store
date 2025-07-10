@@ -72,20 +72,21 @@ const AppProvider = ({ children }) => {
 
         setIsLoading(true)
         // Filter products based on search query only
-        setTimeout(() => {
-
+        const runSearch = () => {
             const searchedProducts = products.filter(product =>
                 product.name.toLowerCase().includes(searchQuery.toLowerCase())
             );
-            setFilteredProducts(searchedProducts)
-            setSelectedCategory("All Categories"); // Reset category
-            setIsLoading(false)
-            // window.scrollTo("#shopsection")
+            setFilteredProducts(searchedProducts);
+            setIsLoading(false);
+        };
 
-            if (location.pathname !== '/products') {
-                navigate('/products');
-            }
-        }, 1000)
+        if (location.pathname !== '/products') {
+            // store search query in URL and navigate
+            navigate(`/products?search=${encodeURIComponent(searchQuery)}`);
+        } else {
+            // already on products page, run search directly
+            setTimeout(runSearch, 1000); // optional delay for feedback
+        }
     }
 
     useEffect(() => {

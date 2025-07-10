@@ -3,6 +3,8 @@ import { AppContext } from '../context/appContext'
 import Categories from '../components/Categories'
 import ShopItem from '../components/ShopItem'
 import Pagination from '../components/Pagination'
+import { useSearchParams } from 'react-router-dom'
+import products from '../Products'
 
 const Products = () => {
     const {
@@ -10,8 +12,9 @@ const Products = () => {
         isLoading,
         handleSearchSubmit,
         setIsLoading,
+        setFilteredProducts,
         // searchQuery,
-        // setSearchQuery,
+        setSearchQuery,
         // handleCategoryClick,
         // selectedCategory,
         // categories,
@@ -20,6 +23,8 @@ const Products = () => {
 
     const [currentPage, setCurrentPage] = useState(1)
     const productsPerPage = 9
+
+    const [searchParams] = useSearchParams()
 
     const indexOfLastProduct = currentPage * productsPerPage
     const indexOfFirstProduct = indexOfLastProduct - productsPerPage
@@ -43,6 +48,22 @@ const Products = () => {
             setCurrentPage(1)
         }
     }
+
+    useEffect(() => {
+    const query = searchParams.get('search');
+    if (query) {
+        setSearchQuery(query);
+        setIsLoading(true);
+
+        setTimeout(() => {
+            const searched = products.filter((product) =>
+                product.name.toLowerCase().includes(query.toLowerCase())
+            );
+            setFilteredProducts(searched);
+            setIsLoading(false);
+        }, 1000);
+    }
+}, [searchParams]);
 
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
