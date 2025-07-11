@@ -1,6 +1,6 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { FiMenu } from 'react-icons/fi';
-import { CiSearch, CiHeart,   } from 'react-icons/ci';
+import { CiSearch, CiHeart, } from 'react-icons/ci';
 import { RiWhatsappFill } from 'react-icons/ri';
 import { TfiInfoAlt } from "react-icons/tfi";
 import { MdOutlineContactPhone } from 'react-icons/md';
@@ -8,15 +8,25 @@ import { FaFacebookF, FaTwitter, FaYoutube, } from 'react-icons/fa';
 import { HiOutlineShoppingBag } from "react-icons/hi2";
 import { VscHome } from 'react-icons/vsc';
 import { IoIosCloseCircleOutline } from "react-icons/io";
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink, Link, useNavigate } from 'react-router-dom';
 import Button from './Button';
 import SearchForm from './SearchForm';
 import { AppContext } from '../context/appContext';
 import Categories from './Categories';
+import products from '../Products';
 
 const Header = () => {
+
+    const { searchQuery, setSearchQuery } = useContext(AppContext)
+
     const [showMenu, setShowMenu] = useState(false)
     const [showSearch, setShowSearch] = useState(false)
+
+    const [suggestions, setSuggestions] = useState([]);
+    const [showSuggestions, setShowSuggestions] = useState(false);
+
+    const navigate = useNavigate()
+
 
     const { showStickyCategories } = useContext(AppContext)
 
@@ -25,7 +35,32 @@ const Header = () => {
         setShowSearch((prevState) => !prevState)
     }
 
-    
+
+    useEffect(() => {
+        if (searchQuery.trim() === '') {
+            setSuggestions([]);
+            setShowSuggestions(false);
+            return;
+        }
+
+        const filtered = products
+            .filter((product) =>
+                product.name.toLowerCase().includes(searchQuery.toLowerCase())
+            )
+            .slice(0, 5); // limit suggestions to 5
+
+        setSuggestions(filtered);
+        setShowSuggestions(filtered.length > 0);
+    }, [searchQuery]);
+
+
+    const handleSuggestionClick = (name) => {
+        setSearchQuery(name);
+        setSuggestions([]);
+        setShowSuggestions(false);
+        navigate(`/products?search=${encodeURIComponent(name)}`);
+    };
+
 
     const { wishlist } = useContext(AppContext)
 
@@ -38,7 +73,7 @@ const Header = () => {
         <header>
             <nav className='nav-wrapper flex justify-center'>
                 <div className={showSearch ? `navbar bg-base-100 shadow-lg rounded-3xl fixed top-0 z-10 flex flex-col items-start px-[1.1rem] md:px-[2rem] lg:px-[3rem] pb-[3px]` : 'navbar bg-base-100 min-h-[4rem] lg:min-h-[4rem] shadow-lg rounded-3xl fixed top-0 z-10 flex flex-col items-start px-[1.1rem] md:px-[2rem] lg:px-[3rem] pb-[3px] xl:max-w-[90rem] xl:mx-auto'}>
-                    <div className={showSearch ? `navbar nav-wrapper flex items-center justify-between h-[2rem] min-h-0 p-0`
+                    <div className={showSearch ? `desktop-nav navbar nav-wrapper flex items-center justify-between h-[2rem] min-h-0 p-0`
                         : `navbar nav-wrapper flex items-center justify-between h-[3rem] min-h-0 p-0
                     `}>
                         <div className='logo/menu nav inline-flex gap-[1.2rem] items-center'>
@@ -215,7 +250,7 @@ const Header = () => {
                             <li onClick={() => setShowMenu(false)}>
                                 <NavLink to='/about' className='mobile-nav-link landscape:bg-[#c9c4c4]'>
                                     <span>
-                                        <TfiInfoAlt   size={'1.5rem'} className='mr-[0.3rem]' />
+                                        <TfiInfoAlt size={'1.5rem'} className='mr-[0.3rem]' />
                                     </span>
                                     About
                                 </NavLink>

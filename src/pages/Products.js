@@ -50,20 +50,20 @@ const Products = () => {
     }
 
     useEffect(() => {
-    const query = searchParams.get('search');
-    if (query) {
-        setSearchQuery(query);
-        setIsLoading(true);
+        const query = searchParams.get('search');
+        if (query) {
+            setSearchQuery(query);
+            setIsLoading(true);
 
-        setTimeout(() => {
-            const searched = products.filter((product) =>
-                product.name.toLowerCase().includes(query.toLowerCase())
-            );
-            setFilteredProducts(searched);
-            setIsLoading(false);
-        }, 1000);
-    }
-}, [searchParams]);
+            setTimeout(() => {
+                const searched = products.filter((product) =>
+                    product.name.toLowerCase().includes(query.toLowerCase())
+                );
+                setFilteredProducts(searched);
+                setIsLoading(false);
+            }, 1000);
+        }
+    }, [searchParams]);
 
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
