@@ -157,7 +157,7 @@ const Header = () => {
                                     </div>
                                 </label>
                                 {/* |======cart icon indicator======== */}
-                                <div tabIndex={0} className="mt-3 card card-compact dropdown-content items-center p-[0.1rem] w-36 bg-base-100 shadow z-10">
+                                <div tabIndex={0} className="mt-3 card card-compact dropdown-content items-center p-[0.1rem] w-36 bg-base-100 shadow z-50">
                                     <div className="card-body">
                                         <span className="font-bold text-lg text-gray-600">{wishListLength} Items</span>
                                         {/* <span className="text-gray-600">Subtotal: $999</span> */}

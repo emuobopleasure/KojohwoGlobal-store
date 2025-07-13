@@ -53,4 +53,8 @@ html {
   /* Firefox */
 }
 
-
+@media (orientation: landscape) {
+  .search-dropdown {
+    max-height: 40vh;
+  }
+}
