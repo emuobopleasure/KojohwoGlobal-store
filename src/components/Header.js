@@ -72,9 +72,9 @@ const Header = () => {
     return (
         <header>
             <nav className='nav-wrapper flex justify-center'>
-                <div className={showSearch ? `navbar bg-base-100 shadow-lg rounded-3xl fixed top-0 z-10 flex flex-col items-start px-[1.1rem] md:px-[2rem] lg:px-[3rem] pb-[3px]` : 'navbar bg-base-100 min-h-[4rem] lg:min-h-[4rem] shadow-lg rounded-3xl fixed top-0 z-10 flex flex-col items-start px-[1.1rem] md:px-[2rem] lg:px-[3rem] pb-[3px] xl:max-w-[90rem] xl:mx-auto'}>
-                    <div className={showSearch ? `desktop-nav navbar nav-wrapper flex items-center justify-between h-[2rem] min-h-0 p-0`
-                        : `navbar nav-wrapper flex items-center justify-between h-[3rem] min-h-0 p-0
+                <div className={showSearch ? `nav-container navbar bg-base-100 shadow-lg rounded-3xl fixed top-0 z-10 flex flex-col items-start px-[1.1rem] md:px-[2rem] lg:px-[3rem] pb-[3px]` : 'navbar bg-base-100 min-h-[4rem] lg:min-h-[4rem] shadow-lg rounded-3xl fixed top-0 z-10 flex flex-col items-start px-[1.1rem] md:px-[2rem] lg:px-[3rem] pb-[3px] xl:max-w-[90rem] xl:mx-auto'}>
+                    <div className={showSearch ? `navbar nav-wrapper flex items-center justify-between h-[2rem] min-h-0 p-0`
+                        : `desktop-nav navbar flex items-center justify-between h-[3rem] min-h-0 p-0
                     `}>
                         <div className='logo/menu nav inline-flex gap-[1.2rem] items-center'>
                             <div className='hamburger inline-flex lg:hidden'>
@@ -117,6 +117,8 @@ const Header = () => {
                                 </li>
                             </ul>
                         </div>
+
+                        <SearchForm formStyle='desktop-search hidden w-[30%] lg:flex my-[0.25rem] bg-[btnColor]' inputStyle='h-[2rem] md:h-[2.2rem] lg:h-[2.3rem] focus:outline-transparent text-[0.8rem] py-[3px]' btnStyle='w-[1.9rem] md:w-[2.2rem] min-h-[2rem] h-[2rem] md:min-h-[2.2rem] md:h-[2.2rem] lg:min-h-[2.3rem] lg:h-[2.3rem]' />
 
                         {/* |=======profile tabs =========| */}
                         <div className="flex items-center gap-[0.3rem] lg:flex-none pr-[13px]">
@@ -193,10 +195,10 @@ const Header = () => {
                         </div>
                     </div>
                     {/* |===============search form===========| */}
-                    {showSearch &&
+                    { !showMenu && showSearch &&
                         <SearchForm formStyle='w-full my-[0.25rem] bg-[btnColor]' inputStyle='h-[2rem] md:h-[2.2rem] lg:h-[2.3rem] focus:outline-transparent text-[0.8rem] py-[3px]' btnStyle='w-[1.9rem] md:w-[2.2rem] min-h-[2rem] h-[2rem] md:min-h-[2.2rem] md:h-[2.2rem] lg:min-h-[2.3rem] lg:h-[2.3rem]' />
                     }
-                    <SearchForm formStyle='desktop-search hidden lg:flex w-full my-[0.25rem] bg-[btnColor]' inputStyle='h-[2rem] md:h-[2.2rem] lg:h-[2.3rem] focus:outline-transparent text-[0.8rem] py-[3px]' btnStyle='w-[1.9rem] md:w-[2.2rem] min-h-[2rem] h-[2rem] md:min-h-[2.2rem] md:h-[2.2rem] lg:min-h-[2.3rem] lg:h-[2.3rem]' />
+                    {/* <SearchForm formStyle='desktop-search hidden lg:flex w-full my-[0.25rem] bg-[btnColor]' inputStyle='h-[2rem] md:h-[2.2rem] lg:h-[2.3rem] focus:outline-transparent text-[0.8rem] py-[3px]' btnStyle='w-[1.9rem] md:w-[2.2rem] min-h-[2rem] h-[2rem] md:min-h-[2.2rem] md:h-[2.2rem] lg:min-h-[2.3rem] lg:h-[2.3rem]' /> */}
 
                     {showStickyCategories && (
                         <div className="headr-categories w-full">
