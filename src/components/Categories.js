@@ -20,7 +20,7 @@ const Categories = () => {
     const handleScroll = () => {
       const scrollY = window.scrollY || document.documentElement.scrollTop
       if (location.pathname === '/products') {
-        setShowStickyCategories(scrollY > 100)
+        setShowStickyCategories(scrollY > 120)
       } else {
         setShowStickyCategories(false)
       }

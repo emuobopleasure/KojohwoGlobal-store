@@ -123,7 +123,7 @@ const SearchForm = ({ formStyle, groupStyle, inputStyle, btnStyle }) => {
 
         {/* Suggestions Dropdown */}
         {showSuggestions && (
-          <ul className="drop-down mt-1 w-full bg-base-100 border border-gray-300 rounded-[1.5rem] shadow-xl max-h-[60vh] lg:max-h-[50vh] overflow-auto">
+          <ul className="search-dropdown absolute top-full left-0 z-30 mt-1 w-full bg-base-100 border border-gray-300 rounded-[1.5rem] shadow-xl overflow-auto">
             {suggestions.map((product, index) => (
               <li
                 key={product.id}
