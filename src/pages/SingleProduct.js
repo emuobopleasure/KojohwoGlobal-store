@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { Link, useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import products from '../Products'
 import { TbHeartPlus, TbHeartMinus } from 'react-icons/tb';
 import { BsArrowLeft } from 'react-icons/bs';
@@ -36,7 +36,7 @@ ${`https://kojohwoglobal.vercel.app/products/${item.id}`}`;
     const handleScroll = () => {
         const yOffset = window.scrollY
 
-        if (yOffset > 200) {
+        if (yOffset > 150) {
             setShowButton(true)
         } else {
             setShowButton(false)
