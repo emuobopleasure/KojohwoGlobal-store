@@ -118,7 +118,7 @@ const Header = () => {
                             </ul>
                         </div>
 
-                        <SearchForm formStyle='desktop-search hidden w-[30%] lg:flex my-[0.25rem] bg-[btnColor]' inputStyle='h-[2rem] md:h-[2.2rem] lg:h-[2.3rem] focus:outline-transparent text-[0.8rem] py-[3px]' btnStyle='w-[1.9rem] md:w-[2.2rem] min-h-[2rem] h-[2rem] md:min-h-[2.2rem] md:h-[2.2rem] lg:min-h-[2.3rem] lg:h-[2.3rem]' />
+                        <SearchForm formStyle='desktop-search hidden w-[30%] lg:flex my-[0.25rem] bg-[btnColor]' inputStyle='h-[2rem] md:h-[2.2rem] lg:h-[2.3rem] focus:outline-transparent focus:border-btnColor text-[0.8rem] py-[3px]' btnStyle='w-[1.9rem] md:w-[2.2rem] min-h-[2rem] h-[2rem] md:min-h-[2.2rem] md:h-[2.2rem] lg:min-h-[2.3rem] lg:h-[2.3rem]' />
 
                         {/* |=======profile tabs =========| */}
                         <div className="flex items-center gap-[0.3rem] lg:flex-none pr-[13px]">
@@ -196,7 +196,7 @@ const Header = () => {
                     </div>
                     {/* |===============search form===========| */}
                     { !showMenu && showSearch &&
-                        <SearchForm formStyle='w-full my-[0.25rem] bg-[btnColor]' inputStyle='h-[2rem] md:h-[2.2rem] lg:h-[2.3rem] focus:outline-transparent text-[0.8rem] py-[3px]' btnStyle='w-[1.9rem] md:w-[2.2rem] min-h-[2rem] h-[2rem] md:min-h-[2.2rem] md:h-[2.2rem] lg:min-h-[2.3rem] lg:h-[2.3rem]' />
+                        <SearchForm formStyle='mobile-search w-full my-[0.25rem] bg-[btnColor]' inputStyle='h-[2rem] md:h-[2.2rem] lg:h-[2.3rem] focus:outline-transparent focus:border-btnColor text-[0.8rem] py-[3px]' btnStyle='w-[1.9rem] md:w-[2.2rem] min-h-[2rem] h-[2rem] md:min-h-[2.2rem] md:h-[2.2rem] lg:min-h-[2.3rem] lg:h-[2.3rem]' />
                     }
                     {/* <SearchForm formStyle='desktop-search hidden lg:flex w-full my-[0.25rem] bg-[btnColor]' inputStyle='h-[2rem] md:h-[2.2rem] lg:h-[2.3rem] focus:outline-transparent text-[0.8rem] py-[3px]' btnStyle='w-[1.9rem] md:w-[2.2rem] min-h-[2rem] h-[2rem] md:min-h-[2.2rem] md:h-[2.2rem] lg:min-h-[2.3rem] lg:h-[2.3rem]' /> */}
 
