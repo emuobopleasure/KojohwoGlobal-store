@@ -8,7 +8,7 @@ const HeroSection = () => {
       [@media(orientation:landscape)]:flex-row-reverse">
 
       {/* Image */}
-      <div className="w-full sm:w-1/2 h-[50vh] sm:h-[70vh] md:h-[80vh] lg:h-screen landscape:pr-[1.1rem]">
+      <div className="w-full sm:w-1/2 h-[50vh] sm:h-[70vh] md:h-fit lg:h-fit landscape:pr-[1.1rem]">
         <img
           src="/images/heroImage2.jpg"
           alt="Hero visual"

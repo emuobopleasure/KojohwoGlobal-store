@@ -1,6 +1,7 @@
 import React from 'react'
 import HeroSection from '../components/HeroSection'
 import FeaturedProducts from '../components/FeaturedProducts';
+import Newsletter from '../components/NewsLetter';
 
 const HomePage = () => {
 
@@ -11,7 +12,7 @@ const HomePage = () => {
       <div className='homesection mt-[4rem]'>
         <HeroSection />
         <FeaturedProducts/>
-        {/* <ShopSection/> */}
+        <Newsletter/>
       </div>
     </section>
   )
