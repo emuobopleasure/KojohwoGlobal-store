@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { FiMenu } from 'react-icons/fi';
 import { CiSearch, CiHeart, } from 'react-icons/ci';
+import { PiHeartStraightThin, PiInfoThin, PiHandbagThin, PiHouseThin, PiIdentificationCardThin, PiListThin, PiMagnifyingGlassThin, PiXThin, PiXCircleThin  } from "react-icons/pi";
 import { RiWhatsappFill } from 'react-icons/ri';
 import { TfiInfoAlt } from "react-icons/tfi";
 import { MdOutlineContactPhone } from 'react-icons/md';
@@ -80,11 +81,11 @@ const Header = () => {
                             <div className='hamburger inline-flex lg:hidden'>
                                 {!showMenu && <button onClick={() => setShowMenu(true)}
                                     className='menu-opem' aria-label="menu open">
-                                    <FiMenu className='menu-icon text-3xl' color='#513f59' />
+                                    <PiListThin className='menu-icon text-3xl' color='#513f59' />
                                 </button>}
                                 {showMenu && <button onClick={() => setShowMenu(false)}
                                     className='menu-close' aria-label="menu close">
-                                    <IoIosCloseCircleOutline className='menu-close-icon text-3xl' color='#513f59' />
+                                    <PiXCircleThin   className='menu-close-icon text-3xl' color='#513f59' />
                                 </button>}
                             </div>
                             <h1 className="logo inline-flex">
@@ -125,13 +126,13 @@ const Header = () => {
                             {
                                 !showSearch &&
                                 <button onClick={handleToggle} className='search-open lg:hidden' aria-label='Search Open Button'>
-                                    <CiSearch className='search-icon pb-[2px] lg:p-0 mr-[0.5rem]' size='2rem' color='#513f59' />
+                                    <PiMagnifyingGlassThin className='search-icon pb-[2px] lg:p-0 mr-[0.5rem]' size='2rem' color='#513f59' />
                                 </button>
                             }
                             {
                                 showSearch &&
                                 <button onClick={handleToggle} className='search-close lg:hidden' aria-label='Search Close Button'>
-                                    <IoIosCloseCircleOutline className='close-icon pb-[2px] lg:p-0 mr-[0.5rem] mb-[0.2rem]' size='2rem' color='#513f59' />
+                                    <PiXCircleThin className='close-icon pb-[2px] lg:p-0 mr-[0.5rem] mb-[0.2rem]' size='2rem' color='#513f59' />
                                 </button>
                             }
 
@@ -152,7 +153,7 @@ const Header = () => {
                                 {/* |======cart icon======== */}
                                 <label tabIndex={0} className="wishlist-btn btn btn-ghost btn-circle w-[1rem] h-full min-h-[1.5rem]">
                                     <div className="indicator">
-                                        <CiHeart size='1.8rem' color='#513f59' />
+                                        <PiHeartStraightThin size='1.8rem' color='#513f59' />
                                         <span className="badge badge-sm indicator-item">{wishListLength}</span>
                                     </div>
                                 </label>
@@ -228,7 +229,7 @@ const Header = () => {
                             <li onClick={() => setShowMenu(false)}>
                                 <NavLink to='/' className='mobile-nav-link landscape:bg-[#c9c4c4]'>
                                     <span>
-                                        <VscHome size={'1.5rem'} className='mr-[0.3rem]' />
+                                        <PiHouseThin size={'1.5rem'} className='mr-[0.3rem]' />
                                     </span>
                                     Home
                                 </NavLink>
@@ -236,7 +237,7 @@ const Header = () => {
                             <li onClick={() => setShowMenu(false)}>
                                 <NavLink to='/products' className='mobile-nav-link landscape:bg-[#c9c4c4]'>
                                     <span>
-                                        <HiOutlineShoppingBag size={'1.5rem'} className='mr-[0.3rem]' />
+                                        <PiHandbagThin  size={'1.5rem'} className='mr-[0.3rem]' />
                                     </span>
                                     Shop
                                 </NavLink>
@@ -244,7 +245,7 @@ const Header = () => {
                             <li onClick={() => setShowMenu(false)}>
                                 <NavLink to='/contact' className='mobile-nav-link landscape:bg-[#c9c4c4]'>
                                     <span>
-                                        <MdOutlineContactPhone size={'1.5rem'} className='mr-[0.3rem]' />
+                                        <PiIdentificationCardThin  size={'1.5rem'} className='mr-[0.3rem]' />
                                     </span>
                                     Contact
                                 </NavLink>
@@ -252,7 +253,7 @@ const Header = () => {
                             <li onClick={() => setShowMenu(false)}>
                                 <NavLink to='/about' className='mobile-nav-link landscape:bg-[#c9c4c4]'>
                                     <span>
-                                        <TfiInfoAlt size={'1.5rem'} className='mr-[0.3rem]' />
+                                        <PiInfoThin  size={'1.7rem'} className='mr-[0.3rem]' />
                                     </span>
                                     About
                                 </NavLink>
