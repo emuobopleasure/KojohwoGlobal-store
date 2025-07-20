@@ -73,7 +73,7 @@ const Header = () => {
     return (
         <header>
             <nav className='nav-wrapper flex justify-center'>
-                <div className={showSearch ? `nav-container navbar bg-base-100 shadow-lg rounded-3xl fixed top-0 z-10 flex flex-col items-start px-[1.1rem] md:px-[2rem] lg:px-[3rem] pb-[3px]` : 'navbar bg-base-100 min-h-[4rem] lg:min-h-[4rem] shadow-lg rounded-3xl fixed top-0 z-10 flex flex-col items-start px-[1.1rem] md:px-[2rem] lg:px-[3rem] pb-[3px] xl:max-w-[90rem] xl:mx-auto'}>
+                <div className={showSearch ? `nav-container navbar bg-base-100 text-neutral shadow-lg rounded-3xl fixed top-0 z-10 flex flex-col items-start px-[1.1rem] md:px-[2rem] lg:px-[3rem] pb-[3px]` : 'navbar bg-base-100 min-h-[4rem] lg:min-h-[4rem] shadow-lg rounded-3xl fixed top-0 z-10 flex flex-col items-start px-[1.1rem] md:px-[2rem] lg:px-[3rem] pb-[3px] xl:max-w-[90rem] xl:mx-auto'}>
                     <div className={showSearch ? `navbar nav-wrapper flex items-center justify-between h-[2rem] min-h-0 p-0`
                         : `desktop-nav navbar flex items-center justify-between h-[3rem] min-h-0 p-0
                     `}>
@@ -85,7 +85,7 @@ const Header = () => {
                                 </button>}
                                 {showMenu && <button onClick={() => setShowMenu(false)}
                                     className='menu-close' aria-label="menu close">
-                                    <PiXCircleThin   className='menu-close-icon text-3xl' color='#513f59' />
+                                    <PiXThin  className='menu-close-icon text-3xl' color='#513f59' />
                                 </button>}
                             </div>
                             <h1 className="logo inline-flex">
@@ -132,7 +132,7 @@ const Header = () => {
                             {
                                 showSearch &&
                                 <button onClick={handleToggle} className='search-close lg:hidden' aria-label='Search Close Button'>
-                                    <PiXCircleThin className='close-icon pb-[2px] lg:p-0 mr-[0.5rem] mb-[0.2rem]' size='2rem' color='#513f59' />
+                                    <PiXThin className='close-icon pb-[2px] lg:p-0 mr-[0.5rem] mb-[0.2rem]' size='2rem' color='#513f59' />
                                 </button>
                             }
 
@@ -149,7 +149,7 @@ const Header = () => {
                                 </span>
                             </div> */}
                             {/* |======cart section indicator======== */}
-                            <div className="dropdown dropdown-end mt-[3px]">
+                            <div className="dropdown dropdown-end">
                                 {/* |======cart icon======== */}
                                 <label tabIndex={0} className="wishlist-btn btn btn-ghost btn-circle w-[1rem] h-full min-h-[1.5rem]">
                                     <div className="indicator">
