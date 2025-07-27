@@ -1,3 +1,4 @@
+/* src/index.css or src/main.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,6 +10,7 @@ html {
 /* *{
     outline: 1px solid red;
 } */
+ 
 
 /* Hide scrollbar for Chrome, Safari and Opera */
 .categories-list::-webkit-scrollbar {
@@ -22,6 +24,7 @@ html {
   scrollbar-width: none;
   /* Firefox */
 }
+
 
 .sticky {
   position: fixed;

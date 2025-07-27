@@ -8,33 +8,33 @@ import { AppProvider } from "./context/appContext";
 import Wishlist from "./pages/Wishlist";
 import Error from "./pages/Error";
 import Products from "./pages/Products";
-
-
-
+import { HelmetProvider } from "react-helmet-async";
 
 const router = createBrowserRouter([
   {
-    path: '/', element: (
+    path: '/',
+    element: (
       <AppProvider>
         <Root />
       </AppProvider>
     ),
     errorElement: <Error />,
     children: [
-      { path: '/', element: <HomePage /> },
-      { path: '/products', element: <Products /> },
-      { path: '/contact', element: <ContactPage /> },
-      { path: '/about', element: <AboutPage /> },
-      { path: '/products/:id', element: <SingleProductPage /> },
-      { path: '/wishlist', element: <Wishlist /> }
+      { index: true, element: <HomePage /> },
+      { path: 'products', element: <Products /> },
+      { path: 'contact', element: <ContactPage /> },
+      { path: 'about', element: <AboutPage /> },
+      { path: 'products/:id', element: <SingleProductPage /> },
+      { path: 'wishlist', element: <Wishlist /> }
     ]
   }
-])
+]);
 
 function App() {
-
   return (
-    <RouterProvider router={router} />
+    <HelmetProvider>
+      <RouterProvider router={router} />
+    </HelmetProvider>
   );
 }
 

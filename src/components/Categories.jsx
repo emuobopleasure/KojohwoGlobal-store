@@ -62,8 +62,8 @@ const Categories = () => {
       <li>
         <button
           onClick={() => handleCategoryClick('All Categories')}
-          className={`all-categories-btn items-center border px-[0.8rem] py-[0.5rem] ${selectedCategory === 'All Categories' ? 'bg-btnColor text-white' : 'border-gray-500'
-            } rounded-full lg:hover:bg-btnColor lg:hover:text-white lg:hover:border-white flex gap-1`}
+          className={`all-categories-btn items-center border px-[0.8rem] py-[0.5rem] ${selectedCategory === 'All Categories' ? 'bg-accent text-white' : 'border-gray-400'
+            } rounded-full lg:hover:bg-accent lg:hover:text-white lg:hover:border-accent font-semibold flex gap-1`}
         >
           <i className="fa-solid fa-house-chimney" />
           <span>All Products</span>
@@ -76,10 +76,10 @@ const Categories = () => {
         >
           <button
             onClick={() => handleCategoryClick(category)}
-            className={`categories-btn items-center px-[0.8rem] py-[0.5rem] rounded-full flex gap-1 ${selectedCategory === category
-              ? 'bg-btnColor text-white border'
-              : 'bg-none border border-gray-500'
-              } lg:hover:bg-btnColor lg:hover:text-white lg:hover:border-white`}
+            className={`categories-btn items-center px-[0.8rem] py-[0.5rem] font-semibold rounded-full flex gap-1 ${selectedCategory === category
+              ? 'bg-accent text-white border'
+              : 'bg-none border border-gray-400'
+              } lg:hover:bg-accent lg:hover:text-white lg:hover:border-white`}
           >
             {categoryIcons[category] && <i className={`fa-solid ${categoryIcons[category]}`} />}
             {category}
@@ -93,14 +93,14 @@ const Categories = () => {
     <article className='w-full'>
       {/* Sticky version */}
       {showStickyCategories && (
-        <div className="sticky-categoriess px-[1.1rem] md:px-[2rem] lg:px-[3rem] z-10 pb-1">
+        <div className="sticky-categoriess px-[1.1rem] md:px-[2rem] lg:px-[3rem] z-10 py-3">
           {categoryList}
         </div>
       )}
 
       {/* Default version */}
       {!showStickyCategories && (
-        <div className="non-sticky px-[1.1rem] md:px-[2rem] lg:px-[3rem] my-4">{categoryList}</div>
+        <div className="non-sticky px-[1rem] md:px-[2rem] lg:px-[3rem] my-8 lg:my-12 border border-gray-300 rounded-3xl py-4">{categoryList}</div>
       )}
     </article>
   )

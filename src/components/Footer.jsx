@@ -4,12 +4,13 @@ import { AiOutlineArrowUp } from 'react-icons/ai';
 import { RiWhatsappFill } from 'react-icons/ri';
 import { FaFacebookF } from 'react-icons/fa';
 import { FaTwitter } from 'react-icons/fa';
+import { IoLocation } from "react-icons/io5";
 import { CiLocationOn } from 'react-icons/ci';
 
 const Footer = () => {
     return (
-        <footer id='footer' data-theme="" className='bg-neutral'>
-            <div className="footer footer-center p-10  text-base-200 mt-20 rounded-t-3xl xl:max-w-[90rem] xl:mx-auto">
+        <footer id='footer' data-theme="" className='bg-accent text-base-100'>
+            <div className="footer footer-center p-10 font-semibold mt-20 rounded-t-3xl xl:max-w-[90rem] xl:mx-auto">
                 <div className="grid grid-flow-col gap-4">
                     <Link to="/about" className="link link-hover mt-[10px]">About Us</Link>
                     <Link to="/contact" className="link link-hover mt-[10px]">Contact Us</Link>
@@ -17,7 +18,7 @@ const Footer = () => {
                     <a href='#top' className='bact-to-top'>
                         <button className='flex items-end gap-[0.3rem]'>
                             <div className="link link-hover">Back to Top</div>
-                            <div className='arrow-up p-[5px] rounded-[40%] border-[1px] border-[#374151] hover:text-[white] hover:bg-[#374151]'>
+                            <div className='arrow-up p-[5px] rounded-[40%] border-[1px] border-base-100 hover:text-accent hover:bg-base-100'>
                                 <AiOutlineArrowUp size='1.2rem' />
                             </div>
                         </button>
@@ -25,13 +26,13 @@ const Footer = () => {
                 </div>
                 <div>
                     <div className="grid grid-flow-col gap-4">
-                        <a href='https://wa.me/message/WRKSVZP2GDD7K1' className='whatsapp p-[10px] rounded-[40%] border-[1px] border-[#374151] hover:text-[white] hover:bg-[#374151]' aria-label='Link to WhatsApp profile'>
+                        <a href='https://wa.me/message/WRKSVZP2GDD7K1' className='whatsapp p-[10px] rounded-[40%] border-[1px] border-base-100 hover:text-accent hover:bg-base-100' aria-label='Link to WhatsApp profile'>
                             <RiWhatsappFill size='1.2rem' />
                         </a>
-                        <a href='https://facebook.com/profile.php/?id=100003626663302&_rdc=1&_rdr' className='facebook p-[10px] rounded-[40%] border-[1px] border-[#374151] hover:text-[white] hover:bg-[#374151]' aria-label='Link to Facebook profile'>
+                        <a href='https://facebook.com/profile.php/?id=100003626663302&_rdc=1&_rdr' className='facebook p-[10px] rounded-[40%] border-[1px] border-base-100 hover:text-accent hover:bg-base-100' aria-label='Link to Facebook profile'>
                             <FaFacebookF size='1.2rem' />
                         </a>
-                        <a href='https://twitter.com' className='instagram p-[10px] rounded-[40%] border-[1px] border-[#374151] hover:text-[white] hover:bg-[#374151]' aria-label='Link to Twitter profile'>
+                        <a href='https://twitter.com' className='instagram p-[10px] rounded-[40%] border-[1px] border-base-100 hover:text-accent hover:bg-base-100' aria-label='Link to Twitter profile'>
                             <FaTwitter size='1.2rem' />
                         </a>
                         {/* <a href='https://www.twitter.com' target='_blank'>
@@ -54,15 +55,15 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className='location flex items-end'>
-                    <div className='location-icon p-[10px] rounded-[40%] border-[1px] border-[#374151] animate-bounce'>
-                        <CiLocationOn size='1.3rem' />
+                    <div className='location-icon p-[10px] rounded-[40%] border-[1px] border-base-100 animate-bounce'>
+                        <IoLocation  size='1.3rem' />
                     </div>
                     <p className='address'>
                         60, Otovwodo Road (Otovwodo Market) Ughelli, Delta State.
                     </p>
                 </div>
                 <div>
-                    <p>Copyright © 2023 - All right reserved by<br /> <span className="brand-name font-['Modak'] text-btnColor text-4xl">Kojohwo Global Services</span></p>
+                    <p>Copyright © 2023 - All right reserved by<br /> <span className="brand-name font-['Modak'] font-normal text-4xl">Kojohwo Global Services</span></p>
                 </div>
             </div>
         </footer>

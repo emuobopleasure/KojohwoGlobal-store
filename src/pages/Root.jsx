@@ -7,6 +7,7 @@ import Alert from '../components/Alert'
 
 const Root = () => {
   const { addToWishAlert, removeFromWishAlert } = useContext(AppContext)
+  // console.log('root')
   return (
     <>
       <Header />
@@ -20,7 +21,7 @@ const Root = () => {
 
       }
       {/* <Alert text='Item successfully removed from Wishlist!' styling='alert-warning' /> */}
-      <main className='main xl:max-w-[90rem] xl:mx-auto'>
+      <main className='main 2xl:max-w-[128rem] 2xl:mx-auto'>
         <Outlet />
       </main>
       <Footer />

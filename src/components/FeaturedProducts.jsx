@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import ShopItem from './ShopItem'
 import { AppContext } from '../context/appContext'
 import { Link } from 'react-router-dom'
-import products from '../Products'
+import products from '../ProductsData'
 
 const FeaturedProducts = () => {
     // const { filteredProducts, isLoading } = useContext(AppContext)
@@ -26,7 +26,7 @@ const FeaturedProducts = () => {
 
             <div className="text-center mt-14">
                 <Link to="/products">
-                    <button className="btn bg-btnColor text-white border-none hover:bg-pink-500">
+                    <button className="btn btn-neutral rounded-full text-white border-none shadow-lg">
                         View All Products
                     </button>
                 </Link>

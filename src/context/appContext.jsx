@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import products from "../Products";
+import products from "../ProductsData";
 import { useLocation, useNavigate } from "react-router-dom";
 
 

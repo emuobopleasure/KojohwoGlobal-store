@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { FiMenu } from 'react-icons/fi';
 import { CiSearch, CiHeart, } from 'react-icons/ci';
-import { PiHeartStraightThin, PiInfoThin, PiHandbagThin, PiHouseThin, PiIdentificationCardThin, PiListThin, PiMagnifyingGlassThin, PiXThin, PiXCircleThin  } from "react-icons/pi";
+import { PiHeartStraightThin, PiInfoThin, PiHandbagThin, PiHouseThin, PiIdentificationCardThin, PiListThin, PiMagnifyingGlassThin, PiXThin, PiXCircleThin } from "react-icons/pi";
 import { RiWhatsappFill } from 'react-icons/ri';
 import { TfiInfoAlt } from "react-icons/tfi";
 import { MdOutlineContactPhone } from 'react-icons/md';
@@ -14,7 +14,7 @@ import Button from './Button';
 import SearchForm from './SearchForm';
 import { AppContext } from '../context/appContext';
 import Categories from './Categories';
-import products from '../Products';
+import products from '../ProductsData';
 
 const Header = () => {
 
@@ -73,9 +73,9 @@ const Header = () => {
     return (
         <header>
             <nav className='nav-wrapper flex justify-center'>
-                <div className={showSearch ? `nav-container navbar bg-base-100 text-neutral shadow-lg rounded-3xl fixed top-0 z-10 flex flex-col items-start px-[1.1rem] md:px-[2rem] lg:px-[3rem] pb-[3px]` : 'navbar bg-base-100 min-h-[4rem] lg:min-h-[4rem] shadow-lg rounded-3xl fixed top-0 z-10 flex flex-col items-start px-[1.1rem] md:px-[2rem] lg:px-[3rem] pb-[3px] xl:max-w-[90rem] xl:mx-auto'}>
+                <div className='nav-container navbar bg-base-100 shadow-lg rounded-3xl fixed top-0 z-10 flex flex-col items-start px-[1.1rem] md:px-[2rem] lg:px-[3rem] pb-[3px]'>
                     <div className={showSearch ? `navbar nav-wrapper flex items-center justify-between h-[2rem] min-h-0 p-0`
-                        : `desktop-nav navbar flex items-center justify-between h-[3rem] min-h-0 p-0
+                        : `desktop-nav navbar flex items-center justify-between h-[3rem] min-h-0 p-0 2xl:max-w-[128rem] 2xl:mx-auto
                     `}>
                         <div className='logo/menu nav inline-flex gap-[1.2rem] items-center'>
                             <div className='hamburger inline-flex lg:hidden'>
@@ -85,11 +85,11 @@ const Header = () => {
                                 </button>}
                                 {showMenu && <button onClick={() => setShowMenu(false)}
                                     className='menu-close' aria-label="menu close">
-                                    <PiXThin  className='menu-close-icon text-3xl' color='#513f59' />
+                                    <PiXThin className='menu-close-icon text-3xl' color='#513f59' />
                                 </button>}
                             </div>
                             <h1 className="logo inline-flex">
-                                <NavLink to="/" className="logo-btn normal-case text-2xl px-1 md:text-2xl xl:text-4xl font-['Modak'] font-thin text-btnColor pt-[2px] lg:pt-0">
+                                <NavLink to="/" className="logo-btn normal-case text-2xl px-1 md:text-2xl xl:text-4xl font-['Modak'] font-thin text-neutral lg:hover:text-[#ae2c00] pt-[2px] lg:pt-0">
                                     Kojohwo Global
                                 </NavLink>
                             </h1>
@@ -97,22 +97,22 @@ const Header = () => {
                         <div className='navbar-links hidden lg:flex gap-6'>
                             <ul className='flex gap-6'>
                                 <li className='home-nav-link hover:transform transition duration-300 hover:scale-110'>
-                                    <NavLink to='/' className={({ isActive }) => isActive ? 'home border-b-2 border-btnColor' : 'border-none'}>
+                                    <NavLink to='/' className={({ isActive }) => isActive ? 'home border-b-2 border-accent' : 'border-none'}>
                                         Home
                                     </NavLink>
                                 </li>
                                 <li className='contact-nav-link hover:transform transition duration-300 hover:scale-110'>
-                                    <NavLink to='/products' className={({ isActive }) => isActive ? 'contact border-b-2 border-btnColor' : 'border-none'}>
+                                    <NavLink to='/products' className={({ isActive }) => isActive ? 'contact border-b-2 border-accent' : 'border-none'}>
                                         Shop
                                     </NavLink>
                                 </li>
                                 <li className='contact-nav-link hover:transform transition duration-300 hover:scale-110'>
-                                    <NavLink to='/contact' className={({ isActive }) => isActive ? 'contact border-b-2 border-btnColor' : 'border-none'}>
+                                    <NavLink to='/contact' className={({ isActive }) => isActive ? 'contact border-b-2 border-accent' : 'border-none'}>
                                         Contact
                                     </NavLink>
                                 </li>
                                 <li className='about-nav-link hover:transform transition duration-300 hover:scale-110'>
-                                    <NavLink to='/about' className={({ isActive }) => isActive ? 'about border-b-2 border-btnColor' : 'border-none'}>
+                                    <NavLink to='/about' className={({ isActive }) => isActive ? 'about border-b-2 border-accent' : 'border-none'}>
                                         About
                                     </NavLink>
                                 </li>
@@ -196,7 +196,7 @@ const Header = () => {
                         </div>
                     </div>
                     {/* |===============search form===========| */}
-                    { !showMenu && showSearch &&
+                    {!showMenu && showSearch &&
                         <SearchForm formStyle='mobile-search w-full my-[0.25rem] bg-[btnColor]' inputStyle='h-[2rem] md:h-[2.2rem] lg:h-[2.3rem] focus:outline-transparent focus:border-btnColor text-[0.8rem] py-[3px]' btnStyle='w-[1.9rem] md:w-[2.2rem] min-h-[2rem] h-[2rem] md:min-h-[2.2rem] md:h-[2.2rem] lg:min-h-[2.3rem] lg:h-[2.3rem]' />
                     }
                     {/* <SearchForm formStyle='desktop-search hidden lg:flex w-full my-[0.25rem] bg-[btnColor]' inputStyle='h-[2rem] md:h-[2.2rem] lg:h-[2.3rem] focus:outline-transparent text-[0.8rem] py-[3px]' btnStyle='w-[1.9rem] md:w-[2.2rem] min-h-[2rem] h-[2rem] md:min-h-[2.2rem] md:h-[2.2rem] lg:min-h-[2.3rem] lg:h-[2.3rem]' /> */}
@@ -227,7 +227,7 @@ const Header = () => {
                                 </div>
                             </li> */}
                             <li onClick={() => setShowMenu(false)}>
-                                <NavLink to='/' className='mobile-nav-link landscape:bg-[#c9c4c4]'>
+                                <NavLink to='/' className={({ isActive }) => isActive ? 'mobile-nav-link bg-accent hover:bg-accent hover:rounded-full text-white rounded-full border-none' : 'border-none'}>
                                     <span>
                                         <PiHouseThin size={'1.5rem'} className='mr-[0.3rem]' />
                                     </span>
@@ -235,31 +235,31 @@ const Header = () => {
                                 </NavLink>
                             </li>
                             <li onClick={() => setShowMenu(false)}>
-                                <NavLink to='/products' className='mobile-nav-link landscape:bg-[#c9c4c4]'>
+                                <NavLink to='/products' className={({ isActive }) => isActive ? 'mobile-nav-link bg-accent hover:bg-accent hover:rounded-full text-white rounded-full border-none' : 'border-none'}>
                                     <span>
-                                        <PiHandbagThin  size={'1.5rem'} className='mr-[0.3rem]' />
+                                        <PiHandbagThin size={'1.5rem'} className='mr-[0.3rem]' />
                                     </span>
                                     Shop
                                 </NavLink>
                             </li>
                             <li onClick={() => setShowMenu(false)}>
-                                <NavLink to='/contact' className='mobile-nav-link landscape:bg-[#c9c4c4]'>
+                                <NavLink to='/contact' className={({ isActive }) => isActive ? 'mobile-nav-link bg-accent hover:bg-accent hover:rounded-full text-white rounded-full border-none' : 'border-none'}>
                                     <span>
-                                        <PiIdentificationCardThin  size={'1.5rem'} className='mr-[0.3rem]' />
+                                        <PiIdentificationCardThin size={'1.5rem'} className='mr-[0.3rem]' />
                                     </span>
                                     Contact
                                 </NavLink>
                             </li>
                             <li onClick={() => setShowMenu(false)}>
-                                <NavLink to='/about' className='mobile-nav-link landscape:bg-[#c9c4c4]'>
+                                <NavLink to='/about' className={({ isActive }) => isActive ? 'mobile-nav-link bg-accent hover:bg-accent hover:rounded-full text-white rounded-full border-none' : 'border-none'}>
                                     <span>
-                                        <PiInfoThin  size={'1.7rem'} className='mr-[0.3rem]' />
+                                        <PiInfoThin size={'1.7rem'} className='mr-[0.3rem]' />
                                     </span>
                                     About
                                 </NavLink>
                             </li>
                             <div className='social-links cursor-default '>
-                                <div className='mobile-nav-link social-links gap-4 px-4 mobile-nav-link landscape:bg-[#c9c4c4] h-[3.4rem] flex items-center justify-between cursor-text rounded-[2rem]'>
+                                <div className='mobile-nav-link social-links gap-4 px-4 mobile-nav-link h-[3.4rem] flex items-center justify-between cursor-text rounded-[2rem]'>
                                     <a href='https://wa.me/message/WRKSVZP2GDD7K1' className='whatsapp p-[10px] rounded-[40%] border-[1px] border-[#291334]'>
                                         <RiWhatsappFill size='1.2rem' />
                                     </a>
