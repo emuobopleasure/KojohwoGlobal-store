@@ -9,6 +9,7 @@ const ContactPage = () => {
       <div className="container my-12 px-0 md:px-6 mx-auto">
         {/* Section: Design Block */}
         <section className="mb-32 text-gray-800">
+          
           <div className="relative overflow-hidden bg-no-repeat bg-cover rounded-lg" style={{ backgroundPosition: '50%', backgroundImage: 'url("https://images.unsplash.com/photo-1587560699334-bea93391dcef?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80")', height: '300px' }}>
           </div>
           <div className="container text-gray-800 px-4 md:px-12">

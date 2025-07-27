@@ -1,39 +1,38 @@
 import React from 'react'
+import { MdOutlineCategory } from 'react-icons/md';
 import { PiHandbag } from "react-icons/pi";
+import { Link } from 'react-router-dom';
 
 const HeroSection = () => {
   return (
-    <section>
-      <div className="hero-section mb-[4rem] sm:mb-0 lg:mb-[4rem]">
-        <div className="hero-container flex flex-col items-center gap-6 md:gap-12 lg:gap-3 lg:flex-row-reverse lg:items-center md:px-[2rem] lg:px-[3rem] 2xl:px-[2rem]
-      [@media(orientation:landscape)]:flex-row-reverse">
-
-          {/* Image */}
-          <div className="w-full sm:w-1/2 h-[50vh] sm:h-[70vh] md:h-fit lg:h-fit landscape:pr-[1.1rem]">
-            <img
-              src="/images/heroImage2.jpg"
-              alt="Hero visual"
-              className="w-full h-full object-cover rounded-lg"
-            />
-          </div>
-
-          {/* Text */}
-          <div className="w-full sm:w-1/2 text-center sm:text-left flex items-center h-full px-[1.1rem]">
-            <div className="flex flex-col justify-center gap-4 sm:gap-6 md:gap-8 py-6 sm:py-0">
-              <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-snug font-bold">
-                Trusted Household Products for Your Everyday Needs
-              </h1>
-              <p className="text-sm sm:text-base md:text-lg lg:text-lg leading-relaxed">
-                Discover top-quality household and personal care products from ultra-soft toilet tissue to trusted baby diapers.
-              </p>
-              <a href="#featuredProducts" className="w-fit mx-auto sm:mx-0">
-                <button className="btn btn-neutral text-white border-none text-sm sm:text-base rounded-full shadow-xl flex items-center justify-center px-6">
-                  <PiHandbag size={'1.5rem'} />
-                  Shop Now
-                </button>
-              </a>
-            </div>
-          </div>
+    <section
+      className="relative min-h-screen flex items-center justify-center text-center px-4"
+      style={{
+        backgroundImage: `linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url('/images/heroImage5.webp')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+    >
+      <div className="max-w-2xl mx-auto text-white space-y-6">
+        <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
+          Everything You Need in One Place
+        </h1>
+        <p className="text-lg md:text-xl opacity-90">
+          Shop articles, kiddies items, gifts, stationery, and more at unbeatable prices.
+        </p>
+        <div className="flex flex-col sm:flex-row justify-center md:items-center gap-4">
+          <Link to='/products' className=''>
+            <button className="btn btn-neutral text-white border-none text-sm sm:text-base rounded-full shadow-xl flex items-center justify-center px-16 w-full">
+              <PiHandbag size={'1.5rem'} />
+              Shop Now
+            </button>
+          </Link>
+          <a href='#featuredProducts'>
+            <button className="btn btn-neutral btn-outline font-bold shadow-md rounded-full px-8 border-1 border-white text-white hover:bg-white hover:text-[#c93400] hover:border-neutral w-full">
+              <MdOutlineCategory size={'1.5rem'} />
+              Explore Categories
+            </button>
+          </a>
         </div>
       </div>
     </section>
