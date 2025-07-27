@@ -19,7 +19,7 @@ const AboutPage = () => {
                 <div className='about-des text-left'>
 
 
-                  At Kojohwo Global Services, we're more than just a distributor – we're your trusted partner in procuring top-quality products and services. With our headquarters located at 60 Otovwodo Road, Ughelli, Otovowodo Market, we've been proudly serving the needs of our valued customers for years. Our commitment to excellence and customer satisfaction sets us apart in the industry.
+                  At Kojohwo Global Services, we're more than just a distributor, we're your trusted partner in procuring top-quality products and services. With our headquarters located at 60 Otovwodo Road, Ughelli, Otovowodo Market, we've been proudly serving the needs of our valued customers for years. Our commitment to excellence and customer satisfaction sets us apart in the industry.
                   <p className='font-bold my-3'>
 
                     Our Range of Products and Services
