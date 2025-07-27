@@ -13,12 +13,12 @@ const NewsletterSection = () => {
                             </div>
                             <div className="grow-0 shrink-0 basis-auto w-full lg:w-6/12 xl:w-8/12">
                                 <div className="px-6 py-12 md:px-12">
-                                    <h2 className="text-3xl text-btnColor font-bold mb-6">
+                                    <h2 className="text-3xl text-neutral font-bold mb-6">
                                         📬Stay Updated
                                         <br />
                                         <span className="text-btnColor"></span>
                                     </h2>
-                                    <p className="text-gray-500 mb-12 lg:pl-2">
+                                    <p className="text-accent font-normal mb-12 lg:pl-2">
                                         Subscribe to our newsletter and be the first to know about new arrivals, special offers, and exclusive deals.
                                     </p>
                                     <div className="md:flex flex-row">
@@ -28,14 +28,14 @@ const NewsletterSection = () => {
                                             </span>
                                             <input
                                                 type="text"
-                                                className="form-control block w-full pl-11 pr-4 py-2 text-xl font-normal text-gray-700 bg-base-100 bg-clip-padding border border-solid border-gray-300 rounded-full transition ease-in-out focus:text-gray-700 focus:bg-white focus:border-btnColor focus:outline-none"
+                                                className="form-control block w-full pl-11 pr-4 py-2 text-xl font-normal text-gray-700 bg-base-100 bg-clip-padding border border-solid border-gray-300 rounded-full transition ease-in-out focus:text-gray-700 focus:bg-base-100 focus:border-neutral focus:outline-none"
                                                 placeholder="Enter your email"
                                             />
                                         </div>
 
                                         <button
                                             type="submit"
-                                            className="inline-block px-7 py-3 bg-btnColor text-white font-medium text-sm leading-snug uppercase rounded-full shadow-md hover:bg-pink-500 hover:shadow-lg focus:bg-pink-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-pink-800 active:shadow-lg transition duration-150 ease-in-out"
+                                            className="inline-block btn btn-neutral text-white rounded-full shadow-lg"
                                             data-mdb-ripple="true"
                                             data-mdb-ripple-color="light"
                                         >

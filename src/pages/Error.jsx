@@ -21,7 +21,7 @@ const Error = () => {
                     </div>
                     <div>
                         <Link to='/'>
-                            <button className='back-home px-[1rem] py-[0.5rem] gap-[2px] flex justify-center items-center bg-bg-base-100 border border-btnColor text-btnColor font-normal text-[85%] md:text-[65%] lg:text-[1rem] xl:text-[1.5rem] leading-snug capitalize rounded-full shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:bg-pink-800 active:shadow-lg transition duration-150 ease-in-out hover:bg-btnColor hover:text-white'>
+                            <button className='back-home btn btn-neutral text-white rounded-full font-normal text-[85%] md:text-[65%] lg:text-[1rem] xl:text-[1.5rem]'>
                                 Go back to our Homepage
                             </button>
                         </Link>

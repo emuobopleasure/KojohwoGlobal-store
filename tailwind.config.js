@@ -1,42 +1,31 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx,html}"],
+import daisyui from 'daisyui'
 
-  theme: {
-    extend: {
-      colors: {
-        btnColor: '#c95fa1',
-      },
-      animation: {
-        slideDown: 'slideDown 0.3s ease-out',
-        slideUp: 'slideUp 0.3s ease-in',
-        'fade-in': 'fadeIn 0.3s ease-in',
-        'fade-out': 'fadeOut 0.3s ease-out',
-      },
-      keyframes: {
-        slideDown: {
-          '0%': { transform: 'translateY(-100%)', opacity: '0' },
-          '100%': { transform: 'translateY(0)', opacity: '1' },
-        },
-        slideUp: {
-          '0%': { transform: 'translateY(0)', opacity: '1' },
-          '100%': { transform: 'translateY(-100%)', opacity: '0' },
-        },
-        fadeIn: {
-          '0%': { opacity: '0' },
-          '100%': { opacity: '1' },
-        },
-        fadeOut: {
-          '0%': { opacity: '1' },
-          '100%': { opacity: '0' },
-        },
-      },
-    },
-  },
-
-  plugins: [require("daisyui")],
-
-  daisyui: {
-    themes: ["cupcake",],
-  },
+export default {
+    content: [
+        "./index.html",
+        "./src/**/*.{js,ts,jsx,tsx}",
+    ],
+    plugins: [daisyui],
+    daisyui: {
+        themes: [
+            //   "autumn", // Keep original autumn theme as fallback
+            {
+                myTheme: { // Object format for custom theme
+                    "primary": "oklch(0% 0 0)",
+                    "secondary": "oklch(22.45% 0.075 37.85)",
+                    "accent": "oklch(46.44% 0.111 37.85)",
+                    "neutral": "oklch(55% 0.195 38.402)",
+                    "neutral-dark": "#ae2c00",
+                    "base-100": "#f1f1f1",
+                    "base-200": "oklch(85% 0.02 37.85)",
+                    "base-300": "oklch(75% 0.03 37.85)",
+                    "info": "oklch(72% 0.17 247.62)",
+                    "success": "oklch(65% 0.15 146.26)",
+                    "warning": "oklch(68% 0.16 83.87)",
+                    "error": "oklch(58% 0.16 27.33)",
+                }
+            }
+        ],
+    }
 }

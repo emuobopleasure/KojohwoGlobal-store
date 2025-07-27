@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState, useRef } from 'react';
 import { AppContext } from '../context/appContext';
 import { useLocation, useNavigate } from 'react-router-dom';
-import products from '../Products';
+import products from '../ProductsData';
 
 const SearchForm = ({ formStyle, groupStyle, inputStyle, btnStyle }) => {
   const { searchQuery, setSearchQuery } = useContext(AppContext);
@@ -86,7 +86,7 @@ const SearchForm = ({ formStyle, groupStyle, inputStyle, btnStyle }) => {
       className={`relative form my-5 flex justify-center ${formStyle}`}
     >
       <div className="form-control w-full relative">
-        <div className={`input-group ${groupStyle}`}>
+        <div className={`input-group flex items-center border rounded-full ${groupStyle}`}>
           <input
             ref={inputRef}
             value={searchQuery}
@@ -97,11 +97,11 @@ const SearchForm = ({ formStyle, groupStyle, inputStyle, btnStyle }) => {
             onKeyDown={handleKeyDown}
             type="search"
             placeholder="Search products…"
-            className={`input input-bordered w-full focus:border-gray-400 ${inputStyle}`}
+            className={`input input-bordered rounded-full text-primary border-r-0 rounded-br-none rounded-tr-none w-full focus:border-accent ${inputStyle}`}
           />
           <button
             type="submit"
-            className={`btn btn-square text-white bg-[#c95fa1] border-[#c95fa1] hover:bg-[#92075a] ${btnStyle}`}
+            className={`btn btn-square text-white bg-accent rounded-full border-none rounded-tl-none rounded-bl-none border-accent hover:bg-neutral ${btnStyle}`}
             aria-label="Search Button"
           >
             <svg

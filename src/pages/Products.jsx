@@ -4,7 +4,7 @@ import Categories from '../components/Categories'
 import ShopItem from '../components/ShopItem'
 import Pagination from '../components/Pagination'
 import { useSearchParams } from 'react-router-dom'
-import products from '../Products'
+import products from '../ProductsData'
 
 const Products = () => {
     const {
@@ -75,7 +75,7 @@ const Products = () => {
 
 
     return (
-        <section className="px-[1.1rem] md:px-[2rem] lg:px-[3rem] pt-[5.5rem] md:pt-28 lg:pt-36">
+        <section className="products-section px-[1.1rem] md:px-[2rem] lg:px-[3rem] pt-[5.5rem] md:pt-28 lg:pt-36">
             <h1 className="text-2xl font-bold text-gray-700 mb-6 text-center md:text-left">All Products</h1>
 
             {/* Search bar */}
@@ -103,7 +103,7 @@ const Products = () => {
             ) : currentProducts.length === 0 ? (
                 <p className="text-center text-gray-500">No products found.</p>
             ) : (
-                <div className="grid grid-cols-2 gap-x-3 gap-y-7 md:grid-cols-2 lg:grid-cols-3">
+                <div className="products-container grid grid-cols-2 gap-x-3 gap-y-7 lg:gap-y-12 md:grid-cols-2 lg:grid-cols-3 2xl:flex 2xl:gap-x-10 2xl:gap-y-14 2xl:justify-between flex-wrap">
                     {currentProducts.map((product) => (
                         <ShopItem key={product.id} item={product} />
                     ))}

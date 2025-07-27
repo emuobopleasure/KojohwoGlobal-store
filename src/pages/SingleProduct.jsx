@@ -1,10 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import products from '../Products'
+import products from '../ProductsData'
 import { TbHeartPlus, TbHeartMinus } from 'react-icons/tb';
 import { BsArrowLeft } from 'react-icons/bs';
 import { AppContext } from '../context/appContext';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
+
 
 const SingleProductPage = () => {
 
@@ -175,7 +176,7 @@ ${`https://kojohwoglobal.vercel.app/products/${item.id}`}`;
                                     {
                                         isItemInWishlist ?
                                             (
-                                                <button onClick={() => handleWishlistButtonClick(item)} className="w-full px-[6px] py-[4px] h-[3rem] landscape:h-[2.5rem] md:h-[4rem] gap-[2px] flex justify-center items-center bg-base-100 border border-btnColor text-btnColor font-medium text-[79%] md:text-lg leading-snug capitalize rounded-full shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:bg-pink-800 active:shadow-lg transition duration-150 ease-in-out">
+                                                <button onClick={() => handleWishlistButtonClick(item)} className="w-full px-[6px] py-[4px] h-[3rem] landscape:h-[2.5rem] md:h-[4rem] gap-[2px] flex justify-center items-center bg-base-100 border border-neutral text-neutral font-medium text-[79%] md:text-lg leading-snug capitalize rounded-full shadow-xl hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#ae2c00] active:text-white active:shadow-lg transition duration-150 ease-in-out">
                                                     <TbHeartMinus size='1.2rem' />
                                                     <p className='addtowish'>
                                                         Remove from Wishlist
@@ -185,7 +186,7 @@ ${`https://kojohwoglobal.vercel.app/products/${item.id}`}`;
                                             :
                                             (
 
-                                                <button onClick={() => handleWishlistButtonClick(item)} className="w-full px-[6px] py-[4px] h-[3rem] landscape:h-[2.5rem] md:h-[4rem] gap-[4px] flex justify-center items-center bg-btnColor text-white font-medium text-[79%] md:text-lg leading-snug capitalize rounded-full shadow-md hover:bg-pink-500 hover:shadow-lg focus:bg-pink-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-pink-800 active:shadow-lg transition duration-150 ease-in-out">
+                                                <button onClick={() => handleWishlistButtonClick(item)} className="w-full px-[6px] py-[4px] h-[3rem] landscape:h-[2.5rem] md:h-[4rem] gap-[4px] flex justify-center items-center bg-neutral text-white font-medium text-[79%] md:text-lg leading-snug capitalize rounded-full shadow-md hover:bg-[#ae2c00] hover:shadow-lg focus:bg-[#ae2c00] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#ae2c00] active:shadow-lg transition duration-150 ease-in-out">
                                                     <TbHeartPlus size='1.2rem' />
                                                     <p className='addtowish'>
                                                         Add to Wishlist
@@ -200,7 +201,7 @@ ${`https://kojohwoglobal.vercel.app/products/${item.id}`}`;
                                     {
                                         isItemInWishlist ?
                                             (
-                                                <button onClick={() => handleWishlistButtonClick(item)} className="w-full px-[6px] py-[4px] gap-[2px] flex justify-center items-center bg-base-100 border border-btnColor text-btnColor font-medium text-[79%] md:text-lg leading-snug capitalize rounded-full shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:bg-pink-800 active:shadow-lg transition duration-150 ease-in-out">
+                                                <button onClick={() => handleWishlistButtonClick(item)} className="w-full px-[6px] py-[6px] gap-[2px] flex justify-center items-center bg-base-100 border border-neutral text-neutral font-medium text-[79%] md:text-lg leading-snug capitalize rounded-full shadow-xl hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#ae2c00] active:text-white active:shadow-lg transition duration-150 ease-in-out">
                                                     <TbHeartMinus size='1.2rem' />
                                                     <p className='addtowish'>
                                                         Remove from Wishlist
@@ -210,7 +211,7 @@ ${`https://kojohwoglobal.vercel.app/products/${item.id}`}`;
                                             :
                                             (
 
-                                                <button onClick={() => handleWishlistButtonClick(item)} className="w-full px-[6px] py-[4px] gap-[4px] flex justify-center items-center bg-btnColor text-white font-medium text-[79%] md:text-lg leading-snug capitalize rounded-full shadow-md hover:bg-pink-500 hover:shadow-lg focus:bg-pink-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-pink-800 active:shadow-lg transition duration-150 ease-in-out">
+                                                <button onClick={() => handleWishlistButtonClick(item)} className="w-full px-[6px] py-[7px] gap-[4px] flex justify-center items-center bg-neutral text-white font-medium text-[79%] md:text-lg leading-snug capitalize rounded-full shadow-md hover:bg-[#ae2c00] hover:shadow-lg focus:bg-[#ae2c00] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#ae2c00] active:shadow-lg transition duration-150 ease-in-out">
                                                     <TbHeartPlus size='1.2rem' />
                                                     <p className='addtowish'>
                                                         Add to Wishlist

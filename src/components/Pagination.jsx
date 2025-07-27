@@ -5,11 +5,11 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
 
     return (
         <div>
-            <div className="join">
+            <div className="join rounded-full">
                 {
                     pageNumbers.map((number) => (
 
-                        <button key={number} onClick={() => onPageChange(number)} className={ number === currentPage ? "join-item btn btn-active bg-[#c9c4c4]" : 'join-item btn' }>{number}</button>
+                        <button key={number} onClick={() => onPageChange(number)} className={ number === currentPage ? "join-item btn bg-accent text-white hover:bg-base-300 hover:text-black" : 'join-item btn' }>{number}</button>
                     ))
                 }
             </div>
