@@ -6,9 +6,9 @@ import { Link } from 'react-router-dom';
 const HeroSection = () => {
   return (
     <section
-      className="relative min-h-screen flex items-center justify-center text-center px-4"
+      className="relative min-h-[90vh] md:min-h-screen flex items-center justify-center text-center px-4"
       style={{
-        backgroundImage: `linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url('/images/heroImage5.webp')`,
+        backgroundImage: `linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url('/images/heroImage16.webp')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
@@ -18,11 +18,11 @@ const HeroSection = () => {
           Everything You Need in One Place
         </h1>
         <p className="text-lg md:text-xl opacity-90">
-          Shop articles, kiddies items, gifts, stationery, and more at unbeatable prices.
+          Shop articles, kiddies items, toiletries, stationery, and more at unbeatable prices.
         </p>
         <div className="flex flex-col sm:flex-row justify-center md:items-center gap-4">
           <Link to='/products' className=''>
-            <button className="btn btn-neutral text-white border-none text-sm sm:text-base rounded-full shadow-xl flex items-center justify-center px-16 w-full">
+            <button className="btn btn-neutral text-white border-1 border-neutral text-sm sm:text-base rounded-full shadow-xl flex items-center justify-center px-16 w-full">
               <PiHandbag size={'1.5rem'} />
               Shop Now
             </button>
