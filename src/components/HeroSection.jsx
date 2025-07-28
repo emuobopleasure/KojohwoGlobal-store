@@ -8,7 +8,7 @@ const HeroSection = () => {
     <section
       className="relative min-h-[90vh] md:min-h-screen flex items-center justify-center text-center px-4"
       style={{
-        backgroundImage: `linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url('/images/heroImage16.webp')`,
+        backgroundImage: `linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url('/images/heroImage21.webp')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
