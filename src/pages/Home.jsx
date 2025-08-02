@@ -19,7 +19,7 @@ const HomePage = () => {
         <meta property="og:title" content="Kojohwo Global — Affordable Gifts & Everyday Essentials" />
         <meta property="og:description" content="Discover quality items across gifts, kiddies supplies, and daily needs at amazing prices." />
         <meta property="og:image" content="https://kojohwoglobal.vercel.app/og/homepage-preview.jpg" />
-        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:width" content="1290" />
         <meta property="og:image:height" content="630" />
         <meta property="og:url" content="https://kojohwoglobal.vercel.app" />
         <meta property="og:type" content="website" />
