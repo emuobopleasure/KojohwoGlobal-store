@@ -1,0 +1,21 @@
+{
+  "functions": {
+    "api/og.js": {
+      "runtime": "nodejs18.x"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/products/:id",
+      "destination": "/api/og?url=/products/:id"
+    },
+    {
+      "source": "/",
+      "destination": "/api/og?url=/"
+    },
+    {
+      "source": "/((?!api|_next|favicon.ico|images|og).*)",
+      "destination": "/index.html"
+    }
+  ]
+}
