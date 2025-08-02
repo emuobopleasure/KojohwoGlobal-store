@@ -18,25 +18,18 @@ const HomePage = () => {
         {/* Open Graph */}
         <meta property="og:title" content="Kojohwo Global — Affordable Gifts & Everyday Essentials" />
         <meta property="og:description" content="Discover quality items across gifts, kiddies supplies, and daily needs at amazing prices." />
-        <meta property="og:image" content="https://kojohwoglobal.vercel.app/og/homepage-preview.webp" />
         <meta property="og:image" content="https://kojohwoglobal.vercel.app/og/homepage-preview.jpg" />
-        {/* <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="586" /> */}
-        {/* <meta property="og:image:type" content="image/webp" /> */}
-
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
         <meta property="og:url" content="https://kojohwoglobal.vercel.app" />
         <meta property="og:type" content="website" />
 
         {/* Twitter Card */}
         <meta name="twitter:title" content="Kojohwo Global — Affordable Gifts & Essentials" />
         <meta name="twitter:description" content="Your one-stop shop for party supplies, books, toiletries, and more." />
-        <meta name="twitter:image" content="https://kojohwoglobal.vercel.app/og/homepage-preview.webp" />
-        <meta name="twitter:image" content="https://kojohwoglobal.vercel.app/og/homepage-preview.jpg" />
-        {/* <meta name="twitter:image:width" content="1200" />
-        <meta name="twitter:image:height" content="586" /> */}
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://kojohwoglobal.vercel.app/og/homepage-preview.jpg" />
       </Helmet>
-
 
       <section>
         <div className='homesection mt-[4rem]'>
