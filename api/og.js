@@ -179,28 +179,23 @@ const products = [
 export default function handler(req, res) {
     const { url } = req.query;
     const userAgent = req.headers['user-agent'] || '';
-    
+
     // Check if it's a social media crawler
     const isCrawler = /facebookexternalhit|twitterbot|linkedinbot|whatsapp|telegrambot/i.test(userAgent);
-    
-    if (!isCrawler) {
-        // If it's not a crawler, redirect to the React app
-        return res.redirect(302, url || '/');
-    }
-    
+
     // Parse the URL to get product ID
     const urlParts = url ? url.split('/') : [];
     const productsIndex = urlParts.indexOf('products');
-    const productId = productsIndex !== -1 && urlParts[productsIndex + 1] 
-        ? parseInt(urlParts[productsIndex + 1]) 
+    const productId = productsIndex !== -1 && urlParts[productsIndex + 1]
+        ? parseInt(urlParts[productsIndex + 1])
         : null;
-    
+
     let title = 'Kojohwo Global — Affordable Gifts & Everyday Essentials';
     let description = 'Discover a variety of quality products from gifts, kiddies items, to school and home essentials at Kojohwo Global. Enjoy the best prices and fast delivery with excellent customer service.';
     let image = 'https://kojohwoglobal.vercel.app/og/homepage-preview.jpg';
     let pageUrl = 'https://kojohwoglobal.vercel.app';
     let type = 'website';
-    
+
     // If it's a product page, use product-specific data
     if (productId) {
         const product = products.find(p => p.id === productId);
@@ -212,7 +207,7 @@ export default function handler(req, res) {
             type = 'product';
         }
     }
-    
+
     // Return HTML with meta tags
     res.setHeader('Content-Type', 'text/html');
     res.status(200).send(`
@@ -246,20 +241,20 @@ export default function handler(req, res) {
             <!-- Logo font link -->
             <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@612&family=Dosis:wght@300&family=Londrina+Sketch&family=Modak&family=Moo+Lah+Lah&family=Rampart+One&family=Ubuntu+Mono:wght@700&display=swap" rel="stylesheet">
             
-            <!-- Redirect non-crawlers to React app -->
-            <script>
-                if (!/facebookexternalhit|twitterbot|linkedinbot|whatsapp|telegrambot/i.test(navigator.userAgent)) {
-                    window.location.href = '${pageUrl}';
-                }
-            </script>
+            ${!isCrawler ? `<script type="module" src="/src/main.jsx"></script>` : ''}
         </head>
         <body>
             <div id="root">
-                <div style="display: flex; justify-content: center; align-items: center; height: 100vh; font-family: Arial, sans-serif;">
-                    <p>Loading Kojohwo Global...</p>
-                </div>
+                ${isCrawler ? `
+                    <div style="display: flex; justify-content: center; align-items: center; height: 100vh; font-family: Arial, sans-serif;">
+                        <div style="text-align: center;">
+                            <h1>${title}</h1>
+                            <p>${description}</p>
+                            <img src="${image}" alt="${title}" style="max-width: 300px; height: auto;" />
+                        </div>
+                    </div>
+                ` : ''}
             </div>
-            <script type="module" src="/src/main.jsx"></script>
         </body>
         </html>
     `);
