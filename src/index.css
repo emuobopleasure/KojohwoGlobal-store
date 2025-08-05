@@ -8,9 +8,9 @@ html {
 }
 
 /* *{
-    outline: 1px solid red;
-} */
- 
+    outline: 1px solid blue;
+}
+  */
 
 /* Hide scrollbar for Chrome, Safari and Opera */
 .categories-list::-webkit-scrollbar {
