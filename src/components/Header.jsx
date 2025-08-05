@@ -73,11 +73,13 @@ const Header = () => {
     return (
         <header>
             <nav className='nav-wrapper flex justify-center'>
-                <div className='nav-container navbar bg-base-100 shadow-lg rounded-3xl fixed top-0 z-10 flex flex-col items-start px-[1.1rem] md:px-[2rem] lg:px-[3rem] pb-[3px]'>
+                {/* fixed-top bar menu */}
+                <div className={ showMenu ? `nav-container navbar bg-base-100 shadow-lg fixed top-0 z-40 flex flex-col items-start px-[1.1rem] md:px-[2rem] lg:px-[3rem] pb-[3px]` : `nav-container navbar bg-base-100 shadow-lg rounded-3xl fixed top-0 z-40 flex flex-col items-start px-[1.1rem] md:px-[2rem] lg:px-[3rem] pb-[3px]`}>
                     <div className={showSearch ? `navbar nav-wrapper flex items-center justify-between h-[2rem] min-h-0 p-0`
                         : `desktop-nav navbar flex items-center justify-between h-[3rem] min-h-0 p-0 2xl:max-w-[128rem] 2xl:mx-auto
                     `}>
                         <div className='logo/menu nav inline-flex gap-[1.2rem] items-center'>
+
                             <div className='hamburger inline-flex lg:hidden'>
                                 {!showMenu && <button onClick={() => setShowMenu(true)}
                                     className='menu-opem' aria-label="menu open">
@@ -88,6 +90,7 @@ const Header = () => {
                                     <PiXThin className='menu-close-icon text-3xl' color='#513f59' />
                                 </button>}
                             </div>
+
                             <h1 className="logo inline-flex">
                                 <NavLink to="/" className="logo-btn normal-case text-2xl px-1 md:text-2xl xl:text-4xl font-['Modak'] font-thin text-neutral lg:hover:text-[#ae2c00] pt-[2px] lg:pt-0">
                                     Kojohwo Global
@@ -201,15 +204,22 @@ const Header = () => {
                     }
                     {/* <SearchForm formStyle='desktop-search hidden lg:flex w-full my-[0.25rem] bg-[btnColor]' inputStyle='h-[2rem] md:h-[2.2rem] lg:h-[2.3rem] focus:outline-transparent text-[0.8rem] py-[3px]' btnStyle='w-[1.9rem] md:w-[2.2rem] min-h-[2rem] h-[2rem] md:min-h-[2.2rem] md:h-[2.2rem] lg:min-h-[2.3rem] lg:h-[2.3rem]' /> */}
 
-                    {showStickyCategories && (
+                    {showStickyCategories && !showMenu && (
                         <div className="headr-categories w-full">
                             <Categories />
                         </div>
                     )}
 
+                    {/* === Backdrop === */}
+                    {showMenu && (
+                        <div
+                            onClick={() => setShowMenu(false)}
+                            className="fixed top-[5rem] inset-0 bg-black bg-opacity-50 z-10"
+                        ></div>
+                    )}
                     {/* !================mobile menu========! */}
-                    <div className={showMenu ? 'hamburger-menu w-full' : 'hidden'}>
-                        <ul tabIndex={0} className="menu pl-0 pr-0 menu-vertical leading-10 text-[1rem] gap-[1.5rem] dropdown-content pt-[1.5rem] bg-base-100 rounded-box w-screen h-auto z-10 landscape:h-auto landscape:grid landscape:grid-cols-2 landscape:place-content-start">
+                    <div className={showMenu ? 'mobile-menu fixed top-[4rem] left-0 w-full bg-base-100 z-30 rounded-b-3xl shadow-lg transition-all duration-300' : 'hidden'}>
+                        <ul tabIndex={0} className="menu pl-0 pr-0 menu-vertical leading-10 text-[1rem] gap-[1.5rem] dropdown-content pt-[1rem] bg-base-100 rounded-box w-screen h-auto z-10 landscape:pl-[1rem] landscape:h-auto landscape:grid landscape:grid-cols-2 landscape:place-content-start">
                             {/* <li>
                                 <div className='theme-toggle-icons cursor-pointer'>
                                     <span className="moon-icon hidden">
@@ -227,33 +237,33 @@ const Header = () => {
                                 </div>
                             </li> */}
                             <li onClick={() => setShowMenu(false)}>
-                                <NavLink to='/' className={({ isActive }) => isActive ? 'mobile-nav-link bg-accent hover:bg-accent hover:rounded-full text-white rounded-full border-none' : 'border-none'}>
+                                <NavLink to='/' className={({ isActive }) => isActive ? 'mobile-nav-link bg-accent hover:bg-accent hover:rounded-full text-white rounded-full border-none pl-[1.3rem]' : 'border-none pl-[1.3rem]'}>
                                     <span>
-                                        <PiHouseThin size={'1.5rem'} className='mr-[0.3rem]' />
+                                        <PiHouseThin size={'1.5rem'} className='mr-[1.1rem]' />
                                     </span>
                                     Home
                                 </NavLink>
                             </li>
                             <li onClick={() => setShowMenu(false)}>
-                                <NavLink to='/products' className={({ isActive }) => isActive ? 'mobile-nav-link bg-accent hover:bg-accent hover:rounded-full text-white rounded-full border-none' : 'border-none'}>
+                                <NavLink to='/products' className={({ isActive }) => isActive ? 'mobile-nav-link bg-accent hover:bg-accent hover:rounded-full text-white rounded-full border-none pl-[1.3rem]' : 'border-none pl-[1.3rem]'}>
                                     <span>
-                                        <PiHandbagThin size={'1.5rem'} className='mr-[0.3rem]' />
+                                        <PiHandbagThin size={'1.5rem'} className='mr-[1.1rem]' />
                                     </span>
                                     Shop
                                 </NavLink>
                             </li>
                             <li onClick={() => setShowMenu(false)}>
-                                <NavLink to='/contact' className={({ isActive }) => isActive ? 'mobile-nav-link bg-accent hover:bg-accent hover:rounded-full text-white rounded-full border-none' : 'border-none'}>
+                                <NavLink to='/contact' className={({ isActive }) => isActive ? 'mobile-nav-link bg-accent hover:bg-accent hover:rounded-full text-white rounded-full border-none pl-[1.3rem]' : 'border-none pl-[1.3rem]'}>
                                     <span>
-                                        <PiIdentificationCardThin size={'1.5rem'} className='mr-[0.3rem]' />
+                                        <PiIdentificationCardThin size={'1.5rem'} className='mr-[1.1rem]' />
                                     </span>
                                     Contact
                                 </NavLink>
                             </li>
                             <li onClick={() => setShowMenu(false)}>
-                                <NavLink to='/about' className={({ isActive }) => isActive ? 'mobile-nav-link bg-accent hover:bg-accent hover:rounded-full text-white rounded-full border-none' : 'border-none'}>
+                                <NavLink to='/about' className={({ isActive }) => isActive ? 'mobile-nav-link bg-accent hover:bg-accent hover:rounded-full text-white rounded-full border-none pl-[1.3rem]' : 'border-none pl-[1.3rem]'}>
                                     <span>
-                                        <PiInfoThin size={'1.7rem'} className='mr-[0.3rem]' />
+                                        <PiInfoThin size={'1.7rem'} className='mr-[1.1rem]' />
                                     </span>
                                     About
                                 </NavLink>
