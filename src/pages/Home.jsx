@@ -4,6 +4,7 @@ import FeaturedProducts from '../components/FeaturedProducts';
 import Newsletter from '../components/NewsLetter';
 import FeaturedCategories from '../components/FeaturedCategories';
 import { Helmet } from 'react-helmet-async';
+import TestCateg from '../components/TestCateg';
 
 const HomePage = () => {
 
@@ -34,7 +35,8 @@ const HomePage = () => {
       <section>
         <div className='homesection mt-[4rem]'>
           <HeroSection />
-          {/* <FeaturedCategories/> */}
+          {/* <TestCateg/> */}
+          <FeaturedCategories/>
           <FeaturedProducts />
           <Newsletter />
         </div>

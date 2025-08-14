@@ -6,7 +6,6 @@ const Categories = () => {
   const {
     selectedCategory,
     categories,
-    categoryIcons,
     handleCategoryClick,
     showStickyCategories,
     setShowStickyCategories,
@@ -71,18 +70,19 @@ const Categories = () => {
       </li>
 
       {categories.map((category) => (
-        <li key={category}
-          ref={(el) => (categoryRefs.current[category] = el)}
+        <li
+          key={category.slug}
+          ref={(el) => (categoryRefs.current[category.slug] = el)}
         >
           <button
-            onClick={() => handleCategoryClick(category)}
-            className={`categories-btn items-center px-[0.8rem] py-[0.5rem] font-semibold rounded-full flex gap-1 ${selectedCategory === category
-              ? 'bg-accent text-white border'
-              : 'bg-none border border-gray-400'
+            onClick={() => handleCategoryClick(category.slug)}
+            className={`categories-btn items-center px-[0.8rem] py-[0.5rem] font-semibold rounded-full flex gap-1 ${selectedCategory === category.slug
+                ? 'bg-accent text-white border'
+                : 'bg-none border border-gray-400'
               } lg:hover:bg-accent lg:hover:text-white lg:hover:border-white`}
           >
-            {categoryIcons[category] && <i className={`fa-solid ${categoryIcons[category]}`} />}
-            {category}
+            {category.icon && <i className={`fa-solid ${category.icon}`} />}
+            {category.name}
           </button>
         </li>
       ))}
