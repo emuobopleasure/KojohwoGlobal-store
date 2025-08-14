@@ -27,7 +27,7 @@ const HeroSection = () => {
               Shop Now
             </button>
           </Link>
-          <a href='#featuredProducts'>
+          <a href='#featuredCategories'>
             <button className="btn btn-neutral btn-outline font-bold shadow-md rounded-full px-8 border-1 border-white text-white hover:bg-white hover:text-[#c93400] hover:border-neutral w-full">
               <MdOutlineCategory size={'1.5rem'} />
               Explore Categories

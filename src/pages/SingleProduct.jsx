@@ -24,7 +24,7 @@ const SingleProductPage = () => {
     const [showButton, setShowButton] = useState(false);
 
     const phone = '+2347061171410';
-    const whatsappMessage = `Hi, I’d like to buy “${item.name}” (₦${item.price}). Is it in stock? Please send me the payment info and delivery timeline.
+    const whatsappMessage = `Hi, I want to buy “${item.name}” (₦${item.price}). Is it in stock? Please send me the payment info and delivery timeline.
 
 ${`https://kojohwoglobal.vercel.app/products/${item.id}`}`;
 

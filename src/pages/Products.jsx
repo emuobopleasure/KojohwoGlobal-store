@@ -15,7 +15,7 @@ const Products = () => {
         setFilteredProducts,
         // searchQuery,
         setSearchQuery,
-        // handleCategoryClick,
+        handleCategoryClick,
         // selectedCategory,
         // categories,
         // setShowStickyCategories 
@@ -51,6 +51,19 @@ const Products = () => {
 
     useEffect(() => {
         const query = searchParams.get('search');
+
+        const categoryParam = searchParams.get('category');
+
+        if (categoryParam) {
+            // Set the selected category in context
+            handleCategoryClick(categoryParam);
+        } else if (!query) {
+            // No category & no search → show all
+            handleCategoryClick("All Categories");
+            sessionStorage.removeItem("selectedCategory");
+        }
+        
+
         if (query) {
             setSearchQuery(query);
             setIsLoading(true);

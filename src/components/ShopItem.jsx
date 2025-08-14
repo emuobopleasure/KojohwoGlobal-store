@@ -18,12 +18,12 @@ const ShopItem = ({ item }) => {
                     <Link to={`/products/${item.id}`} className='image-wrapper overflow-hidden h-1/2 w-full sm:h-full sm:w-1/2'>
                         <img className="object-cover h-full w-full" src={item.image} alt={item.name} />
                     </Link>
-                    <div className="card-buttom flex-1 w-full flex flex-col items-baseline justify-around h-1/2 px-4 sm:h-full sm:items-baseline sm:w-1/2 sm:gap-[2rem]">
-                        <Link to={`/products/${item.id}`} className='w-full flex flex-col items-start sm:gap-4'>
+                    <div className="card-buttom flex-1 w-full flex flex-col items-baseline h-1/2 px-4 mt-[1px] mb-[7px] sm:items-baseline sm:w-1/2 sm:h-[12rem] sm:my-auto sm:justify-between">
+                        <Link to={`/products/${item.id}`} className='w-full flex flex-col items-start h-full gap-[6px] sm:gap-[1.7rem]'>
                             <h1 className="text-base font-extrabold mb-0 text-gray-600 font-sans truncate w-full">
                                 {item.name}
                             </h1>
-                            <p className="text-xs text-gray-500 w-4/5">
+                            <p className="text-xs text-gray-600 line-clamp-2 w-4/5">
                                 {item.description}
                             </p>
                             <h1 className="font-bold text-gray-500">₦{item.price}</h1>
@@ -35,16 +35,16 @@ const ShopItem = ({ item }) => {
                             {
                                 isItemInWishlist ?
                                     (
-                                        <button onClick={() => handleWishlistButtonClick(item)} className="renove-from-wish w-full px-[6px] py-[4px] gap-[2px] flex justify-center items-center bg-transaparent border border-neutral text-neutral font-medium text-[55%] md:text-[65%] lg:text-[47%] xl:text-[65%] leading-snug capitalize rounded-full shadow-md hover:shadow-lg  focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#ae2c00] active:text-white active:shadow-lg transition duration-150 ease-in-out">
+                                        <button onClick={() => handleWishlistButtonClick(item)} className="renove-from-wish w-full px-[6px] py-[4px] gap-[2px] flex justify-center items-center bg-transaparent border border-neutral text-neutral font-medium text-[55%] sm:text-[51%] landscape:text-[60%] md:text-[65%] lg:text-[47%] xl:text-[65%] leading-snug capitalize rounded-full shadow-md hover:shadow-lg  focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#ae2c00] active:text-white active:shadow-lg transition duration-150 ease-in-out">
                                             <TbHeartMinus size='1.2rem' />
-                                            <p className='addtowish'>
+                                            <p className='addtowish font-semibold'>
                                                 Remove from Wishlist
                                             </p>
                                         </button>
                                     )
                                     :
                                     (
-                                        <button onClick={() => handleWishlistButtonClick(item)} className="add-to-wish w-full px-[6px] py-[5px] gap-[2px] flex justify-center items-center bg-neutral text-white font-medium text-[63%] md:text-sm lg:text-[60%] xl:text-sm leading-snug capitalize rounded-full shadow-md hover:bg-[#ae2c00] focus:bg-[#ae2c00] focus:shadow-lg focus:outline-none focus:ring-0 active:bg=[#ae2c00] active:shadow-lg transition duration-150 ease-in-out">
+                                        <button onClick={() => handleWishlistButtonClick(item)} className="add-to-wish w-full px-[6px] py-[5px] gap-[2px] flex justify-center items-center bg-neutral text-white font-medium text-[63%] md:text-sm lg:text-[60%] xl:text-sm leading-snug capitalize rounded-full shadow-sm hover:bg-[#ae2c00] focus:bg-[#ae2c00] focus:shadow-lg focus:outline-none focus:ring-0 active:bg=[#ae2c00] active:shadow-lg transition duration-150 ease-in-out">
                                             <TbHeartPlus size='1.2rem' />
                                             <p className='addtowish'>
                                                 Add to Wishlist
