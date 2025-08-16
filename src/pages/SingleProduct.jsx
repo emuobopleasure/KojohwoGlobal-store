@@ -13,11 +13,16 @@ const SingleProductPage = () => {
 
     const { handleWishlistButtonClick, wishlist } = useContext(AppContext)
 
-    const { id } = useParams()
+    const { idSlug } = useParams()
+
+    const id = idSlug.split("-")[0]
 
     const item = products.find((p) => p.id === parseInt(id))
 
-    const isItemInWishlist = wishlist.some(wishlistItem => wishlistItem.id === item.id);
+    const getProductKey = (item) => `${item.id}-${item.slug}`
+
+    const isItemInWishlist = wishlist.some(wishlistItem => wishlistItem.key === getProductKey(item));
+
 
     const navigate = useNavigate()
 
@@ -26,7 +31,7 @@ const SingleProductPage = () => {
     const phone = '+2347061171410';
     const whatsappMessage = `Hi, I want to buy “${item.name}” (₦${item.price}). Is it in stock? Please send me the payment info and delivery timeline.
 
-${`https://kojohwoglobal.vercel.app/products/${item.id}`}`;
+${`https://kojohwoglobal.vercel.app/products/${item.id}-${item.slug}`}`;
 
 
     const encodedMessage = encodeURIComponent(whatsappMessage);

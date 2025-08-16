@@ -1,4 +1,3 @@
-import React, { useContext } from 'react'
 import ShopItem from './ShopItem'
 import { AppContext } from '../context/appContext'
 import { Link } from 'react-router-dom'

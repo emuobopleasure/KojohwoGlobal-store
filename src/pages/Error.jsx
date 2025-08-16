@@ -1,7 +1,10 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useRouteError } from 'react-router-dom'
 
 const Error = () => {
+    const error = useRouteError()
+    console.log(error)
+
     return (
         <section>
             <div className='error-page mt-[3rem] px-[1.1rem] md:px-[2rem] lg:px-[3rem]'>

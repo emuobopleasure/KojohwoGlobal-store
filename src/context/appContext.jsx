@@ -9,10 +9,6 @@ const AppProvider = ({ children }) => {
     const navigate = useNavigate();
     const location = useLocation();
 
-    const getWishlistFromLocalStorage = () => {
-        const savedWishlist = localStorage.getItem("wishlistData");
-        return savedWishlist ? JSON.parse(savedWishlist) : [];
-    };
 
     // categories array with react-icons
     const initialCategories = [
@@ -30,7 +26,6 @@ const AppProvider = ({ children }) => {
     ];
 
     const [categories] = useState(initialCategories);
-    const [wishlist, setWishlist] = useState(() => getWishlistFromLocalStorage());
     const [filteredProducts, setFilteredProducts] = useState([]);
     const [searchQuery, setSearchQuery] = useState("");
     const [selectedCategory, setSelectedCategory] = useState("All Categories");
@@ -38,11 +33,6 @@ const AppProvider = ({ children }) => {
     const [addToWishAlert, setAddToWishAlert] = useState(false);
     const [removeFromWishAlert, setRemoveFromWishAlert] = useState(false);
     const [showStickyCategories, setShowStickyCategories] = useState(false);
-
-    // Save wishlist to local storage
-    const saveWishlistToLocalStorage = (wishlist) => {
-        localStorage.setItem("wishlistData", JSON.stringify(wishlist));
-    };
 
     useEffect(() => {
         setFilteredProducts(products);
@@ -97,36 +87,87 @@ const AppProvider = ({ children }) => {
         setFilteredProducts(products)
     }, []);
 
+
+    // ✅ Generate unique product key (id + slug)
+    const getProductKey = (product) => `${product.id}-${product.slug}`;
+
+    // ✅ Load & migrate wishlist from localStorage
+    const loadWishlistFromLocalStorage = () => {
+        const saved = localStorage.getItem("wishlistData");
+        if (!saved) return [];
+
+        let parsed = JSON.parse(saved);
+
+        // Ensure every item has a key
+        parsed = parsed.map((item) => ({
+            ...item,
+            key: item.key || getProductKey(item),
+        }));
+
+        // Save migrated version back
+        localStorage.setItem("wishlistData", JSON.stringify(parsed));
+        return parsed;
+    };
+
+    const [wishlist, setWishlist] = useState(loadWishlistFromLocalStorage);
+
+    // ✅ Save wishlist to localStorage
+    const saveWishlistToLocalStorage = (wishlist) => {
+        localStorage.setItem("wishlistData", JSON.stringify(wishlist));
+    };
+
+    // ✅ Add to wishlist
     const handleAddToWishlist = (product) => {
         const productWithTimestamp = {
-            ...product,
-            addedAt: new Date().getTime() // Current timestamp
+            id: product.id,
+            slug: product.slug,
+            name: product.name,
+            price: product.price,
+            image: product.image,
+            key: getProductKey(product),
+            addedAt: new Date().getTime(),
         };
 
-        // Create new array with the newest item first
-        const updatedWishlist = [productWithTimestamp, ...wishlist]; // Fixed this line
+        // prevent duplicates
+        const filteredWishlist = wishlist.filter(
+            (item) => item.key !== productWithTimestamp.key
+        );
+
+        const updatedWishlist = [productWithTimestamp, ...filteredWishlist];
         setWishlist(updatedWishlist);
         saveWishlistToLocalStorage(updatedWishlist);
     };
 
-    const handleRemoveFromWishlist = (productId) => {
-        const updatedWishlist = wishlist.filter((item) => item.id !== productId);
+    // ✅ Remove from wishlist
+    const handleRemoveFromWishlist = (product) => {
+        const productKey = getProductKey(product);
+
+        const updatedWishlist = wishlist.filter(
+            (item) => item.key !== productKey
+        );
+
         setWishlist(updatedWishlist);
         saveWishlistToLocalStorage(updatedWishlist);
         setRemoveFromWishAlert(true);
         setTimeout(() => setRemoveFromWishAlert(false), 2000);
     };
 
-    const handleWishlistButtonClick = (item) => {
-        const isItemInWishlist = wishlist.some((wishlistItem) => wishlistItem.id === item.id);
+    // ✅ Toggle wishlist button
+    const handleWishlistButtonClick = (product) => {
+        const productKey = getProductKey(product);
+        const isItemInWishlist = wishlist.some(
+            (wishlistItem) => wishlistItem.key === productKey
+        );
+
         if (isItemInWishlist) {
-            handleRemoveFromWishlist(item.id);
+            handleRemoveFromWishlist(product);
         } else {
-            handleAddToWishlist(item);
+            handleAddToWishlist(product);
             setAddToWishAlert(true);
             setTimeout(() => setAddToWishAlert(false), 2000);
         }
     };
+
 
     return (
         <AppContext.Provider

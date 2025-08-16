@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { GoArrowRight } from 'react-icons/go';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, } from 'react-router-dom';
 import { AppContext } from '../context/appContext';
 
 const FeaturedCategories = () => {
