@@ -236,50 +236,50 @@ const Header = () => {
                                     </span>
                                 </div>
                             </li> */}
-                            <li onClick={() => setShowMenu(false)}>
-                                <NavLink to='/' className={({ isActive }) => isActive ? 'mobile-nav-link bg-accent hover:bg-accent hover:rounded-full text-white rounded-full border-none pl-[1.3rem]' : 'border-none pl-[1.3rem]'}>
+                            <li onClick={() => setShowMenu(false)} className='w-[95%] mx-auto font-semibold'>
+                                <NavLink to='/' id='m-m-link' className={({ isActive }) => isActive ? 'mobile-nav-link bg-accent hover:bg-accent hover:rounded-full text-white rounded-full border-none pl-[12.5px]' : 'border-none pl-[12.5px] hover:rounded-full'}>
                                     <span>
                                         <PiHouseThin size={'1.5rem'} className='mr-[1.1rem]' />
                                     </span>
                                     Home
                                 </NavLink>
                             </li>
-                            <li onClick={() => setShowMenu(false)}>
-                                <NavLink to='/products' className={({ isActive }) => isActive ? 'mobile-nav-link bg-accent hover:bg-accent hover:rounded-full text-white rounded-full border-none pl-[1.3rem]' : 'border-none pl-[1.3rem]'}>
+                            <li onClick={() => setShowMenu(false)} className='w-[95%] mx-auto font-semibold'>
+                                <NavLink to='/products' id='m-m-link' className={({ isActive }) => isActive ? 'mobile-nav-link bg-accent hover:bg-accent hover:rounded-full text-white rounded-full border-none pl-[12.5px]' : 'border-none pl-[12.5px] hover:rounded-full'}>
                                     <span>
                                         <PiHandbagThin size={'1.5rem'} className='mr-[1.1rem]' />
                                     </span>
                                     Shop
                                 </NavLink>
                             </li>
-                            <li onClick={() => setShowMenu(false)}>
-                                <NavLink to='/contact' className={({ isActive }) => isActive ? 'mobile-nav-link bg-accent hover:bg-accent hover:rounded-full text-white rounded-full border-none pl-[1.3rem]' : 'border-none pl-[1.3rem]'}>
+                            <li onClick={() => setShowMenu(false)} className='w-[95%] mx-auto font-semibold'>
+                                <NavLink to='/contact' id='m-m-link' className={({ isActive }) => isActive ? 'mobile-nav-link bg-accent hover:bg-accent hover:rounded-full text-white rounded-full border-none pl-[12.5px]' : 'border-none pl-[12.5px] hover:rounded-full'}>
                                     <span>
                                         <PiIdentificationCardThin size={'1.5rem'} className='mr-[1.1rem]' />
                                     </span>
                                     Contact
                                 </NavLink>
                             </li>
-                            <li onClick={() => setShowMenu(false)}>
-                                <NavLink to='/about' className={({ isActive }) => isActive ? 'mobile-nav-link bg-accent hover:bg-accent hover:rounded-full text-white rounded-full border-none pl-[1.3rem]' : 'border-none pl-[1.3rem]'}>
+                            <li onClick={() => setShowMenu(false)} className='w-[95%] mx-auto font-semibold'>
+                                <NavLink to='/about' id='m-m-link' className={({ isActive }) => isActive ? 'mobile-nav-link bg-accent hover:bg-accent hover:rounded-full text-white rounded-full border-none pl-[12.5px]' : 'border-none pl-[12.5px] hover:rounded-full'}>
                                     <span>
                                         <PiInfoThin size={'1.7rem'} className='mr-[1.1rem]' />
                                     </span>
                                     About
                                 </NavLink>
                             </li>
-                            <div className='social-links cursor-default '>
+                            <div className='social-links cursor-default'>
                                 <div className='mobile-nav-link social-links gap-4 px-4 mobile-nav-link h-[3.4rem] flex items-center justify-between cursor-text rounded-[2rem]'>
-                                    <a href='https://wa.me/message/WRKSVZP2GDD7K1' className='whatsapp p-[10px] rounded-[40%] border-[1px] border-[#291334]'>
+                                    <a href='https://wa.me/message/WRKSVZP2GDD7K1' target='blank' className='whatsapp p-[10px] rounded-[40%] border-[1px] border-[#291334]'>
                                         <RiWhatsappFill size='1.2rem' />
                                     </a>
-                                    <a href='https://facebook.com/profile.php/?id=100003626663302&_rdc=1&_rdr' className='facebook p-[10px] rounded-[40%] border-[1px] border-[#291334]'>
+                                    <a href='https://facebook.com/profile.php/?id=100003626663302&_rdc=1&_rdr' target='blank' className='facebook p-[10px] rounded-[40%] border-[1px] border-[#291334]'>
                                         <FaFacebookF />
                                     </a>
-                                    <a href='https://twitter.com' className='instagram p-[10px] rounded-[40%] border-[1px] border-[#291334]'>
+                                    <a href='https://twitter.com' target='blank' className='instagram p-[10px] rounded-[40%] border-[1px] border-[#291334]'>
                                         <FaTwitter />
                                     </a>
-                                    <a href='https://youtube.com' className='tiktok p-[10px] rounded-[40%] border-[1px] border-[#291334]'>
+                                    <a href='https://youtube.com' target='blank' className='tiktok p-[10px] rounded-[40%] border-[1px] border-[#291334]'>
                                         <FaYoutube />
                                     </a>
                                 </div>

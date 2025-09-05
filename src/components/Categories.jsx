@@ -58,10 +58,10 @@ const Categories = () => {
 
   const categoryList = (
     <ul className="categories-list text-gray-700 text-sm flex justify-between whitespace-nowrap items-center md:justify-evenly gap-2 overflow-auto">
-      <li>
+      <li className='mb-[2px]'>
         <button
           onClick={() => handleCategoryClick('All Categories')}
-          className={`all-categories-btn items-center border px-[0.8rem] py-[0.5rem] ${selectedCategory === 'All Categories' ? 'bg-accent text-white' : 'border-gray-400'
+          className={`all-categories-btn items-center border px-[0.8rem] py-[0.5rem] ${selectedCategory === 'All Categories' ? 'bg-accent py-[0.85rem] text-white' : 'border-gray-400'
             } rounded-full lg:hover:bg-accent lg:hover:text-white lg:hover:border-accent font-semibold flex gap-1`}
         >
           <i className="fa-solid fa-house-chimney" />
@@ -70,14 +70,14 @@ const Categories = () => {
       </li>
 
       {categories.map((category) => (
-        <li
+        <li className='mb-[2px]'
           key={category.slug}
           ref={(el) => (categoryRefs.current[category.slug] = el)}
         >
           <button
             onClick={() => handleCategoryClick(category.slug)}
             className={`categories-btn items-center px-[0.8rem] py-[0.5rem] font-semibold rounded-full flex gap-1 ${selectedCategory === category.slug
-                ? 'bg-accent text-white border'
+                ? 'bg-accent py-[0.85rem] text-white border'
                 : 'bg-none border border-gray-400'
               } lg:hover:bg-accent lg:hover:text-white lg:hover:border-white`}
           >
