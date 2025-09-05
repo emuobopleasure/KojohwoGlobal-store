@@ -10,6 +10,24 @@ html {
 /* * {
   outline: 1px solid blue;
 } */
+
+#m-m-link {
+  /* all: unset !important; */
+
+}
+
+#m-m-link:hover {
+  background-color: #8c3f27 !important;
+  color: white;
+}
+
+#m-m-link:focus {
+  background-color: none !important;
+  color: white !important;
+}
+#m-m-link:active {
+  background-color: none !important;
+}
  
 
 /* Hide scrollbar for Chrome, Safari and Opera */
