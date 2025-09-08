@@ -88,7 +88,7 @@ const Products = () => {
 
 
     return (
-        <section className="products-section px-[1.1rem] md:px-[2rem] lg:px-[3rem] pt-[5.5rem] md:pt-28 lg:pt-36">
+        <section className="products-section px-[1.1rem] md:px-[2rem] lg:px-[3rem] pt-[5.5rem] md:pt-28 lg:pt-36 mb-14">
             <h1 className="text-2xl font-bold text-gray-700 mb-6 text-center md:text-left">All Products</h1>
 
             {/* Search bar */}
@@ -125,7 +125,7 @@ const Products = () => {
 
             {/* Pagination */}
             {totalPages > 1 && (
-                <div className="pagination-wrapper mt-10 flex justify-center">
+                <div className="pagination-wrapper mt-14 flex justify-center">
                     <Pagination
                         currentPage={currentPage}
                         totalPages={totalPages}

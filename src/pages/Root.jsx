@@ -12,7 +12,7 @@ const Root = () => {
     <>
       <Header />
       {
-        addToWishAlert && 
+        addToWishAlert &&
         <Alert text='Item successfully added to Wishlist!' styling='alert-success' />
       }
       {
@@ -21,9 +21,11 @@ const Root = () => {
 
       }
       {/* <Alert text='Item successfully removed from Wishlist!' styling='alert-warning' /> */}
-      <main className='main 2xl:max-w-[128rem] 2xl:mx-auto'>
-        <Outlet />
-      </main>
+      <div className='flex flex-col min-h-screen'>
+        <main className='main flex-grow 2xl:max-w-[128rem] 2xl:mx-auto'>
+          <Outlet />
+        </main>
+      </div>
       <Footer />
     </>
   )
