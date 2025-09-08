@@ -100,7 +100,7 @@ const Categories = () => {
 
       {/* Default version */}
       {!showStickyCategories && (
-        <div className="non-sticky px-[1rem] md:px-[2rem] lg:px-[3rem] my-8 lg:my-12 border border-gray-300 rounded-3xl py-4">{categoryList}</div>
+        <div className="non-sticky px-[1rem] md:px-[2rem] lg:px-[3rem] my-8 lg:my-12 border border-gray-300 rounded-full py-4">{categoryList}</div>
       )}
     </article>
   )

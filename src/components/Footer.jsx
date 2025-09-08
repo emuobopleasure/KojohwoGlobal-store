@@ -10,7 +10,7 @@ import { CiLocationOn } from 'react-icons/ci';
 const Footer = () => {
     return (
         <footer id='footer' data-theme="" className='bg-accent text-base-100'>
-            <div className="footer footer-center p-10 font-semibold mt-20 rounded-t-3xl xl:max-w-[90rem] xl:mx-auto">
+            <div className="footer footer-center p-10 font-semibold rounded-t-3xl xl:max-w-[90rem] xl:mx-auto">
                 <div className="grid grid-flow-col gap-4">
                     <Link to="/about" className="link link-hover mt-[10px]">About Us</Link>
                     <Link to="/contact" className="link link-hover mt-[10px]">Contact Us</Link>
