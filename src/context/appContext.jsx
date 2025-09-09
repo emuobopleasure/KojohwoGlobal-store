@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import products from "../ProductsData";
 import { useLocation, useNavigate } from "react-router-dom";
-import { FaFileAlt, FaChild, FaGift, FaSchool, FaBook, FaToiletPaper } from "react-icons/fa";
+import { FaBroom, FaChild, FaGift, FaSchool, FaBook , FaPumpSoap } from "react-icons/fa";
 
 const AppContext = createContext();
 
@@ -12,7 +12,7 @@ const AppProvider = ({ children }) => {
 
     // categories array with react-icons
     const initialCategories = [
-        { id: 1, name: "Home Articles", image: '/images/categoryImages/home-art2.webp', icon: <FaFileAlt />, slug: "home-articles" },
+        { id: 1, name: "Home Articles", image: '/images/categoryImages/home-art2.webp', icon: <FaBroom />, slug: "home-articles" },
 
         { id: 2, name: "Kiddies", image: '/images/categoryImages/kiddies2.webp', icon: <FaChild />, slug: "kiddies" },
 
@@ -22,7 +22,7 @@ const AppProvider = ({ children }) => {
 
         { id: 5, name: "Books/Stationeries", image: '/images/categoryImages/books2.webp', icon: <FaBook />, slug: "books-stationeries" },
 
-        { id: 6, name: "Toiletries", image: '/images/categoryImages/toilet1.webp', icon: <FaToiletPaper />, slug: "toiletries" },
+        { id: 6, name: "Toiletries", image: '/images/categoryImages/toilet1.webp', icon: <FaPumpSoap />, slug: "toiletries" },
     ];
 
     const [categories] = useState(initialCategories);
