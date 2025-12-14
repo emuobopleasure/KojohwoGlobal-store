@@ -1,13 +1,30 @@
 import React, { useContext } from 'react'
 import { VscClose } from 'react-icons/vsc';
 import { AppContext } from '../context/appContext';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+
 const Wishlist = () => {
     window.scrollTo(0, 0)
 
     const { wishlist, handleRemoveFromWishlist } = useContext(AppContext)
+    const navigate = useNavigate()
 
     const numOfWishItems = wishlist.length
+
+    // Handle card click - navigate to product details
+    const handleCardClick = (item, e) => {
+        // Check if the click target is the delete button or its children
+        if (e.target.closest('.delete-button')) {
+            return; // Don't navigate if delete button was clicked
+        }
+        navigate(`/products/${item.id}-${item.slug}`)
+    }
+
+    // Handle remove button click
+    const handleRemoveClick = (item, e) => {
+        e.stopPropagation() // Prevent card click event
+        handleRemoveFromWishlist(item)
+    }
 
     return (
         <section>
@@ -37,28 +54,29 @@ const Wishlist = () => {
                         )
                         :
                         (
-                            <div className='wishlist-container bg-[#ede8e8] py-[2rem] px-[1rem] grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-4 rounded-xl'>
+                            <div className='wishlist-container bg-[#ede8e8] py-[2rem] px-[1rem] grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-4 rounded-xl mb-12'>
                                 {wishlist.map((item) => (
-                                    <div key={item.key} className='wishlist-products'>
-                                        <div className="cart-item-card bg-base-100 flex p-4 rounded-2xl shadow-xl hover:border hover:border-accent relative cursor-pointer">
+                                    <div key={item.id} className='wishlist-products'>
+                                        <div 
+                                            onClick={(e) => handleCardClick(item, e)}
+                                            className="cart-item-card bg-base-100 flex p-4 rounded-2xl shadow-xl hover:border hover:border-accent relative cursor-pointer"
+                                        >
                                             {/* Product Image */}
-                                        <Link to={`/products/${item.id}-${item.slug}`} className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-lg border border-gray-200">
+                                            <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-lg border border-gray-200">
                                                 <img src={item.image} alt={item.name} className="h-full w-full object-cover" />
-                                            </Link>
+                                            </div>
 
                                             {/* Product Info */}
                                             <div className="ml-4 flex flex-col flex-1 justify-between min-w-0">
                                                 <div className="flex justify-between items-center">
                                                     <h3 className="text-base font-medium text-gray-700 truncate">
-                                                        <Link to={`/products/${item.id}-${item.slug}`} className="hover:text-accent">
-                                                            {item.name}
-                                                        </Link>
+                                                        {item.name}
                                                     </h3>
 
                                                     {/* Delete Button*/}
                                                     <button
-                                                        onClick={() => handleRemoveFromWishlist(item)}
-                                                        className="text-red-600 border border-red-600 rounded-lg hover:text-white ml-2 flex-shrink-0 hover:bg-red-500"
+                                                        onClick={(e) => handleRemoveClick(item, e)}
+                                                        className="delete-button text-red-600 border border-red-600 rounded-lg hover:text-white ml-2 flex-shrink-0 hover:bg-red-500"
                                                         aria-label="Remove item"
                                                     >
                                                         <VscClose size='1.2rem' className="font-bold" />
@@ -66,11 +84,11 @@ const Wishlist = () => {
                                                 </div>
 
                                                 {/* Price */}
-                                                <Link to={`/products/${item.id}-${item.slug}`} className="mt-2">
+                                                <div className="mt-2">
                                                     <p className="text-sm font-semibold text-gray-900">
                                                         ₦{item.price}
                                                     </p>
-                                                </Link>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
