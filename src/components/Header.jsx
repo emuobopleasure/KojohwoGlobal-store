@@ -1,7 +1,14 @@
 import React, { useContext, useEffect, useState } from 'react'
+import { FiMenu } from 'react-icons/fi';
+import { CiSearch, CiHeart, } from 'react-icons/ci';
 import { PiHeartStraightThin, PiInfoThin, PiHandbagThin, PiHouseThin, PiIdentificationCardThin, PiListThin, PiMagnifyingGlassThin, PiXThin, PiXCircleThin } from "react-icons/pi";
 import { RiWhatsappFill } from 'react-icons/ri';
+import { TfiInfoAlt } from "react-icons/tfi";
+import { MdOutlineContactPhone } from 'react-icons/md';
 import { FaFacebookF, FaTwitter, FaYoutube, } from 'react-icons/fa';
+import { HiOutlineShoppingBag } from "react-icons/hi2";
+import { VscHome } from 'react-icons/vsc';
+import { IoIosCloseCircleOutline } from "react-icons/io";
 import { NavLink, Link, useNavigate } from 'react-router-dom';
 import Button from './Button';
 import SearchForm from './SearchForm';
