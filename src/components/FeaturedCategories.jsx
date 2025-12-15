@@ -41,14 +41,14 @@ const FeaturedCategories = () => {
                             </div>
 
                             {/* Card Bottom */}
-                            <div className='card-bottom mt-4 mb-[4px] flex items-center justify-between px-[5px] border border-accent rounded-2xl w-[93%] mx-auto group-hover:bg-accent transition-colors duration-300 ease-in-out py-[2px]'>
+                            <div className='card-bottom mt-4 mb-[4px] flex items-center justify-between px-[4px] border border-accent rounded-full w-[93%] mx-auto group-hover:bg-accent transition-colors duration-300 ease-in-out py-[2px]'>
                                 <h3 className='text-accent text-sm sm:text-base group-hover:text-base-100 transition-colors duration-300 ease-in-out truncate pr-2'>
                                     {category.name}
                                 </h3>
                                 <div className='flex-shrink-0'>
                                     <GoArrowRight
                                         size={'1.2rem'}
-                                        className='border border-base-100 rounded-lg p-[1px] text-base-100 bg-accent group-hover:scale-110 transition-all ease-out duration-300 group-hover:rounded-full'
+                                        className='border border-base-100 rounded-full p-[1px] text-base-100 bg-accent group-hover:scale-110 transition-all ease-out duration-300 group-hover:rounded-full'
                                     />
                                 </div>
                             </div>
