@@ -15,7 +15,7 @@ const ContactPage = () => {
           <div className="container text-gray-800 px-4 md:px-12">
             <div className="contact-card block rounded-xl shadow-lg py-10 md:py-12 px-2 md:px-6" style={{ marginTop: '-100px', background: 'hsla(0, 0%, 100%, 0.8)', backdropFilter: 'blur(30px)' }}>
               <div className="flex flex-wrap lg:items-center">
-                <div className="grow-0 shrink-0 basis-auto w-full xl:w-5/12 px-3 lg:px-6 mb-12 xl:mb-0">
+                <div className="grow-0 shrink-0 basis-auto w-full xl:w-6/12 px-3 lg:px-6 mb-12 xl:mb-0">
                   <form>
                     <div className="form-group mb-6">
                       <input type="text" className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded-2xl transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-500 focus:outline-none" id="exampleInput7" placeholder="Name" />
@@ -31,8 +31,8 @@ const ContactPage = () => {
                     />
                   </form>
                 </div>
-                <div className="grow-0 shrink-0 basis-auto w-full xl:w-7/12">
-                  <div className="flex flex-wrap">
+                <div className="grow-0 shrink-0 basis-auto w-full xl:w-6/12">
+                  <div className="flex flex-wrap gap-4">
                     <div className="mb-12 grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
                       <div className="flex items-start">
                         <div className="shrink-0">
