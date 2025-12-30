@@ -41,7 +41,7 @@ const NewsletterForm = ({
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            placeholder="Your name (optional)"
+            placeholder="Your names (optional)"
             className="input input-bordered w-full"
             disabled={isLoading}
           />
