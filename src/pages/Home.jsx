@@ -40,7 +40,7 @@ const HomePage = () => {
           {/* <TestCateg/> */}
           <FeaturedCategories/>
           <FeaturedProducts />
-          <Newsletter />
+          {/* <Newsletter /> */}
           <NewsletterSection />
           {/* <NewsletterForm 
             className="max-w-md mx-auto"
