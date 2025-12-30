@@ -5,6 +5,7 @@ import Newsletter from '../components/NewsLetter';
 import FeaturedCategories from '../components/FeaturedCategories';
 import { Helmet } from 'react-helmet-async';
 import TestCateg from '../components/TestCateg';
+import NewsletterForm from '../components/NewsLetterForm';
 
 const HomePage = () => {
 
@@ -39,6 +40,11 @@ const HomePage = () => {
           <FeaturedCategories/>
           <FeaturedProducts />
           <Newsletter />
+          <NewsletterForm 
+            className="max-w-md mx-auto"
+              showName={true}
+
+          />
         </div>
       </section>
     </>

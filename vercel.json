@@ -1,29 +1,10 @@
 {
+  "devCommand": "npm run dev",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
   "rewrites": [
     {
-      "source": "/products/:id",
-      "destination": "/api/og?url=/products/:id",
-      "has": [
-        {
-          "type": "header",
-          "key": "user-agent",
-          "value": ".*(facebookexternalhit|twitterbot|linkedinbot|whatsapp|telegrambot).*"
-        }
-      ]
-    },
-    {
-      "source": "/",
-      "destination": "/api/og?url=/",
-      "has": [
-        {
-          "type": "header",
-          "key": "user-agent",
-          "value": ".*(facebookexternalhit|twitterbot|linkedinbot|whatsapp|telegrambot).*"
-        }
-      ]
-    },
-    {
-      "source": "/((?!api|_next|favicon.ico|images|og|src).*)",
+      "source": "/((?!api).*)",
       "destination": "/index.html"
     }
   ]
