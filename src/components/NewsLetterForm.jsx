@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import useNewsletter from '../hooks/useNewsletter';
+import useNewsletter from '../hooks/useNewsLetter.js';
 
 const NewsletterForm = ({ 
   showName = false, 
