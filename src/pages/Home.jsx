@@ -7,6 +7,7 @@ import { Helmet } from 'react-helmet-async';
 import TestCateg from '../components/TestCateg';
 import NewsletterForm from '../components/NewsLetterForm';
 import NewsletterSection from '../components/NewsLetterSection';
+import NewsletterModal from '../components/NewsLetterModal';
 
 const HomePage = () => {
 
@@ -42,6 +43,7 @@ const HomePage = () => {
           <FeaturedProducts />
           {/* <Newsletter /> */}
           <NewsletterSection />
+          <NewsletterModal/>
           {/* <NewsletterForm 
             className="max-w-md mx-auto"
               showName={true}
