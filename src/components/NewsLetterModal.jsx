@@ -60,14 +60,26 @@ const NewsletterModal = ({ isOpen, isSuccess, message, onClose }) => {
                         {isSuccess ? (
                             <GoCheck className="text-success text-7xl animate-scaleIn p-[6px] bg-base-100 animate-scaleIn shadow-2xl drop-shadow-xl rounded-full" />
                         ) : (
-                            <TfiClose  className="text-error p-[6px] bg-base-100 text-7xl animate-scaleIn shadow-2xl drop-shadow-xl rounded-full" />
+                            <TfiClose className="text-error p-[6px] bg-base-100 text-7xl animate-scaleIn shadow-2xl drop-shadow-xl rounded-full" />
                         )}
                     </div>
 
                     {/* Title */}
-                    <h2 className="text-2xl font-bold text-center text-neutral mb-4">
+                    {
+                        isSuccess ?
+                            (<h2 className="text-2xl font-bold text-center mb-4 text-success">
+                                🎉 Success!
+                            </h2>
+                            )
+                            :
+                            (<h2 className="text-2xl font-bold text-center mb-4 text-error">
+                                ⚠️ Oops!
+                            </h2>
+                            )
+                    }
+                    {/* <h2 className="text-2xl font-bold text-center mb-4">
                         {isSuccess ? '🎉 Success!' : '⚠️ Oops!'}
-                    </h2>
+                    </h2> */}
 
                     {/* Message */}
                     <p className="text-center text-gray-600 mb-8 text-base">
@@ -86,11 +98,11 @@ const NewsletterModal = ({ isOpen, isSuccess, message, onClose }) => {
                     </button>
 
                     {/* Additional Info for Success */}
-                    {isSuccess && (
+                    {/* {isSuccess && (
                         <p className="text-xs text-center text-gray-500 mt-4 italic">
                             Check your inbox for a confirmation email
                         </p>
-                    )}
+                    )} */}
                 </div>
             </div>
 
