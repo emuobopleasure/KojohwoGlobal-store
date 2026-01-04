@@ -68,7 +68,7 @@ const NewsletterModal = ({ isOpen, isSuccess, message, onClose }) => {
                     {
                         isSuccess ?
                             (<h2 className="text-2xl font-bold text-center mb-4 text-success">
-                                🎉 Success!
+                                Success!
                             </h2>
                             )
                             :
