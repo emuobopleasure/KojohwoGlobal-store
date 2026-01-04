@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
-import { IoCheckmarkCircle, IoCloseCircle } from 'react-icons/io5';
+import { GoCheck } from 'react-icons/go';
 import { VscClose } from 'react-icons/vsc';
+import { TfiClose } from 'react-icons/tfi';
 
 const NewsletterModal = ({ isOpen, isSuccess, message, onClose }) => {
 
@@ -55,16 +56,16 @@ const NewsletterModal = ({ isOpen, isSuccess, message, onClose }) => {
                     </button>
 
                     {/* Icon */}
-                    <div className="flex justify-center mb-6">
+                    <div className="flex justify-center mb-6 ">
                         {isSuccess ? (
-                            <IoCheckmarkCircle className="text-success text-7xl animate-scaleIn" />
+                            <GoCheck className="text-success text-7xl animate-scaleIn p-[6px] bg-base-100 animate-scaleIn shadow-2xl drop-shadow-xl rounded-full" />
                         ) : (
-                            <IoCloseCircle className="text-warning text-7xl animate-scaleIn" />
+                            <TfiClose  className="text-error p-[6px] bg-base-100 text-7xl animate-scaleIn shadow-2xl drop-shadow-xl rounded-full" />
                         )}
                     </div>
 
                     {/* Title */}
-                    <h2 className="text-2xl font-bold text-center text-warning mb-4">
+                    <h2 className="text-2xl font-bold text-center text-neutral mb-4">
                         {isSuccess ? '🎉 Success!' : '⚠️ Oops!'}
                     </h2>
 
@@ -79,7 +80,7 @@ const NewsletterModal = ({ isOpen, isSuccess, message, onClose }) => {
                     {/* Action Button */}
                     <button
                         onClick={onClose}
-                        className={`w-full btn ${isSuccess ? 'btn-neutral' : 'btn-error'} text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300`}
+                        className={`w-full btn ${isSuccess ? 'btn-success' : 'btn-error'} text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300`}
                     >
                         {isSuccess ? 'Continue Shopping' : 'Try Again'}
                     </button>

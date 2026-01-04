@@ -14,7 +14,7 @@ const FeaturedCategories = () => {
     return (
         <section id='featuredCategories' className='section-wrapper px-[1.1rem] md:px-[2rem] lg:px-[3rem] mt-16 mb-[4rem]'>
             <div className='shop-by-categories mb-8'>
-                <h2 className="text-[22px] font-bold text-center leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">
+                <h2 className="text-[22px] text-gray-700 font-bold text-center leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">
                     Shop by Category
                 </h2>
             </div>

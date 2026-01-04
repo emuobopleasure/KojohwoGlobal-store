@@ -48,12 +48,12 @@ const NewsletterSection = () => {
                                 </div>
                                 <div className="grow-0 shrink-0 basis-auto w-full lg:w-6/12 xl:w-8/12">
                                     <div className="px-6 py-12 md:px-12">
-                                        <h2 className="text-3xl text-neutral font-bold mb-6">
+                                        <h2 className="text-3xl text-neutral-dark font-bold mb-6">
                                             📬Stay Updated
                                             <br />
                                             <span className="text-btnColor"></span>
                                         </h2>
-                                        <p className="text-accent font-normal mb-12 lg:pl-2">
+                                        <p className="text-neutral-dark font-normal mb-12 lg:pl-2">
                                             Subscribe to our newsletter and be the first to know about new arrivals, special offers, and exclusive deals.
                                         </p>
                                         <div className='form-wrapper md:flex items-end gap-[12px]'>
@@ -102,7 +102,7 @@ const NewsletterSection = () => {
                                             </button>
                                         </div>
 
-                                        <p className="text-xs mt-3 text-start text-gray-500 italic">
+                                        <p className="text-sm mt-3 text-start text-neutral-dark italic">
                                             By subscribing, you agree to receive emails from Kojohwo Global.
                                         </p>
                                     </div>
