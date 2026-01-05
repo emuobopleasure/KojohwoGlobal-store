@@ -24,10 +24,10 @@ const ShopItem = ({ item }) => {
                             <h1 className="text-base font-extrabold mb-0 text-gray-600 font-sans truncate w-full">
                                 {item.name}
                             </h1>
-                            <p className="text-xs text-gray-600 line-clamp-2 w-4/5">
+                            <p className="text-xs text-gray-700 line-clamp-2 w-4/5">
                                 {item.description}
                             </p>
-                            <h1 className="font-bold text-gray-500">₦{item.price}</h1>
+                            <h1 className="font-bold text-gray-600">₦{item.price}</h1>
                         </Link>
                         <div className="w-full mx-auto md:mx-0">
                             {/* <Button

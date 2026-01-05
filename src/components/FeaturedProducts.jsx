@@ -13,7 +13,7 @@ const FeaturedProducts = () => {
         <section id="featuredProducts" className="featured-products px-[1.1rem] md:px-[2rem] lg:px-[3rem] mt-16 mb-[4rem]">
             <div className="section-header text-center mb-10">
                 <h2 className="text-2xl font-bold text-gray-700">Featured Products</h2>
-                <p className="text-gray-500 text-sm">A quick glance at our best picks</p>
+                <p className="text-gray-700 text-sm">A quick glance at our best picks</p>
             </div>
 
 

@@ -34,7 +34,7 @@ const FeaturedCategories = () => {
                                 <div className='h-full w-full overflow-hidden rounded-2xl'>
                                     <img
                                         src={category.image}
-                                        alt={category.name}
+                                        alt=''
                                         className='h-full w-full object-cover transition-transform ease-out duration-300 group-hover:scale-110'
                                     />
                                 </div>
