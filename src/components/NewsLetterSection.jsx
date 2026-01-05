@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { PiEnvelopeSimpleLight } from "react-icons/pi";
 import useNewsletter from '../hooks/useNewsLetter.js';
 import NewsletterModal from './NewsLetterModal.jsx';
+
 const NewsletterSection = () => {
     const [email, setEmail] = useState('');
     const [name, setName] = useState('');
