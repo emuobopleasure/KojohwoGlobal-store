@@ -5,6 +5,7 @@ import NewsletterModal from './NewsLetterModal.jsx';
 
 const NewsletterSection = () => {
     const [email, setEmail] = useState('');
+    const [emailError, setEmailError] = useState('');
     const [name, setName] = useState('');
     const [showModal, setShowModal] = useState(false);
     const { subscribe, isLoading, message, isSuccess, clearMessage } = useNewsletter();
@@ -12,14 +13,22 @@ const NewsletterSection = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        if (!email.trim()) return;
+        if (!email.trim()) {
+
+            setEmailError('Please enter your email address');
+
+
+            return;
+        }
+
+        setEmailError('');
 
         const result = await subscribe(email, name);
 
         if (result) {
             // Show modal after subscription attempt
             setShowModal(true);
-            
+
             if (result.success) {
                 setEmail('');
                 setName('');
@@ -66,34 +75,45 @@ const NewsletterSection = () => {
                                                             type="text"
                                                             value={name}
                                                             onChange={(e) => setName(e.target.value)}
-                                                            className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-base-100 bg-clip-padding border border-solid border-gray-300 rounded-full transition ease-in-out focus:text-gray-700 focus:bg-base-100 focus:border-neutral focus:outline-none"
+                                                            className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-base-100 bg-clip-padding border border-solid border-gray-300 rounded-full transition ease-in-out focus:text-gray-700 focus:bg-base-100 focus:border-accent focus:outline-none"
                                                             placeholder="Your name (optional)"
                                                             disabled={isLoading}
                                                         />
                                                     </div>
                                                 </div>
-                                                {/* Email Input and Subscribe Button */}
-                                                <div className="relative w-full mb-3 md:mb-0 md:mr-2">
-                                                    <span className="absolute inset-y-0 left-4 flex items-center text-gray-400 text-xl">
-                                                        <PiEnvelopeSimpleLight />
-                                                    </span>
-                                                    <input
-                                                        type="email"
-                                                        value={email}
-                                                        onChange={(e) => setEmail(e.target.value)}
-                                                        className="form-control block w-full pl-11 pr-4 py-2 text-xl font-normal text-gray-700 bg-base-100 bg-clip-padding border border-solid border-gray-300 rounded-full transition ease-in-out focus:text-gray-700 focus:bg-base-100 focus:border-neutral focus:outline-none"
-                                                        placeholder="Enter your email"
-                                                        required
-                                                        disabled={isLoading}
-                                                    />
+                                                <div className='flex flex-col'>
+                                                    {/* Email Input and Subscribe Button */}
+                                                     <div className='emailError ml-3 mb-1'>
+                                                        {emailError && (
+                                                            <p className="mt-2 text-sm text-red-500 text-left">
+                                                                {emailError}
+                                                            </p>
+                                                        )}
+                                                    </div>
+                                                    <div className="relative w-full mb-3 md:mb-0 md:mr-2">
+                                                        <span className="absolute inset-y-0 left-4 flex items-center text-gray-400 text-xl">
+                                                            <PiEnvelopeSimpleLight />
+                                                        </span>
+                                                        <input
+                                                            type="email"
+                                                            value={email}
+                                                            onChange={(e) => {
+                                                                setEmail(e.target.value)
+                                                                if (emailError) setEmailError('')
+                                                            }}
+
+                                                            className={`form-control block w-full pl-11 pr-4 py-2 text-xl font-normal text-gray-700 bg-base-100 bg-clip-padding border border-solid border-gray-300 rounded-full transition ease-in-out focus:text-gray-700 focus:bg-base-100 focus:border-accent focus:outline-none ${emailError ? "border-red-500" : ""}`}
+                                                            placeholder="Enter your email"
+                                                            required
+                                                            disabled={isLoading}
+                                                        />
+                                                    </div>
                                                 </div>
                                             </div>
                                             <button
                                                 onClick={handleSubmit}
                                                 className="inline-block btn btn-neutral text-white rounded-full shadow-lg basis-[15%]"
-                                                data-mdb-ripple="true"
-                                                data-mdb-ripple-color="light"
-                                                disabled={isLoading || !email.trim()}
+                                                disabled={isLoading}
                                             >
                                                 {isLoading ? (
                                                     <span className="loading loading-spinner loading-sm"></span>
@@ -103,7 +123,7 @@ const NewsletterSection = () => {
                                             </button>
                                         </div>
 
-                                        <p className="text-sm mt-3 text-start text-neutral-dark italic">
+                                        <p className="text-sm mt-3 text-start text-neutral-dark italic ml-3">
                                             By subscribing, you agree to receive emails from Kojohwo Global.
                                         </p>
                                     </div>
