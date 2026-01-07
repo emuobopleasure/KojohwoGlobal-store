@@ -88,10 +88,10 @@ const AppProvider = ({ children }) => {
     }, []);
 
 
-    // ✅ Generate unique product key (id + slug)
+    // Generate unique product key (id + slug)
     const getProductKey = (product) => `${product.id}-${product.slug}`;
 
-    // ✅ Load & migrate wishlist from localStorage
+    // Load & migrate wishlist from localStorage
     const loadWishlistFromLocalStorage = () => {
         const saved = localStorage.getItem("wishlistData");
         if (!saved) return [];

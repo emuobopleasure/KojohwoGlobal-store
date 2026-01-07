@@ -4,7 +4,29 @@
   "outputDirectory": "dist",
   "rewrites": [
     {
-      "source": "/((?!api).*)",
+      "source": "/products/:idSlug",
+      "destination": "/api/og?url=/products/:idSlug",
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(facebookexternalhit|twitterbot|linkedinbot|whatsapp|telegrambot).*"
+        }
+      ]
+    },
+    {
+      "source": "/",
+      "destination": "/api/og?url=/",
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(facebookexternalhit|twitterbot|linkedinbot|whatsapp|telegrambot).*"
+        }
+      ]
+    },
+    {
+      "source": "/((?!api|_next|favicon.ico|images|og|src).*)",
       "destination": "/index.html"
     }
   ]
