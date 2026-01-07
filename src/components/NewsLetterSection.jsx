@@ -112,7 +112,7 @@ const NewsletterSection = () => {
                                             </div>
                                             <button
                                                 onClick={handleSubmit}
-                                                className="inline-block btn btn-neutral text-white rounded-full shadow-lg basis-[15%]"
+                                                className="inline-block btn btn-neutral text-white rounded-full shadow-lg basis-[15%] mt-1 lg:mt-0 min-w-[10rem] lg:ml-1"
                                                 disabled={isLoading}
                                             >
                                                 {isLoading ? (
