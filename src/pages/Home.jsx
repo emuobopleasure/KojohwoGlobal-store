@@ -40,7 +40,7 @@ const HomePage = () => {
           <FeaturedProducts />
           {/* <Newsletter /> */}
           <NewsletterSection />
-          <NewsletterModal/>
+          {/* <NewsletterModal/> */}
           {/* <NewsletterForm 
             className="max-w-md mx-auto"
               showName={true}
