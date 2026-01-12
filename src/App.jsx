@@ -9,6 +9,7 @@ import Wishlist from "./pages/Wishlist";
 import Error from "./pages/Error";
 import Products from "./pages/Products";
 import { HelmetProvider } from "react-helmet-async";
+import { Analytics } from "@vercel/analytics/react";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,7 @@ const router = createBrowserRouter([
 function App() {
   return (
     <HelmetProvider>
+      <Analytics/>
       <RouterProvider router={router} />
     </HelmetProvider>
   );

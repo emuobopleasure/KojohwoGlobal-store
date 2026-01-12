@@ -122,7 +122,7 @@ ${`https://kojohwoglobal.vercel.app/products/${item.id}-${item.slug}`}`;
 
                             {/* arrow button that navigates to the previously active route */}
                             
-                            <button onClick={() => navigate(-1)} className='back-link fixed lg:hidden ml-[1rem] top-[4.3rem] p-[10px] landscape:ml-0 rounded-[40%] border-[1px] border-[#374151] bg-base-100'>
+                            <button onClick={() => navigate(-1)} className='back-link fixed lg:hidden ml-[1rem] top-[4.3rem] p-[10px] rounded-[40%] border-[1px] border-[#374151] bg-base-100'>
                                 <BsArrowLeft size='1.2rem' />
                             </button>
                             
