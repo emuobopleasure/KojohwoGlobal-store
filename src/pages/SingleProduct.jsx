@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState, useRef } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import products from '../ProductsData'
 import { TbHeartPlus, TbHeartMinus } from 'react-icons/tb';
@@ -6,15 +6,22 @@ import { BsArrowLeft } from 'react-icons/bs';
 import { AppContext } from '../context/appContext';
 import { Helmet } from 'react-helmet-async';
 import RelatedProducts from '../components/RelatedProducts';
+import RecentlyViewed from '../components/RecentlyViewed';
+import useRecentlyViewed from '../hooks/useRecentlyViewed';
 
 const SingleProductPage = () => {
     const { handleWishlistButtonClick, wishlist } = useContext(AppContext)
     const { idSlug } = useParams()
     const navigate = useNavigate()
+    const { addToRecentlyViewed } = useRecentlyViewed();
+    const footerRef = useRef(null);
 
     // Loading state for product changes
     const [isLoadingProduct, setIsLoadingProduct] = useState(false);
-    const [showButton, setShowButton] = useState(false);
+    // const [showButton, setShowButton] = useState(false);
+    const [isFooterVisible, setIsFooterVisible] = useState(false);
+    const [isSticky, setIsSticky] = useState(false);     // scroll-based
+
 
     const id = idSlug.split("-")[0]
     const item = products.find((p) => p.id === parseInt(id))
@@ -31,31 +38,70 @@ ${`https://kojohwoglobal.vercel.app/products/${item.id}-${item.slug}`}`;
     const whatsappLink = `https://wa.me/${phone}?text=${encodedMessage}`;
 
     const handleScroll = () => {
-        const yOffset = window.scrollY
-        if (yOffset > 150) {
-            setShowButton(true)
-        } else {
-            setShowButton(false)
-        }
+        // const yOffset = window.scrollY
+        // if (yOffset > 150) {
+        //     setShowButton(true)
+        // } else {
+        //     setShowButton(false)
+        // }
     }
+
+    // Handle product view tracking
+    useEffect(() => {
+        if (item && item.id) {
+            addToRecentlyViewed(item.id);
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [idSlug]);
 
     // Handle product change with loading state
     useEffect(() => {
         setIsLoadingProduct(true);
         window.scrollTo(0, 0);
 
-        // Simulate loading for smooth transition
         const timer = setTimeout(() => {
             setIsLoadingProduct(false);
         }, 300);
 
         window.addEventListener('scroll', handleScroll);
-        
+
         return () => {
             window.removeEventListener('scroll', handleScroll);
             clearTimeout(timer);
         };
-    }, [idSlug]); // Re-run when product ID changes
+    }, [idSlug]);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsSticky(window.scrollY > 180); // adjust threshold
+        };
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+
+    // Detect when footer is visible using IntersectionObserver
+    useEffect(() => {
+        const footer = document.querySelector('footer');
+        if (!footer) return;
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                // Use visibility threshold instead of raw intersecting
+                setIsFooterVisible(entry.intersectionRatio > 0.1);
+            },
+            {
+                threshold: 0.1,
+            }
+        );
+
+        observer.observe(footer);
+
+        return () => observer.disconnect();
+    }, []);
+
 
     // Show loading spinner while product is loading
     if (isLoadingProduct) {
@@ -80,22 +126,22 @@ ${`https://kojohwoglobal.vercel.app/products/${item.id}-${item.slug}`}`;
                 <meta name="twitter:description" content={`Buy ${item.name} now for ₦${item.price}`} />
                 <meta name="twitter:image" content={`https://kojohwoglobal.vercel.app${item.image}`} />
             </Helmet>
-            
+
             <section>
-                <div className="single-item text-gray-700 body-font bg-base-100 mt-[7.3vh] mb-4 md:mt-20">
+                <div className="single-item text-gray-700 body-font bg-base-100 mt-[7.3vh] mb-4 md:mt-12 px-[1.1rem] md:px-[2rem] lg:px-[3rem]">
                     <div className="container py-2 md:py-12 mx-auto">
                         <div className="lg:w-4/5 mx-auto flex flex-wrap landscape:flex-nowrap landscape:items-center">
                             <div className='image-wrapper w-full lg:w-1/2 lg:h-full'>
                                 <img alt={item.name} className="product-image w-full h-full lg:h-full max-h-[20rem] md:max-h-[28rem] md:h-[28rem] object-scale-down md:object-contain object-center rounded-bl-2xl rounded-br-2xl md:rounded relative" src={item.image} />
                             </div>
 
-                            <button onClick={() => navigate(-1)} className='back-link fixed lg:hidden ml-[1rem] top-[4.3rem] p-[10px] rounded-[40%] border-[1px] border-[#374151] bg-base-100 z-20'>
+                            <button onClick={() => navigate(-1)} className='back-link fixed lg:hidden top-[4.3rem] p-[10px] rounded-[40%] border-[1px] border-[#374151] bg-base-100 z-20'>
                                 <BsArrowLeft size='1.2rem' />
                             </button>
-                            
+
                             <div className="lg:w-1/2 w-full px-[1.1rem] md:px-[2rem] lg:px-[3rem] lg:pl-10 lg:py-6 mt-6 lg:mt-0 lg:flex flex-col justify-between gap-4">
                                 <h1 className="product-name text-gray-600 text-3xl title-font font-medium mb-2">{item.name}</h1>
-                               
+
                                 <p className="leading-relaxed">{item.description}</p>
                                 <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-200 mb-5 justify-between gap-[6vw]">
                                     <div className="title-font font-medium text-2xl text-gray-900">₦{item.price}</div>
@@ -111,9 +157,23 @@ ${`https://kojohwoglobal.vercel.app/products/${item.id}-${item.slug}`}`;
                                         </svg>
                                         Chat to Order
                                     </a>
+
                                 </div>
-                                
-                                <div id='addToWish' className={`add-to-wish lg:hidden landscape:hidden ${showButton ? 'gap-[10vw]' : ' fixed bottom-2 right-4 left-4 md:right-8 md:left-8 z-10'}`}>
+
+                                {/* Add to Wishlist - Mobile/Tablet (Fixed or Relative based on footer visibility) */}
+                                <div
+                                    className={`
+                                            lg:hidden landscape:hidden z-40
+                                            transition-all duration-300 ease-in-out
+
+                                            ${isSticky
+                                            ? 'fixed bottom-2 left-4 right-4 md:left-8 md:right-8'
+                                            : 'relative mt-6 w-screen left-1/2 -translate-x-1/2 px-4 md:px-8'}
+
+                                             ${isFooterVisible
+                                            ? 'opacity-0 pointer-events-none translate-y-4'
+                                            : 'opacity-100 pointer-events-auto translate-y-0'}`}
+                                >
                                     {isItemInWishlist ? (
                                         <button onClick={() => handleWishlistButtonClick(item)} className="w-full px-[6px] py-[4px] h-[3rem] landscape:h-[2.5rem] md:h-[4rem] gap-[2px] flex justify-center items-center bg-base-100 border border-neutral text-neutral font-medium text-[79%] md:text-lg leading-snug capitalize rounded-full shadow-xl hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#ae2c00] active:text-white active:shadow-lg transition duration-150 ease-in-out">
                                             <TbHeartMinus size='1.2rem' />
@@ -127,7 +187,8 @@ ${`https://kojohwoglobal.vercel.app/products/${item.id}-${item.slug}`}`;
                                     )}
                                 </div>
 
-                                <div id='addToWish' className='add-to-wish hidden lg:block landscape:block lg:justify-start gap-[10vw]'>
+                                {/* Add to Wishlist - Desktop (Always relative) */}
+                                <div id='addToWish' className='add-to-wish hidden lg:block landscape:block lg:justify-start gap-[10vw] z-10'>
                                     {isItemInWishlist ? (
                                         <button onClick={() => handleWishlistButtonClick(item)} className="w-full px-[6px] py-[6px] gap-[2px] flex justify-center items-center bg-base-100 border border-neutral text-neutral font-medium text-[79%] md:text-lg leading-snug capitalize rounded-full shadow-xl hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#ae2c00] active:text-white active:shadow-lg transition duration-150 ease-in-out">
                                             <TbHeartMinus size='1.2rem' />
@@ -143,10 +204,10 @@ ${`https://kojohwoglobal.vercel.app/products/${item.id}-${item.slug}`}`;
                             </div>
                         </div>
                     </div>
+                    <RelatedProducts currentProduct={item} />
+                    <RecentlyViewed currentProductId={item.id} />
                 </div>
-
-                <RelatedProducts currentProduct={item} />
-            </section>
+            </section >
         </>
     )
 }

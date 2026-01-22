@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { IoEyeOutline } from 'react-icons/io5';
 
-const RelatedProductCard = ({ item }) => {
+const RecentlyViewedCard = ({ item }) => {
     return (
         <article className='w-auto'>
             <div className="flex justify-center items-center w-auto cursor-pointer">
@@ -20,16 +19,6 @@ const RelatedProductCard = ({ item }) => {
                             </p>
                             <h1 className="font-bold text-gray-600">₦{item.price}</h1>
                         </Link>
-                        {/* <div className="w-full mx-auto md:mx-0">
-                            <Link to={`/products/${item.id}-${item.slug}`}>
-                                <button className="w-full px-[6px] py-[5px] gap-[2px] flex justify-center items-center bg-neutral text-white font-medium text-[63%] md:text-[0.8rem] lg:text-[60%] xl:text-sm leading-snug capitalize rounded-full shadow-md hover:bg-[#ae2c00] focus:bg-[#ae2c00] focus:shadow-lg focus:outline-none focus:ring-0 active:bg=[#ae2c00] active:shadow-lg transition duration-150 ease-in-out">
-                                    <IoEyeOutline size='1.2rem' />
-                                    <p>
-                                        View Product
-                                    </p>
-                                </button>
-                            </Link>
-                        </div> */}
                     </div>
                 </div>
             </div>
@@ -37,4 +26,4 @@ const RelatedProductCard = ({ item }) => {
     );
 };
 
-export default RelatedProductCard;
+export default RecentlyViewedCard;

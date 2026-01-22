@@ -35,10 +35,8 @@ const HomePage = () => {
       <section>
         <div className='homesection mt-[4rem]'>
           <HeroSection />
-          {/* <TestCateg/> */}
           <FeaturedCategories/>
           <FeaturedProducts />
-          {/* <Newsletter /> */}
           <NewsletterSection />
           {/* <NewsletterModal/> */}
           {/* <NewsletterForm 

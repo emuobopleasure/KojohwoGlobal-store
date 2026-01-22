@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react'
 import ShopItem from './ShopItem'
 import Pagination from './Pagination'
 import Categories from './Categories'
+import RecentlyViewed from './RecentlyViewed'
 import { AppContext } from '../context/appContext'
 
 const ShopSection = () => {
@@ -20,12 +21,15 @@ const ShopSection = () => {
         setIsLoading(true)
 
         setTimeout(() => {
-
             setCurrentPage(pageNumber)
             setIsLoading(false)
         }, 1000)
-        
+        console.log('🏪 ShopSection rendering. Recently Viewed component should render below.');
+
     }
+
+    console.log('🏪 ShopSection rendering. Recently Viewed component should render below.');
+
 
     return (
         <section id='shopsection'>
@@ -47,18 +51,22 @@ const ShopSection = () => {
                         </div>
                         :
                         !isLoading && currentProducts.map((product) => (
-                            // <Link to={`/products/${product.id}`} key={product.id}>
-                                <ShopItem
-                                    key={product.id}
-                                    item={product}
-                                />
-                            // </Link>
+                            <ShopItem
+                                key={product.id}
+                                item={product}
+                            />
                         ))
                 }
             </div>
 
             <div className='pagination-wrapper mt-[2rem] flex justify-center'>
                 <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={handlePageChange} />
+            </div>
+
+            {/* Recently Viewed Section - After Pagination */}
+            <RecentlyViewed />
+            <div className="bg-blue-500 text-white p-8 text-center">
+                <h1>TEST: If you see this, the position is correct!</h1>
             </div>
         </section>
     )

@@ -28,7 +28,7 @@ const Wishlist = () => {
 
     return (
         <section>
-            <div className='wishlist px-[1.1rem] md:px-[2rem] lg:px-[3rem] mt-[6rem] lg:mt-[8rem] 2xl:max-w-[128rem] 2xl:mx-auto'>
+            <div className='wishlist px-[1.1rem] md:px-[2rem] lg:px-[3rem] mt-[6rem] 2xl:max-w-[128rem] 2xl:mx-auto'>
                 <div className='wishlist-heading'>
                     <h1 className='wishlist-heading text-xl text-center font-bold text-gray-600 mb-[1.5rem] lg:mb-[2rem]'>
                         Total Items ({numOfWishItems})

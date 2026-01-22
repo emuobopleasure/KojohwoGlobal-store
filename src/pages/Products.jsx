@@ -5,6 +5,7 @@ import ShopItem from '../components/ShopItem'
 import Pagination from '../components/Pagination'
 import { useSearchParams } from 'react-router-dom'
 import products from '../ProductsData'
+import RecentlyViewed from '../components/RecentlyViewed'
 
 const Products = () => {
     const {
@@ -88,8 +89,8 @@ const Products = () => {
 
 
     return (
-        <section className="products-section px-[1.1rem] md:px-[2rem] lg:px-[3rem] pt-[5.5rem] md:pt-28 lg:pt-36 mb-14">
-            <h1 className="text-2xl font-bold text-gray-700 mb-6 text-center md:text-left">All Products</h1>
+        <section className="products-section px-[1.1rem] md:px-[2rem] lg:px-[3rem] mt-[6rem] mb-12">
+            <h1 className="text-2xl font-bold text-gray-700 text-left">All Products</h1>
 
             {/* Search bar */}
             {/* <div className="mb-6">
@@ -133,6 +134,8 @@ const Products = () => {
                     />
                 </div>
             )}
+
+            <RecentlyViewed/>
         </section>
     )
 }

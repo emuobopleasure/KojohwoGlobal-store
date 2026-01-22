@@ -10,7 +10,7 @@ const FeaturedProducts = () => {
     // const featured = filteredProducts.slice(0, 6)
 
     return (
-        <section id="featuredProducts" className="featured-products px-[1.1rem] md:px-[2rem] lg:px-[3rem] mt-16 mb-[4rem]">
+        <section id="featuredProducts" className="featured-products px-[1.1rem] md:px-[2rem] lg:px-[3rem] mt-12 mb-[4rem]">
             <div className="section-header text-center mb-10">
                 <h2 className="text-2xl font-bold text-gray-700">Featured Products</h2>
                 <p className="text-gray-700 text-sm">A quick glance at our best picks</p>

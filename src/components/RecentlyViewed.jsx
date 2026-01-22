@@ -1,27 +1,51 @@
-import React, { useMemo, useRef, useState } from 'react';
-import { IoChevronBack, IoChevronForward } from 'react-icons/io5';
+import React, { useState, useRef, useEffect } from 'react';
+import { BsArrowLeft, BsArrowRight } from 'react-icons/bs';
 import products from '../ProductsData';
-import RelatedProductCard from './RelatedProductCard';
+import RecentlyViewedCard from './RecentlyViewedCard';
+import useRecentlyViewed from '../hooks/useRecentlyViewed';
 
-const RelatedProducts = ({ currentProduct }) => {
+const RecentlyViewed = ({ currentProductId = null }) => {
     const scrollContainerRef = useRef(null);
     const [canScrollLeft, setCanScrollLeft] = useState(false);
     const [canScrollRight, setCanScrollRight] = useState(true);
+    const [recentlyViewedProducts, setRecentlyViewedProducts] = useState([]);
+    const { getRecentlyViewed } = useRecentlyViewed();
 
-    // Get related products from same category, excluding current product
-    const relatedProducts = useMemo(() => {
-        if (!currentProduct) return [];
+    // Load recently viewed products on mount and when currentProductId changes
+    useEffect(() => {
+        // console.log('🔄 RecentlyViewed useEffect running...');
+        // console.log('Current Product ID:', currentProductId);
+        
+        const recentlyViewed = getRecentlyViewed();
+        // console.log('Recently viewed from localStorage:', recentlyViewed);
 
-        // Filter products by same category and EXCLUDE current product
-        const filtered = products.filter(product => 
-            product.category === currentProduct.category && 
-            product.id !== currentProduct.id  // ✅ This prevents current product from showing
-        );
+        // Map IDs to actual product objects
+        const productsList = recentlyViewed
+            .map(item => {
+                const product = products.find(p => p.id === item.id);
+                // console.log(`Mapping ID ${item.id}:`, product ? '✅ Found' : '❌ Not found');
+                return product;
+            })
+            .filter(product => {
+                if (!product) {
+                    console.log('❌ Filtered out null product');
+                    return false;
+                }
+                if (currentProductId && product.id === currentProductId) {
+                    // console.log(`❌ Filtered out current product: ${product.id}`);
+                    return false;
+                }
+                return true;
+            });
 
-        // Shuffle and get first 8 products for horizontal scroll
-        const shuffled = filtered.sort(() => 0.5 - Math.random());
-        return shuffled.slice(0, 8);
-    }, [currentProduct]);
+        // console.log('Final products list:', productsList);
+        // console.log('Number of products to display:', productsList.length);
+
+        // Set up to 8 products
+        const finalList = productsList.slice(0, 8);
+        setRecentlyViewedProducts(finalList);
+        // console.log('✅ Set recently viewed products:', finalList.length);
+    }, [currentProductId, getRecentlyViewed]);
 
     // Check scroll position to show/hide arrows
     const checkScrollPosition = () => {
@@ -31,6 +55,11 @@ const RelatedProducts = ({ currentProduct }) => {
             setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
         }
     };
+
+    // Initialize scroll position check
+    useEffect(() => {
+        checkScrollPosition();
+    }, [recentlyViewedProducts]);
 
     // Scroll left
     const scrollLeft = () => {
@@ -52,21 +81,26 @@ const RelatedProducts = ({ currentProduct }) => {
         }
     };
 
-    // Don't render if no related products
-    if (relatedProducts.length === 0) {
+    // console.log('🎨 Rendering RecentlyViewed. Products count:', recentlyViewedProducts.length);
+
+    // Don't render if no recently viewed products
+    if (recentlyViewedProducts.length === 0) {
+        // console.log('⚠️ Not rendering - no products to show');
         return null;
     }
 
+    // console.log('✅ Rendering RecentlyViewed section with', recentlyViewedProducts.length, 'products');
+
     return (
-        <section className="related-products py-12 bg-base-100">
+        <section className="recently-viewed pb-12 bg-base-100">
             <div className="max-w-7xl mx-auto">
                 {/* Section Header */}
                 <div className="mb-8">
-                    <h2 className="text-2xl font-bold text-gray-700 mb-2">
-                        You May Also Like
+                    <h2 className="text-xl md:text-2xl font-bold text-gray-700 mb-2">
+                        Recently Viewed
                     </h2>
-                    <p className="text-gray-500">
-                        Similar products from the same category
+                    <p className="text-gray-600">
+                        Continue shopping where you left off
                     </p>
                 </div>
 
@@ -76,10 +110,10 @@ const RelatedProducts = ({ currentProduct }) => {
                     {canScrollLeft && (
                         <button
                             onClick={scrollLeft}
-                            className="hidden lg:flex absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-neutral text-white p-3 rounded-full shadow-lg hover:bg-[#ae2c00] transition-all duration-300 -ml-5"
+                            className="hidden lg:flex absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-neutral text-white p-3 rounded-[40%] shadow-lg hover:bg-[#ae2c00] transition-all duration-300 -ml-[1.5rem]"
                             aria-label="Scroll left"
                         >
-                            <IoChevronBack size="1.5rem" />
+                            <BsArrowLeft size="1.5rem" />
                         </button>
                     )}
 
@@ -87,10 +121,10 @@ const RelatedProducts = ({ currentProduct }) => {
                     {canScrollRight && (
                         <button
                             onClick={scrollRight}
-                            className="hidden lg:flex absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-neutral text-white p-3 rounded-full shadow-lg hover:bg-[#ae2c00] transition-all duration-300 -mr-5"
+                            className="hidden lg:flex absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-neutral text-white p-3 rounded-[40%] shadow-lg hover:bg-[#ae2c00] transition-all duration-300 -mr-[1.5rem]"
                             aria-label="Scroll right"
                         >
-                            <IoChevronForward size="1.5rem" />
+                            <BsArrowRight size="1.5rem" />
                         </button>
                     )}
 
@@ -101,12 +135,12 @@ const RelatedProducts = ({ currentProduct }) => {
                         className="flex gap-[7vw] md:gap-[5vw] lg:gap-[3vw] overflow-x-auto scroll-smooth py-2 px-2 lg:h-[16rem] items-end lg:pb-[1rem] lg:px-[2rem] bg-[#edebeb] rounded-[2rem]"
                         style={{
                             scrollbarWidth: 'thin',
-                            scrollbarColor: '#afb4be #E5E7EB'
+                            scrollbarColor: '#afb4be #E5E7EB',
                         }}
                     >
-                        {relatedProducts.map((product) => (
+                        {recentlyViewedProducts.map((product) => (
                             <div key={product.id} className="flex-shrink-0 w-[12rem] sm:w-[18rem] lg:w-[23rem]">
-                                <RelatedProductCard item={product} />
+                                <RecentlyViewedCard item={product} />
                             </div>
                         ))}
                     </div>
@@ -120,7 +154,7 @@ const RelatedProducts = ({ currentProduct }) => {
 
             {/* Custom Scrollbar Styling */}
             <style>{`
-                 .recently-viewed .flex::-webkit-scrollbar {
+                .recently-viewed .flex::-webkit-scrollbar {
                     height: 8px;
                 }
                 .recently-viewed .flex::-webkit-scrollbar-track {
@@ -139,4 +173,4 @@ const RelatedProducts = ({ currentProduct }) => {
     );
 };
 
-export default RelatedProducts;
+export default RecentlyViewed;

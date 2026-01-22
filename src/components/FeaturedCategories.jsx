@@ -12,9 +12,9 @@ const FeaturedCategories = () => {
     // }
 
     return (
-        <section id='featuredCategories' className='section-wrapper px-[1.1rem] md:px-[2rem] lg:px-[3rem] mt-16 mb-[4rem]'>
-            <div className='shop-by-categories mb-8'>
-                <h2 className="text-[22px] text-gray-700 font-bold text-center leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">
+        <section id='featuredCategories' className='section-wrapper px-[1.1rem] md:px-[2rem] lg:px-[3rem] mt-12'>
+            <div className='shop-by-categories mb-12'>
+                <h2 className="text-[22px] text-gray-700 font-bold text-center leading-tight tracking-[-0.015em] px-4">
                     Shop by Category
                 </h2>
             </div>
@@ -58,7 +58,7 @@ const FeaturedCategories = () => {
             </div>
 
             {/* View All Categories Link */}
-            <div className="text-center mt-8">
+            <div className="text-center mt-12">
                 <Link
                     to="/products"
                     className="inline-flex items-center px-6 py-2 text-accent shadow-lg border border-accent rounded-full hover:bg-accent hover:text-base-100 transition-all duration-300 ease-in-out font-medium"
