@@ -83,7 +83,7 @@ const NewsletterSection = () => {
                                                 </div>
                                                 <div className='flex flex-col'>
                                                     {/* Email Input and Subscribe Button */}
-                                                     <div className='emailError ml-3 mb-1'>
+                                                    <div className='emailError ml-3 mb-1'>
                                                         {emailError && (
                                                             <p className="mt-2 text-sm text-red-500 text-left">
                                                                 {emailError}
@@ -112,11 +112,11 @@ const NewsletterSection = () => {
                                             </div>
                                             <button
                                                 onClick={handleSubmit}
-                                                className="inline-block btn btn-neutral text-white rounded-full shadow-lg basis-[15%] mt-1 lg:mt-0 min-w-[10rem] lg:ml-1"
+                                                className="inline-block btn btn-neutral border-neutral rounded-full shadow-lg basis-[15%] mt-1 lg:mt-0 min-w-[10rem] lg:ml-1"
                                                 disabled={isLoading}
                                             >
                                                 {isLoading ? (
-                                                    <span className="loading loading-spinner loading-sm"></span>
+                                                    <span className="loading loading-dots loading-lg text-[#836056]"></span>
                                                 ) : (
                                                     'Subscribe'
                                                 )}
@@ -126,6 +126,15 @@ const NewsletterSection = () => {
                                         <p className="text-sm mt-3 text-start text-neutral-dark italic ml-3">
                                             By subscribing, you agree to receive emails from Kojohwo Global.
                                         </p>
+                                        {/* <button
+                                            onClick={handleSubmit}
+                                            className="inline-block btn btn-neutral border-neutral rounded-full shadow-lg basis-[15%] mt-1 lg:mt-0 min-w-[10rem] lg:ml-1"
+                                            disabled
+
+                                        >
+                                            <span className="loading loading-dots loading-lg text-[#836056]"></span>
+
+                                        </button> */}
                                     </div>
                                 </div>
                             </div>

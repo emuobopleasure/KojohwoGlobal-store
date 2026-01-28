@@ -172,7 +172,7 @@ ${`https://kojohwoglobal.vercel.app/products/${item.id}-${item.slug}`}`;
 
                                              ${isFooterVisible
                                             ? 'opacity-0 pointer-events-none translate-y-4'
-                                            : 'opacity-100 pointer-events-auto translate-y-0'}`}
+                                            : 'opacity-100 pointer-events-auto translate-y-0'}xxx`}
                                 >
                                     {isItemInWishlist ? (
                                         <button onClick={() => handleWishlistButtonClick(item)} className="w-full px-[6px] py-[4px] h-[3rem] landscape:h-[2.5rem] md:h-[4rem] gap-[2px] flex justify-center items-center bg-base-100 border border-neutral text-neutral font-medium text-[79%] md:text-lg leading-snug capitalize rounded-full shadow-xl hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#ae2c00] active:text-white active:shadow-lg transition duration-150 ease-in-out">
