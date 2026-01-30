@@ -98,7 +98,7 @@ const RelatedProducts = ({ currentProduct }) => {
                     <div
                         ref={scrollContainerRef}
                         onScroll={checkScrollPosition}
-                        className="flex gap-[7vw] md:gap-[5vw] lg:gap-[3vw] overflow-x-auto scroll-smooth py-2 px-2 lg:h-[16rem] items-end lg:pb-[1rem] lg:px-[2rem] bg-[#edebeb] rounded-[2rem]"
+                        className="scrooll-carousel flex gap-[7vw] md:gap-[5vw] lg:gap-[3vw] overflow-x-auto scroll-smooth py-2 px-2 lg:h-[16rem] items-end lg:pb-[1rem] lg:px-[2rem] bg-[#edebeb] rounded-[2rem]"
                         style={{
                             scrollbarWidth: 'thin',
                             scrollbarColor: '#afb4be #E5E7EB'

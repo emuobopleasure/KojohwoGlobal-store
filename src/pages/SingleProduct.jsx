@@ -106,7 +106,7 @@ ${`https://kojohwoglobal.vercel.app/products/${item.id}-${item.slug}`}`;
     // Show loading spinner while product is loading
     if (isLoadingProduct) {
         return (
-            <div className="fixed inset-0 bg-base-100 z-50 flex items-center justify-center mt-[7.3vh]">
+            <div className="fixed inset-0 bg-[rgba(229,227,225,0.4)] z-50 flex items-center justify-center">
                 <span className="loading loading-dots loading-lg text-neutral"></span>
             </div>
         );
@@ -135,7 +135,7 @@ ${`https://kojohwoglobal.vercel.app/products/${item.id}-${item.slug}`}`;
                                 <img alt={item.name} className="product-image w-full h-full lg:h-full max-h-[20rem] md:max-h-[28rem] md:h-[28rem] object-scale-down md:object-contain object-center rounded-bl-2xl rounded-br-2xl md:rounded relative" src={item.image} />
                             </div>
 
-                            <button onClick={() => navigate(-1)} className='back-link fixed lg:hidden top-[4.3rem] p-[10px] rounded-[40%] border-[1px] border-[#374151] bg-base-100 z-20'>
+                            <button onClick={() => navigate(-1)} className='back-link fixed lg:hidden top-[4.3rem] z-20 p-[10px] rounded-[40%] border border-white/30 bg-white/30 backdrop-blur-md shadow-md hover:bg-white/40 transition'>
                                 <BsArrowLeft size='1.2rem' />
                             </button>
 
@@ -163,16 +163,17 @@ ${`https://kojohwoglobal.vercel.app/products/${item.id}-${item.slug}`}`;
                                 {/* Add to Wishlist - Mobile/Tablet (Fixed or Relative based on footer visibility) */}
                                 <div
                                     className={`
-                                            lg:hidden landscape:hidden z-40
-                                            transition-all duration-300 ease-in-out
+                                md:hidden landscape:hidden z-40
+                                transition-all duration-300 ease-in-out
 
-                                            ${isSticky
+                                         ${isSticky
                                             ? 'fixed bottom-2 left-4 right-4 md:left-8 md:right-8'
-                                            : 'relative mt-6 w-screen left-1/2 -translate-x-1/2 px-4 md:px-8'}
+                                            : 'relative mt-6 w-full'}
 
-                                             ${isFooterVisible
+                                        ${isFooterVisible
                                             ? 'opacity-0 pointer-events-none translate-y-4'
-                                            : 'opacity-100 pointer-events-auto translate-y-0'}xxx`}
+                                            : 'opacity-100 pointer-events-auto translate-y-0'}
+                                `}
                                 >
                                     {isItemInWishlist ? (
                                         <button onClick={() => handleWishlistButtonClick(item)} className="w-full px-[6px] py-[4px] h-[3rem] landscape:h-[2.5rem] md:h-[4rem] gap-[2px] flex justify-center items-center bg-base-100 border border-neutral text-neutral font-medium text-[79%] md:text-lg leading-snug capitalize rounded-full shadow-xl hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#ae2c00] active:text-white active:shadow-lg transition duration-150 ease-in-out">
@@ -188,14 +189,14 @@ ${`https://kojohwoglobal.vercel.app/products/${item.id}-${item.slug}`}`;
                                 </div>
 
                                 {/* Add to Wishlist - Desktop (Always relative) */}
-                                <div id='addToWish' className='add-to-wish hidden lg:block landscape:block lg:justify-start gap-[10vw] z-10'>
+                                <div id='addToWish' className='add-to-wish hidden md:block landscape:block lg:justify-start gap-[10vw] z-10'>
                                     {isItemInWishlist ? (
-                                        <button onClick={() => handleWishlistButtonClick(item)} className="w-full px-[6px] py-[6px] gap-[2px] flex justify-center items-center bg-base-100 border border-neutral text-neutral font-medium text-[79%] md:text-lg leading-snug capitalize rounded-full shadow-xl hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#ae2c00] active:text-white active:shadow-lg transition duration-150 ease-in-out">
+                                        <button onClick={() => handleWishlistButtonClick(item)} className="w-full px-[6px] py-[6px] gap-[2px] flex justify-center items-center landscape:h-[3rem] h-[4rem] bg-base-100 border border-neutral text-neutral font-medium text-[79%] md:text-lg leading-snug capitalize rounded-full shadow-xl hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#ae2c00] active:text-white active:shadow-lg transition duration-150 ease-in-out">
                                             <TbHeartMinus size='1.2rem' />
                                             <p className='addtowish'>Remove from Wishlist</p>
                                         </button>
                                     ) : (
-                                        <button onClick={() => handleWishlistButtonClick(item)} className="w-full px-[6px] py-[7px] gap-[4px] flex justify-center items-center bg-neutral text-white font-medium text-[79%] md:text-lg leading-snug capitalize rounded-full shadow-md hover:bg-[#ae2c00] hover:shadow-lg focus:bg-[#ae2c00] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#ae2c00] active:shadow-lg transition duration-150 ease-in-out">
+                                        <button onClick={() => handleWishlistButtonClick(item)} className="w-full px-[6px] py-[7px] gap-[4px] flex justify-center items-center landscape:h-[3rem] h-[4rem] bg-neutral text-white font-medium text-[79%] md:text-lg leading-snug capitalize rounded-full shadow-md hover:bg-[#ae2c00] hover:shadow-lg focus:bg-[#ae2c00] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#ae2c00] active:shadow-lg transition duration-150 ease-in-out">
                                             <TbHeartPlus size='1.2rem' />
                                             <p className='addtowish'>Add to Wishlist</p>
                                         </button>

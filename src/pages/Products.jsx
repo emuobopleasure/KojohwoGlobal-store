@@ -112,7 +112,7 @@ const Products = () => {
             {/* Products Grid */}
             {isLoading ? (
                 <div className="fixed inset-0 bg-[rgba(229,227,225,0.4)] z-50 flex items-center justify-center">
-                    <span className="loading loading-dots loading-lg text-btnColor"></span>
+                    <span className="loading loading-dots loading-lg text-neutral"></span>
                 </div>
             ) : currentProducts.length === 0 ? (
                 <p className="text-center text-gray-500">No products found.</p>
